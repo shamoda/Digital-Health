@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Digital Health</string>
+    <string name="call_an_ambulance">Call an Ambulance</string>
+    <string name="already_have_an_account">Already have an Account? Login</string>
+    <string name="create_account">Create Account</string>
+</resources>
