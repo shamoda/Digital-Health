@@ -3,4 +3,12 @@
     <string name="call_an_ambulance">Call an Ambulance</string>
     <string name="already_have_an_account">Already have an Account? Login</string>
     <string name="create_account">Create Account</string>
+    <string name="enter_name">Name</string>
+    <string name="enter_phone">Phone Number</string>
+    <string name="enter_password">Passowrd</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="login_btn">Login</string>
+    <string name="i_am_an_admin">I am an admin</string>
+    <string name="i_am_not_an_admin">I am not an admin</string>
 </resources>
