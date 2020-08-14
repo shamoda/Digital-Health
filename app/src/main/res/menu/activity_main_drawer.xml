@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sm_nav_find_a_doctor"
+            android:icon="@drawable/ic_doctors"
+            android:title="@string/find_a_doctor"
+            android:iconTint="@android:color/white"/>
+        <item
+            android:id="@+id/sm_nav_my_appointments"
+            android:icon="@drawable/ic_appointments"
+            android:title="@string/my_appointments"
+            android:iconTint="@android:color/white"/>
+        <item
+            android:id="@+id/sm_nav_my_reports"
+            android:icon="@drawable/ic_reports"
+            android:title="@string/my_reports"
+            android:iconTint="@android:color/white"/>
+        <item
+            android:id="@+id/sm_nav_quick_health_checkups"
+            android:icon="@drawable/ic_checkups"
+            android:title="@string/quick_health_checkups"
+            android:iconTint="@android:color/white"/>
+        <item
+            android:id="@+id/sm_nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings"
+            android:iconTint="@android:color/white"/>
+        <item
+            android:id="@+id/sm_nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/logout"
+            android:iconTint="@android:color/white"/>
+    </group>
+</menu>

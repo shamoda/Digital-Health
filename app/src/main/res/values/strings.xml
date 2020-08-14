@@ -23,4 +23,29 @@
     <string name="update_btn">Update</string>
     <string name="manage_users">Manage Users</string>
     <string name="add_new_patient">Add New Patient</string>
+    <string name="change_profile_picture">Change Profile Picture</string>
+    <string name="delete_my_profile">Delete My Profile</string>
+    <string name="bmi_calculator_title">Body Mass Index (BMI)</string>
+    <string name="bmi_enter_height">Height in cm</string>
+    <string name="bmi_weight">Weight in kg</string>
+    <string name="calculate_btn">Calculate</string>
+    <string name="bmi_range">Underweight \u003C 18.5 \u003E Healthy \u003C 25 \u003E Overweight</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="find_a_doctor">Find your Doctor</string>
+    <string name="my_appointments">My Appointments</string>
+    <string name="my_reports">My Reports</string>
+    <string name="quick_health_checkups">Quick Health Checkups</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="find_your_doctor">Find your Doctor :</string>
 </resources>
