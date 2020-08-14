@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/sm_patient_details_row_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_user"
+            />
+
+        <TextView
+            android:id="@+id/sm_patient_details_row_specialization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_name"
+            android:layout_toRightOf="@+id/sm_patient_details_row_img"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/sm_patient_details_row_specialization_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_name"
+            android:layout_toRightOf="@+id/sm_patient_details_row_specialization"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/sm_patient_details_row_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_phone"
+            android:layout_toRightOf="@+id/sm_patient_details_row_img"
+            android:layout_below="@+id/sm_patient_details_row_specialization"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/sm_patient_details_row_name_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_phone"
+            android:layout_toRightOf="@+id/sm_patient_details_row_name"
+            android:layout_below="@+id/sm_patient_details_row_specialization"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

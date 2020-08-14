@@ -19,4 +19,8 @@
     <string name="nic">NIC</string>
     <string name="slmc_reg_no">SLMC registration number</string>
     <string name="add_doctor">Add Doctor</string>
+    <string name="manage_doctors">Manage Doctors</string>
+    <string name="update_btn">Update</string>
+    <string name="manage_users">Manage Users</string>
+    <string name="add_new_patient">Add New Patient</string>
 </resources>
