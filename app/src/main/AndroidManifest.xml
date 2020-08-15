@@ -9,18 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ManageUsersActivity"></activity>
-        <activity android:name=".ManageDoctorsActivity">
+        <activity android:name=".UpdateSessionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CalorieCalculatorActivity">
+        </activity>
+        <activity android:name=".SessionsActivity">
+        </activity>
+        <activity android:name=".AddSessionActivity">
+
+        </activity>
+        <activity android:name=".ManageUsersActivity" />
+        <activity android:name=".ManageDoctorsActivity" />
         <activity android:name=".DoctorRegistrationActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
