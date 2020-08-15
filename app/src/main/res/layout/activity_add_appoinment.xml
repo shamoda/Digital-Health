@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddAppoinment">
+
+    <Toolbar
+        android:id="@+id/ar_add_appoinment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_appoinment"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="12dp"
+                />
+
+
+        </RelativeLayout>
+
+    </Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ar_add_appoinment_toolbar"
+        android:background="@drawable/input_design"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        >
+
+
+
+    <TextView
+        android:id="@+id/ar_add_appoinment_tname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:text="@string/fullname"
+
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+
+    <EditText
+        android:id="@+id/ar_add_appoinment_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ar_add_appoinment_tname"
+        android:background="@drawable/input_design"
+        android:padding="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/ar_add_appoinment_tgen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:text="@string/gender"
+        android:layout_below="@id/ar_add_appoinment_name"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+
+    <RadioGroup
+        android:orientation="horizontal"
+        android:id="@+id/ar_add_appoinment_gen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ar_add_appoinment_tgen"
+        android:layout_marginTop="10dp"
+
+        >
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ar_add_appoinment_option1"
+        android:text="@string/male"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="20dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ar_add_appoinment_option2"
+            android:text="@string/female"
+            android:layout_marginLeft="40dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/ar_add_appoinment_temail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:text="@string/email"
+        android:layout_below="@id/ar_add_appoinment_gen"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <EditText
+        android:id="@+id/ar_add_appoinment_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ar_add_appoinment_temail"
+        android:background="@drawable/input_design"
+        android:padding="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/ar_add_appoinment_tphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:text="@string/contactnum"
+        android:layout_below="@id/ar_add_appoinment_email"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <EditText
+        android:id="@+id/ar_add_appoinment_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ar_add_appoinment_tphone"
+        android:background="@drawable/input_design"
+        android:padding="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/ar_add_appoinment_tnote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:text="@string/notes"
+        android:layout_below="@id/ar_add_appoinment_phone"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <EditText
+        android:id="@+id/ar_add_appoinment_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ar_add_appoinment_tnote"
+        android:background="@drawable/input_design"
+        android:padding="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+    <Button
+        android:id="@+id/ar_add_appoinment_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ar_add_appoinment_note"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/buttons"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/submit"
+        android:textColor="@android:color/white"
+        />
+
+    </RelativeLayout>
+</RelativeLayout>
