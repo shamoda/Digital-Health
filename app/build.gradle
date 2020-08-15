@@ -47,6 +47,7 @@ dependencies {
     implementation 'io.paperdb:paperdb:2.7.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+
 }
 
 apply plugin: 'com.android.application'
