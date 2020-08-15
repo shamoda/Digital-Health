@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+
+    <Button
+        android:id="@+id/sm_home_call_an_ambulance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/buttons"
+        android:padding="5dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="30dp"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:text="@string/call_an_ambulance"
+        android:drawableLeft="@drawable/ambulance"
+        android:drawableRight="@drawable/free"
+        />
+
+    <Button
+        android:id="@+id/sm_home_quick_health_checkups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@id/sm_home_call_an_ambulance"
+        android:padding="5dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/quick_health_checkups"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:id="@+id/sm_home_find_your_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/find_your_doctor"
+        android:layout_below="@+id/sm_home_quick_health_checkups"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/sm_home_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/sm_home_find_your_doctor"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        >
+
+        <Spinner
+            android:id="@+id/sm_home_specialization_spinner"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/input_design"
+            />
+
+        <SearchView
+            android:id="@+id/sm_home_search_view"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/input_design"
+            />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sm_home_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/sm_home_relative_layout">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+</RelativeLayout>
