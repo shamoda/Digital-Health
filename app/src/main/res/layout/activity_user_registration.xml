@@ -149,15 +149,13 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/buttons"
-        android:padding="10dp"
+        android:padding="14dp"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textSize="18dp"
         android:text="@string/create_account"
         android:textColor="@android:color/white"
         />
-
 
 
 </RelativeLayout>
