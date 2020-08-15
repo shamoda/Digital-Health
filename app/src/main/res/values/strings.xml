@@ -48,6 +48,8 @@
     <string name="settings">Settings</string>
     <string name="logout">Logout</string>
     <string name="find_your_doctor">Find your Doctor :</string>
+    <string name="re_enter_password">Re-enter Password</string>
+
 
 
 <!--    Admin Dashboard-->
@@ -55,4 +57,6 @@
     <string name="cusNo">Total No of Registered Customers</string>
     <string name="countDocs">54</string>
     <string name="cusCount">567</string>
+  
+
 </resources>

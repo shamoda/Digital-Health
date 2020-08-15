@@ -14,12 +14,9 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity android:name=".BMICalculatorActivity"></activity>
         <activity android:name=".UpdateUserAccountActivity" />
         <activity android:name=".ManageUsersActivity" />
@@ -28,6 +25,33 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
         <activity android:name=".MainActivity" />
-    </application>
+
+        <activity android:name=".BMICalculatorActivity">
+
+        </activity>
+        <activity android:name=".UpdateUserAccountActivity" >
+
+        </activity>
+        <activity android:name=".ManageUsersActivity" />
+        <activity android:name=".ManageDoctorsActivity">
+
+        </activity>
+        <activity android:name=".DoctorRegistrationActivity" >
+
+        </activity>
+        <activity android:name=".LoginActivity" >
+
+        </activity>
+        <activity android:name=".UserRegistrationActivity" >
+
+        </activity>
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+ </application>
 
 </manifest>
