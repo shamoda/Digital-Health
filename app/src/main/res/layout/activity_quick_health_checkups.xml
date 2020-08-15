@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".QuickHealthCheckupsActivity">
+
+    <Toolbar
+        android:id="@+id/sm_quick_health_checkups_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quick_health_checkups"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:id="@+id/sm_quick_health_checkups_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="12dp"
+                />
+
+        </RelativeLayout>
+    </Toolbar>
+
+    <Button
+        android:id="@+id/sm_quick_health_checkups_bmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sm_quick_health_checkups_toolbar"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="12dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/bmi_calculator_title"
+        android:textColor="@android:color/white"
+        />
+
+
+    <Button
+        android:id="@+id/sm_quick_health_checkups_bmr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sm_quick_health_checkups_bmi"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="12dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/bmr_title"
+        android:textColor="@android:color/white"
+        />
+
+    <Button
+        android:id="@+id/sm_quick_health_checkups_calorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sm_quick_health_checkups_bmr"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="12dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/calorie_calculator_title"
+        android:textColor="@android:color/white"
+        />
+
+
+    <Button
+        android:id="@+id/sm_quick_health_checkups_insulin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sm_quick_health_checkups_calorie"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="12dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/insulin_dose_calculator_title"
+        android:textColor="@android:color/white"
+        />
+
+
+</RelativeLayout>

@@ -49,4 +49,7 @@
     <string name="logout">Logout</string>
     <string name="find_your_doctor">Find your Doctor :</string>
     <string name="re_enter_password">Re-enter Password</string>
+    <string name="bmr_title">Basal Metabolic Rate (BMR)</string>
+    <string name="calorie_calculator_title">Calorie Calculator</string>
+    <string name="insulin_dose_calculator_title">Insulin Dose Calculator</string>
 </resources>
