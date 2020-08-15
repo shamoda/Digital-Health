@@ -27,7 +27,7 @@
             android:background="@drawable/input_design"
             android:padding="20dp"
             android:textAllCaps="false"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textColor="@color/colorPrimaryDark"
             android:text="@string/already_have_an_account"
             />
@@ -43,7 +43,7 @@
         android:background="@drawable/input_design"
         android:padding="20dp"
         android:textAllCaps="false"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:textColor="@color/colorPrimaryDark"
         android:text="@string/create_account"
         />
@@ -61,7 +61,7 @@
         android:paddingStart="40dp"
         android:paddingEnd="30dp"
         android:textAllCaps="true"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:text="@string/call_an_ambulance"

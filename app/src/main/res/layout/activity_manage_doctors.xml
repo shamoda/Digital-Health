@@ -59,43 +59,63 @@
         />
 
     <RelativeLayout
-        android:id="@+id/sm_manage_doctors_linearlayout"
+        android:id="@+id/sm_manage_doctors_relative_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_below="@+id/sm_manage_doctors_add_new_doctor"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         >
 
-        <Spinner
-            android:id="@+id/sm_manage_doctors_specialization_spinner"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:background="@drawable/input_design"
-            />
+        //specialization
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sm_manage_doctors_specialization"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/specialization"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundMode="outline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:endIconMode="dropdown_menu"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            >
+            <AutoCompleteTextView
+                android:id="@+id/sm_manage_doctors_specialization_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:focusableInTouchMode="true"
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <SearchView
             android:id="@+id/sm_manage_doctors_search_view"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/sm_manage_doctors_specialization"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp"
             android:background="@drawable/input_design"
             />
 
     </RelativeLayout>
 
 
-    <ListView
-        android:id="@+id/sm_manage_doctors_list_view"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sm_manage_doctors_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/sm_manage_doctors_linearlayout"
+        android:layout_below="@+id/sm_manage_doctors_relative_layout"
         />
-
-
-
 
 </RelativeLayout>

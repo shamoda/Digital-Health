@@ -48,7 +48,7 @@
         android:layout_height="130dp"
         android:src="@drawable/ic_user"
         android:layout_below="@+id/sm_update_user_toolbar"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         />
 
@@ -66,77 +66,131 @@
         android:layout_marginRight="12dp"
         />
 
-    <EditText
+    //name
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sm_update_user_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sm_update_user_change_profile_img_btn"
-        android:background="@drawable/input_design"
-        android:padding="12dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/enter_name"
-        android:inputType="text"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        />
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/sm_update_user_change_profile_img_btn"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sm_update_user_name_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
 
-    <EditText
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    //phone
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sm_update_user_phone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sm_update_user_name"
-        android:background="@drawable/input_design"
-        android:padding="12dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/enter_phone"
-        android:inputType="text"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        />
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/sm_update_user_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sm_update_user_phone_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
 
-    <EditText
+    </com.google.android.material.textfield.TextInputLayout>
+
+    //address
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sm_update_user_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sm_update_user_phone"
-        android:background="@drawable/input_design"
-        android:padding="12dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/address"
-        android:inputType="text"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        />
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/sm_update_user_phone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sm_update_user_address_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
 
-    <EditText
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    //password
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sm_update_user_password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sm_update_user_address"
-        android:background="@drawable/input_design"
-        android:padding="12dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/enter_password"
-        android:inputType="text"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        />
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/sm_update_user_address"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="password_toggle"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sm_update_user_password_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/sm_update_user_delete_account_btn"
@@ -148,7 +202,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/buttons"
-        android:padding="17dp"
+        android:padding="5dp"
         android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold"
