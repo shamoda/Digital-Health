@@ -69,8 +69,8 @@
     <string name="fullname">Full Name</string>
     <string name="contactnum">Contact Number</string>
     <string name="contact">Contact Number:</string>
-    <string name="view_appoinment">My Appoinment</string>
-    <string name="app_id">Appoinment ID:</string>
+    <string name="view_appoinment">My Appointment</string>
+    <string name="app_id">Appointment ID:</string>
     <string name="patientname">Patient Name:</string>
     <string name="doctorname">Doctor:</string>
     <string name="date">Date:</string>
@@ -85,10 +85,10 @@
     <string name="doctorName">Doctor Name</string>
     <string name="search">Search</string>
     <string name="search_details">Search Details</string>
-    <string name="app_id_history">Appoinment ID </string>
+    <string name="app_id_history">Appointment ID </string>
     <string name="patientname_history">Patient Name </string>
     <string name="date_history">Date </string>
-    <string name="app_history">Appoinment History</string>
+    <string name="app_history">Appointment History</string>
     <string name="view_history">View History</string>
 
 
