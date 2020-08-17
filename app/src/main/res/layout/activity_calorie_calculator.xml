@@ -19,262 +19,252 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/calorie_calculator"
+                android:text="@string/close_btn"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:layout_alignParentStart="true"
                 />
 
-            <TextView
-                android:id="@+id/ak_calorie_calculator_close_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/close_btn"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="17sp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="12dp"
-                />
         </RelativeLayout>
     </Toolbar>
 
     <TextView
+        android:id="@+id/ak_calorie_calculator_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ak_calorie_calculator_toolbar"
         android:text="@string/calorie_calculator"
-        android:padding="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="60dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:textSize="22sp"
-        android:layout_alignParentStart="true"
+        android:layout_below="@id/ak_calorie_calculator_toolbar"
+        android:layout_marginTop="10dp"
         />
 
-    <RelativeLayout
-        android:id="@+id/ak_calorie_calculator_form"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/input_design"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ak_calorie_calculator_age"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="25dp"
-        android:layout_below="@id/ak_calorie_calculator_toolbar">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/patient_age"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/ak_calorie_calculator_title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterMaxLength="5"
+        app:counterEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ak_calorie_calculator_age_value"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/ak_calorie_calculator_age"
-        android:layout_width="wrap_content"
+        android:id="@+id/ak_calorie_calculator_age_range"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/patient_age"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/age_range"
         android:textSize="20sp"
-        />
-
-    <EditText
-        android:id="@+id/ak_calorie_calculator_insert_age"
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:background="@drawable/input_design"
-        android:padding="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:inputType="number"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ak_calorie_calculator_title"
         android:layout_toRightOf="@+id/ak_calorie_calculator_age"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age_range"
-            android:layout_marginTop="50dp"
-            android:layout_toRightOf="@+id/ak_calorie_calculator_insert_age"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            />
-
-
-        <TextView
-            android:id="@+id/ak_calorie_calculator_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/patient_gender"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_below="@id/ak_calorie_calculator_age"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            />
-
-        <RadioGroup
-            android:orientation="horizontal"
-            android:id="@+id/ar_add_appoinment_gen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ak_calorie_calculator_insert_age"
-            android:layout_toRightOf="@+id/ak_calorie_calculator_gender"
-            android:layout_marginTop="30dp"
-
-            >
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ak_calorie_calculator_option1"
-                android:text="@string/male"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ak_calorie-calculator_option2"
-                android:text="@string/female"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"
-                />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/ak_calorie_calculator_weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/patient_weight"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_below="@+id/ak_calorie_calculator_gender"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            />
-
-        <EditText
-            android:id="@+id/ak_calorie_calculator_insert_weight"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:background="@drawable/input_design"
-            android:padding="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:inputType="number"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_below="@+id/ak_calorie_calculator_gender"
-            android:layout_toRightOf="@+id/ak_calorie_calculator_weight"
-            android:layout_marginTop="30dp"
-            />
-
-        <TextView
-            android:id="@+id/ak_calorie_calculator_height"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/patient_height"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_below="@+id/ak_calorie_calculator_weight"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            />
-
-        <EditText
-            android:id="@+id/ak_calorie_calculator_insert_height"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:background="@drawable/input_design"
-            android:padding="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:inputType="number"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_below="@+id/ak_calorie_calculator_insert_weight"
-            android:layout_toRightOf="@+id/ak_calorie_calculator_height"
-            android:layout_marginTop="30dp"
-            />
-
-        <TextView
-            android:id="@+id/ak_calorie_calculator_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activity"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="35dp"
-            android:layout_below="@+id/ak_calorie_calculator_height"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            />
-
-
-
-        <Spinner
-            android:id="@+id/ak_calorie_calculator_activity_spinner"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:background="@drawable/input_design"
-            android:layout_below="@id/ak_calorie_calculator_insert_height"
-            android:layout_toRightOf="@+id/ak_calorie_calculator_activity"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:layout_marginTop="30dp"
-            />
-
-
-    <RelativeLayout
-        android:layout_below="@+id/ak_calorie_calculator_activity"
+    <TextView
+        android:id="@+id/ak_calorie_calculator_gender"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/ak_calorie_claculator_calculate_btn"
-        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/buttons"
+        android:text="@string/patient_gender"
+        android:layout_below="@+id/ak_calorie_calculator_age"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/ak_calorie_calculator_gender_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@+id/ak_calorie_calculator_gender"
+        android:layout_below="@id/ak_calorie_calculator_age_range"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        >
+
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/male" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"
+            android:layout_marginLeft="30dp"
+            />
+    </RadioGroup>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ak_calorie_calculator_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/bmi_weight"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/ak_calorie_calculator_gender_value"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterMaxLength="5"
+        app:counterEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ak_calorie_calculator_weight_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ak_calorie_calculator_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/bmi_enter_height"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/ak_calorie_calculator_weight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterMaxLength="5"
+        app:counterEnabled="true"
+        >
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/ak_calorie_calculator_height_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    //activity
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ak_calorie_calculator_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/activity"
+        android:layout_below="@+id/ak_calorie_calculator_height"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:endIconMode="dropdown_menu"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <AutoCompleteTextView
+            android:id="@+id/ak_calorie_calculator_activity_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:focusableInTouchMode="true"
+            android:focusable="false"
+            android:cursorVisible="false"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/ak_calorie_calculator_calculate_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ak_calorie_calculator_activity"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         android:padding="17dp"
         android:textAllCaps="false"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textSize="18dp"
-        android:text="@string/submit_btn"
         android:textColor="@android:color/white"
+        android:text="@string/calculate_btn"
         />
 
-        <Button
-            android:id="@+id/ak_calorie_claculator_clear_btn"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="100dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_toRightOf="@id/ak_calorie_claculator_calculate_btn"
-            android:background="@drawable/buttons"
-            android:padding="17dp"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:text="@string/clear_btn"
-            android:textColor="@android:color/white"
-            />
-    </RelativeLayout>
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/ak_calorie_calculator_suggest_msg"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ak_calorie_calculator_calculate_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:text="The result show how many calories to consume each day to maintain the current weight."
+        />
+
+    <TextView
+        android:id="@+id/ak_calorie_calculator_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ak_calorie_calculator_suggest_msg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="1523 calories/day"
+        />
+
+
+
 
 
 

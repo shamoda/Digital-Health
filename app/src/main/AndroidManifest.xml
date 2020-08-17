@@ -24,34 +24,18 @@
         <activity android:name=".DoctorRegistrationActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
+        <activity android:name=".CalorieCalculatorActivity"/>
+        <activity android:name=".UpdateSessionActivity"/>
+        <activity android:name=".SessionsActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".AddSessionActivity"/>
+        
         <activity android:name=".MainActivity" />
-
-        <activity android:name=".BMICalculatorActivity">
-
-        </activity>
-        <activity android:name=".UpdateUserAccountActivity" >
-
-        </activity>
-        <activity android:name=".ManageUsersActivity" />
-        <activity android:name=".ManageDoctorsActivity">
-
-        </activity>
-        <activity android:name=".DoctorRegistrationActivity" >
-
-        </activity>
-        <activity android:name=".LoginActivity" >
-
-        </activity>
-        <activity android:name=".UserRegistrationActivity" >
-
-        </activity>
-        <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
  </application>
 
 </manifest>

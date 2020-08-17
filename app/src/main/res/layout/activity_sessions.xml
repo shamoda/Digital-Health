@@ -1,284 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SessionsActivity">
-
-    <Toolbar
-        android:id="@+id/ak_session_list_toolbar"
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
-        >
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        app:cardElevation="5dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sessions"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="17sp"
-                android:layout_alignParentStart="true"
-                />
-
-            <TextView
-                android:id="@+id/ak_session_list_close_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/close_btn"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="17sp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="12dp"
-                />
-        </RelativeLayout>
-    </Toolbar>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/ak_session_list_toolbar"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp">
-
-        <ImageView
-            android:id="@+id/ak_session_doctor_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_user"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            />
-
-        <TextView
-            android:id="@+id/ak_session_doctor_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_name"
-            android:layout_toRightOf="@+id/ak_session_doctor_img"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="30dp"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"
-            />
-
-        <TextView
-            android:id="@+id/ak_session_specialization"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/specialization"
-            android:layout_below="@+id/ak_session_doctor_img"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            />
-
-        <RelativeLayout
-            android:id="@+id/ak_session_session_layout1"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ak_session_specialization"
-            android:background="@drawable/input_design"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="5dp">
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/input_design">
 
             <ImageView
-                android:id="@+id/ak_session_calendar1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/ak_session_list_calendar_img"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
                 android:src="@drawable/calendar"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="7dp"
                 />
 
             <TextView
-                android:id="@+id/ak_session_date1"
+                android:id="@+id/ak_session_list_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/session_date"
-                android:layout_toRightOf="@+id/ak_session_calendar1"
+                android:layout_toRightOf="@+id/ak_session_list_calendar_img"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 />
 
             <ImageView
-                android:id="@+id/ak_session_clock1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/ak_session_list_clock_img"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
                 android:src="@drawable/clock"
-                android:layout_toRightOf="@+id/ak_session_date1"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@+id/ak_session_list_date"
                 />
 
             <TextView
-                android:id="@+id/ak_session_time1"
+                android:id="@+id/ak_session_list_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/session_date"
-                android:layout_toRightOf="@+id/ak_session_clock1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
+                android:text="@string/session_time"
+                android:layout_toRightOf="@+id/ak_session_list_clock_img"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 />
 
             <TextView
-                android:id="@+id/ak_session_session_day1"
+                android:id="@+id/ak_session_list_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/session_day"
-                android:layout_below="@+id/ak_session_calendar1"
-                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/ak_session_list_calendar_img"
+                android:layout_marginLeft="35dp"
+                android:textColor="@android:color/black"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 />
 
             <TextView
-                android:id="@+id/ak_session_session_active_patients1"
+                android:id="@+id/ak_session_list_active_patients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/no_of_active_patients"
-                android:layout_below="@+id/ak_session_session_day1"
-                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/ak_session_list_day"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
                 />
 
             <Button
-                android:id="@+id/ak_session_Book_btn1"
-                android:layout_width="200dp"
+                android:id="@+id/ak_session_list_btn"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ak_session_session_active_patients1"
-                android:layout_marginTop="10dp"
+                android:layout_below="@+id/ak_session_list_active_patients"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="180dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/buttons"
-                android:padding="17dp"
+                android:padding="10dp"
                 android:textAllCaps="false"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textSize="18dp"
-                android:text="@string/session_available_btn"
                 android:textColor="@android:color/white"
-                />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/ak_session_session_layout2"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ak_session_session_layout1"
-            android:background="@drawable/input_design"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="5dp">
-
-            <ImageView
-                android:id="@+id/ak_session_calendar2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/calendar"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                />
-
-            <TextView
-                android:id="@+id/ak_session_date2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/session_date"
-                android:layout_toRightOf="@+id/ak_session_calendar2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
-                />
-
-            <ImageView
-                android:id="@+id/ak_session_clock2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/clock"
-                android:layout_toRightOf="@+id/ak_session_date2"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="10dp"
-                />
-
-            <TextView
-                android:id="@+id/ak_session_time2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/session_date"
-                android:layout_toRightOf="@+id/ak_session_clock2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
-                />
-
-            <TextView
-                android:id="@+id/ak_session_session_day2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/session_day"
-                android:layout_below="@+id/ak_session_calendar2"
-                android:layout_marginLeft="40dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
-                />
-
-            <TextView
-                android:id="@+id/ak_session_session_active_patients2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/no_of_active_patients"
-                android:layout_below="@+id/ak_session_session_day2"
-                android:layout_marginLeft="40dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
-                />
-
-            <Button
-                android:id="@+id/ak_session_Book_btn2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ak_session_session_active_patients2"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="180dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/buttons"
-                android:padding="17dp"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textSize="18dp"
                 android:text="@string/session_available_btn"
-                android:textColor="@android:color/white"
                 />
+
+
 
     </RelativeLayout>
 
-    </RelativeLayout>
-</RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
