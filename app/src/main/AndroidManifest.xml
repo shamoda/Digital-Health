@@ -38,7 +38,20 @@
         <activity android:name=".DoctorRegistrationActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
+        <activity android:name=".CalorieCalculatorActivity"/>
+        <activity android:name=".UpdateSessionActivity"/>
+        <activity android:name=".SessionsActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".AddSessionActivity"/>
+        
         <activity android:name=".MainActivity" />
-    </application>
+
+ </application>
+
 
 </manifest>

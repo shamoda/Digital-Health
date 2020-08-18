@@ -173,7 +173,6 @@
         android:elevation="30dp"
         android:paddingStart="50dp"
         android:paddingEnd="100dp"
-
         android:text="Manage Customers"
         android:textSize="18sp" />
 
@@ -235,6 +234,4 @@
         android:textSize="18sp" />
 
 </LinearLayout>
-
-
 </LinearLayout>
