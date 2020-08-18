@@ -28,7 +28,6 @@
 
         </activity>
         <activity android:name=".AdminDashboard"></activity>
-        <activity android:name=".InsulinDoseCal" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
