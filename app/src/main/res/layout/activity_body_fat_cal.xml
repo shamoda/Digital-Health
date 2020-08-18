@@ -13,32 +13,50 @@
         android:id="@+id/insulinCal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPrimary">
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+
+            >
 
             <TextView
-                android:layout_width="214dp"
-                android:layout_height="35dp"
-                android:layout_alignParentStart="true"
-                android:fontFamily="sans-serif-black"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
 
+
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="-3dp"
+                android:text="Close"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="12dp"
-                android:drawableRight="@drawable/ic_logout"
-                android:text="back"
+                android:layout_alignParentTop="true"
+
+
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="190dp"
+                android:layout_marginRight="24dp"
+
+                android:text="@string/SS_cal"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

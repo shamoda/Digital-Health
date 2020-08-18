@@ -9,18 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminDashboard"></activity>
-        <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".BodyFatCal">
+
+        </activity>
+        <activity android:name=".AddBloodReport"></activity>
+        <activity android:name=".UpdateDeletePage"></activity>
+        <activity android:name=".DetailedReport"></activity>
+        <activity android:name=".ReportSearch"></activity>
+        <activity android:name=".ReportList"></activity>
+        <activity android:name=".ResultFatCal" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
-        <activity android:name=".BMICalculatorActivity"></activity>
+        <activity android:name=".AdminDashboard"></activity>
+        <activity android:name=".InsulinDoseCal" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BMICalculatorActivity" />
         <activity android:name=".UpdateUserAccountActivity" />
         <activity android:name=".ManageUsersActivity" />
         <activity android:name=".ManageDoctorsActivity" />
@@ -28,6 +41,10 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
