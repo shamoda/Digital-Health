@@ -9,15 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminDashboard"></activity>
+        <activity android:name=".AppoinmentHistoryActivity">
+
+        </activity>
+        <activity android:name=".ViewAppoinmentActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".BMRcalculatorActivity" >
+
+        </activity>
+        <activity android:name=".AddAppoinmentActivity">
+
+        </activity>
+        <activity android:name=".AdminDashboard" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
-        <activity android:name=".BMICalculatorActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BMICalculatorActivity" />
         <activity android:name=".UpdateUserAccountActivity" />
         <activity android:name=".ManageUsersActivity" />
         <activity android:name=".ManageDoctorsActivity" />
@@ -25,33 +39,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
         <activity android:name=".MainActivity" />
-
-        <activity android:name=".BMICalculatorActivity">
-
-        </activity>
-        <activity android:name=".UpdateUserAccountActivity" >
-
-        </activity>
-        <activity android:name=".ManageUsersActivity" />
-        <activity android:name=".ManageDoctorsActivity">
-
-        </activity>
-        <activity android:name=".DoctorRegistrationActivity" >
-
-        </activity>
-        <activity android:name=".LoginActivity" >
-
-        </activity>
-        <activity android:name=".UserRegistrationActivity" >
-
-        </activity>
-        <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
- </application>
+    </application>
 
 </manifest>

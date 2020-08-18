@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BMRcalculatorActivity">
+
+    <Toolbar
+        android:id="@+id/ar_bmr_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ar_bmr_calculator_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentStart="true"
+                />
+        </RelativeLayout>
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/ar_bmr_calculator_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bmrcalc"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_below="@+id/ar_bmr_toolbar"
+        android:layout_marginTop="30dp"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ar_bmr_tage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/age"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@+id/ar_bmr_calculator_title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterMaxLength="5"
+        app:counterEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ar_bmr_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/ar_bmr_tgen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/gender"
+        android:layout_below="@id/ar_bmr_tage"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+
+        <RadioGroup
+            android:id="@+id/ar_bmr_gen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ar_bmr_tgen"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            >
+
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/male" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"
+            android:layout_marginLeft="30dp"
+            />
+        </RadioGroup>
+
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ar_bmr_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/bmi_enter_height"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@+id/ar_bmr_gen"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterMaxLength="5"
+        app:counterEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ar_bmr_calculator_height_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ar_bmr_tweight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/bmi_weight"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/ar_bmr_height"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterMaxLength="5"
+        app:counterEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ar_bmr_calculator_weight_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/ar_bmr_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ar_bmr_tweight"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:text="@string/calculate_btn"
+        />
+
+    <Button
+        android:id="@+id/ar_bmr_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ar_bmr_calculate"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="17dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:text="@string/clear"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewAppoinmentActivity">
+
+    <Toolbar
+        android:id="@+id/ar_view_appoinment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ar_add_appoinment_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentStart="true"
+                />
+        </RelativeLayout>
+    </Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ar_view_appoinment_toolbar"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_appoinment"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            />
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/ar_view_appoinment_title">
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="@string/app_id"
+
+            android:textSize="20sp"
+
+            android:layout_marginTop="25dp"
+            />
+
+
+
+
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="@string/patientname"
+            android:layout_below="@id/ar_view_appoinment_id"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/ar_view_appoinment_drname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="@string/doctorname"
+            android:layout_below="@id/ar_view_appoinment_name"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="@string/date"
+            android:layout_below="@id/ar_view_appoinment_drname"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_session"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="@string/session"
+            android:layout_below="@id/ar_view_appoinment_date"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="@string/app_no"
+            android:layout_below="@id/ar_view_appoinment_session"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="@string/contact"
+            android:layout_below="@id/ar_view_appoinment_number"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            />
+
+        <Button
+            android:id="@+id/ar_view_appoinment_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="12dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="@string/update_btn"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/ar_view_appoinment_phone"
+            android:layout_marginBottom="10dp"
+            />
+
+        <Button
+            android:id="@+id/ar_view_appoinment_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="12dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="@string/delete_btn"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/ar_view_appoinment_update"
+            android:layout_marginBottom="10dp"
+            />
+
+        <Button
+            android:id="@+id/ar_view_appoinment_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="12dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="@string/view_history"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/ar_view_appoinment_delete"
+            android:layout_marginBottom="10dp"
+            />
+
+</RelativeLayout>
+
+</RelativeLayout>
+</RelativeLayout>
