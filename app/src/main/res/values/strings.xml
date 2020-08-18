@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" >Digital Health</string>
+    <string name="app_name">Digital Health</string>
     <string name="call_an_ambulance">Call an Ambulance</string>
     <string name="already_have_an_account">Already have an Account? Login</string>
     <string name="create_account">Create Account</string>
@@ -51,8 +51,7 @@
     <string name="re_enter_password">Re-enter Password</string>
 
 
-
-<!--    Admin Dashboard-->
+    <!--    Admin Dashboard-->
     <string name="docaNo">Total No of Registered Doctors</string>
     <string name="cusNo">Total No of Registered Customers</string>
     <string name="countDocs">54</string>
@@ -86,5 +85,40 @@
     <string name="no_of_active_patients">Number Of Active Patients :</string>
     <string name="session_available_btn">Available</string>
   
+
+    <!-- Amashi -->
+
+    <string name="add_appoinment">Patient Infomation</string>
+    <string name="email">Email</string>
+    <string name="notes">Special Notes(if any)</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="submit">Submit</string>
+    <string name="fullname">Full Name</string>
+    <string name="contactnum">Contact Number</string>
+    <string name="contact">Contact Number:</string>
+    <string name="view_appoinment">My Appointment</string>
+    <string name="app_id">Appointment ID:</string>
+    <string name="patientname">Patient Name:</string>
+    <string name="doctorname">Doctor:</string>
+    <string name="date">Date:</string>
+    <string name="session">Session:</string>
+    <string name="app_no">Number:</string>
+    <string name="delete_btn">Delete</string>
+    <string name="age">Age</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
+    <string name="bmrcalc">Basal Metabolic Rate</string>
+    <string name="agerange">ages 15 -80</string>
+    <string name="doctorName">Doctor Name</string>
+    <string name="search">Search</string>
+    <string name="search_details">Search Details</string>
+    <string name="app_id_history">Appointment ID </string>
+    <string name="patientname_history">Patient Name </string>
+    <string name="date_history">Date </string>
+    <string name="app_history">Appointment History</string>
+    <string name="view_history">View History</string>
+
 
 </resources>
