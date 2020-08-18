@@ -187,7 +187,65 @@
             android:text="@string/manage_appointments"
             />
 
+
         <Button
+
+    <Button
+        android:id="@+id/Customer"
+        android:layout_width="387dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+
+        android:background="@color/button"
+        android:drawableLeft="@drawable/ic_user"
+        android:drawableTint="#FFFFFF"
+
+        android:elevation="30dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="100dp"
+        android:text="Manage Customers"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/Doca"
+        android:layout_width="387dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+
+        android:background="@color/button"
+        android:drawableLeft="@drawable/ic_doctors"
+        android:elevation="10dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="100dp"
+        android:text="Manage Doctors"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/sess"
+        android:layout_width="387dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@color/button"
+        android:drawableLeft="@drawable/ic_appointments"
+        android:elevation="10dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="100dp"
+        android:text="Manage Sessions"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/appo"
+        android:layout_width="356dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@color/button"
+
+        android:drawableLeft="@drawable/ic_appointments"
+        android:elevation="10dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="80dp"
+        android:text="Manage Appointments"
+        android:textSize="18sp" />
 
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -206,4 +264,8 @@
 
 
 
+
+
+</LinearLayout>
+</LinearLayout>
 

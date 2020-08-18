@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".BodyFatCal">
 
         </activity>
@@ -19,6 +20,12 @@
         <activity android:name=".ReportList"></activity>
         <activity android:name=".ResultFatCal" >
 
+
+        <activity android:name=".AppoinmentHistoryActivity">
+
+        </activity>
+        <activity android:name=".ViewAppoinmentActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,8 +33,19 @@
             </intent-filter>
 
 
+
         </activity>
         <activity android:name=".AdminDashboard"></activity>
+
+        </activity>
+        <activity android:name=".BMRcalculatorActivity" >
+
+        </activity>
+        <activity android:name=".AddAppoinmentActivity">
+
+        </activity>
+        <activity android:name=".AdminDashboard" />
+
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
@@ -39,11 +57,27 @@
         <activity android:name=".DoctorRegistrationActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
+        <activity android:name=".CalorieCalculatorActivity"/>
+        <activity android:name=".UpdateSessionActivity"/>
+        <activity android:name=".SessionsActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".AddSessionActivity"/>
+        
         <activity android:name=".MainActivity" />
+
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
+ </application>
+
+
 
 </manifest>

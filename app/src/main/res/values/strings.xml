@@ -59,6 +59,7 @@
     <string name="cusCount">567</string>
 
 
+
     <string name="SS_functionName">Medical Reports</string>
 
     <string name="GenRepo">Generate Report</string>
@@ -110,5 +111,67 @@
 
     <string name="ListTitle">Check your Reports Here !!!</string>
     <string name="RepoTypes">Enter the Report Type...</string>
+
+    <!-- IT19113364-->
+    <string name="session_information">Session Information</string>
+    <string name="add_new_session">Add New Session</string>
+    <string name="enter_doctor_name">Name(Dr.)</string>
+    <string name="no_of_patients">Maximum Number Of Patients</string>
+    <string name="add_session_btn">Submit</string>
+    <string name="sessions">Sessions</string>
+    <string name="calorie_calculator">Calorie Calculator</string>
+    <string name="patient_age">Age</string>
+    <string name="age_range">ages 15-80</string>
+    <string name="patient_gender">Gender </string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="patient_weight">Weight :</string>
+    <string name="patient_height">Height :</string>
+    <string name="activity">Activity</string>
+    <string name="clear_btn">Clear</string>
+    <string name="session_date">Date</string>
+    <string name="session_time">Time</string>
+    <string name="update_session">Update Session</string>
+    <string name="session_id">Session ID : #S004</string>
+    <string name="session_delete_btn">Delete Session</string>
+    <string name="doctor_specialization">Specialization :</string>
+    <string name="session_day">Day</string>
+    <string name="no_of_active_patients">Number Of Active Patients :</string>
+    <string name="session_available_btn">Available</string>
+  
+    <!-- Amashi -->
+
+    <string name="add_appoinment">Patient Infomation</string>
+    <string name="email">Email</string>
+    <string name="notes">Special Notes(if any)</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="submit">Submit</string>
+    <string name="fullname">Full Name</string>
+    <string name="contactnum">Contact Number</string>
+    <string name="contact">Contact Number:</string>
+    <string name="view_appoinment">My Appointment</string>
+    <string name="app_id">Appointment ID:</string>
+    <string name="patientname">Patient Name:</string>
+    <string name="doctorname">Doctor:</string>
+    <string name="date">Date:</string>
+    <string name="session">Session:</string>
+    <string name="app_no">Number:</string>
+    <string name="delete_btn">Delete</string>
+    <string name="age">Age</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
+    <string name="bmrcalc">Basal Metabolic Rate</string>
+    <string name="agerange">ages 15 -80</string>
+    <string name="doctorName">Doctor Name</string>
+    <string name="search">Search</string>
+    <string name="search_details">Search Details</string>
+    <string name="app_id_history">Appointment ID </string>
+    <string name="patientname_history">Patient Name </string>
+    <string name="date_history">Date </string>
+    <string name="app_history">Appointment History</string>
+    <string name="view_history">View History</string>
+
 
 </resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    app:cardElevation="5dp">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/ar_appoinment_history_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/appoinment"
+
+            />
+
+        <TextView
+            android:id="@+id/ar_appoinment_history_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_id"
+            android:layout_toRightOf="@+id/ar_appoinment_history_img"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/ar_appoinment_history_id_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_id_history"
+            android:layout_toRightOf="@+id/ar_appoinment_history_id"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/ar_appoinment_history_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patientname"
+            android:layout_toRightOf="@+id/ar_appoinment_history_img"
+            android:layout_below="@+id/ar_appoinment_history_id"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/ar_appoinment_history_name_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patientname_history"
+            android:layout_toRightOf="@+id/ar_appoinment_history_name"
+            android:layout_below="@+id/ar_appoinment_history_id"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            />
+
+
+        <TextView
+            android:id="@+id/ar_appoinment_history_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:layout_toRightOf="@+id/ar_appoinment_history_img"
+            android:layout_below="@+id/ar_appoinment_history_name"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/ar_appoinment_history_date_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_history"
+            android:layout_toRightOf="@+id/ar_appoinment_history_date"
+            android:layout_below="@+id/ar_appoinment_history_name"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

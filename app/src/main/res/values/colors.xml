@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#00ACFF</color>
-    <color name="colorPrimaryDark">#0006F7</color>
-    <color name="colorAccent">#fff</color>
+    <color name="colorPrimaryDark">#006BFF</color>
+    <color name="colorAccent">#006BFF</color>
     <color name="button">#E91E63</color>
+
     <color name="DeleteColor">#F44336</color>
     <color name="UpdateCOlor">#00BCD4</color>
     <color name="RelateColor">#9EC9EEF3</color>
     <color name="CardColor">#F6F3F4</color>
+
+    <color name="text">#989898</color>
+
 </resources>
