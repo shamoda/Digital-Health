@@ -50,6 +50,7 @@
     <string name="find_your_doctor">Find your Doctor :</string>
     <string name="re_enter_password">Re-enter Password</string>
 
+<!--    IT19204680-->
 
     <!--    Admin Dashboard-->
     <string name="docaNo">Total No of Registered Doctors</string>
@@ -57,6 +58,59 @@
     <string name="countDocs">54</string>
     <string name="cusCount">567</string>
 
+
+
+    <string name="SS_functionName">Medical Reports</string>
+
+    <string name="GenRepo">Generate Report</string>
+    <string name="DelRepo">DELETE REPORT</string>
+    <string name="UPRepo">UPDATE REPORT</string>
+
+    <!--   BodyFat Calculator-->
+    <string name="SS_cal">Body Fat Calculator</string>
+    <string name="FatAge">Age   ex : 25</string>
+    <string name="waistSize">Waist size  in  cm   </string>
+    <string name="Neck">Neck Size in   cm   </string>
+    <string name="HipSize">Hip size in  cm   </string>
+    <string name="Height">Height in cm</string>
+    <string name="resultComment">Your body is Healthy!!!</string>
+    <string name="result">Your Body Fat Perecentage :</string>
+    <string name="patent_name">Patient Name :</string>
+    <string name="eosinophills">Eosinophills</string>
+    <string name="monocytes">Monocytes</string>
+    <string name="lymphocytes">Lymphocytes</string>
+    <string name="rbc_count">RBC COUNT</string>
+    <string name="pcv">PCV :</string>
+    <string name="mcv">MCV</string>
+    <string name="back">Back</string>
+    <string name="investigation">Investigation</string>
+    <string name="patent_id">Patient ID :</string>
+    <string name="heamoglobin">HEAMOGLOBIN</string>
+    <string name="basophills">Basophills</string>
+    <string name="myelocytes">Myelocytes</string>
+    <string name="band_cells">Band Cells</string>
+    <string name="blastcells">BlastCells</string>
+    <string name="comment">Comment</string>
+    <string name="PLATELET">PLATELET COUNT</string>
+
+    <!--        UNITS-->
+
+    <string name="Heam">gm/dl</string>
+    <string name="percent">%</string>
+    <string name="RBCunit">m/mm3</string>
+    <string name="MCVunit">fL</string>
+    <string name="Plateletunit">thou/mm3</string>
+    <string name="manage_sessions">Manage Sessions</string>
+
+    <string name="manage_customers">Manage Customers</string>
+    <string name="manage_appointments">Manage Appointments</string>
+    <string name="manage_reports">Manage Reports</string>
+
+
+    <!--    Reports-->
+
+    <string name="ListTitle">Check your Reports Here !!!</string>
+    <string name="RepoTypes">Enter the Report Type...</string>
 
     <!-- IT19113364-->
     <string name="session_information">Session Information</string>
@@ -85,7 +139,6 @@
     <string name="no_of_active_patients">Number Of Active Patients :</string>
     <string name="session_available_btn">Available</string>
   
-
     <!-- Amashi -->
 
     <string name="add_appoinment">Patient Infomation</string>
