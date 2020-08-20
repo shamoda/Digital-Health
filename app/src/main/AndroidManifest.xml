@@ -16,30 +16,54 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
-        <activity android:name=".BMICalculatorActivity" >
-
-        </activity>
-        <activity android:name=".UpdateUserAccountActivity" >
+        <activity android:name=".BMICalculatorActivity" />
+        <activity android:name=".BodyFatCal" />
+        <activity android:name=".AddBloodReport" />
+        <activity android:name=".UpdateDeletePage" />
+        <activity android:name=".DetailedReport" />
+        <activity android:name=".ReportSearch" />
+        <activity android:name=".ReportList" />
+        <activity android:name=".ResultFatCal" >
 
         </activity>
         <activity android:name=".ManageUsersActivity" >
 
         </activity>
         <activity android:name=".ManageDoctorsActivity" />
-        <activity android:name=".DoctorRegistrationActivity" >
+        <activity android:name=".DoctorRegistrationActivity" />
+        <activity android:name=".AppoinmentHistoryActivity">
+
+        </activity>
+        <activity android:name=".ViewAppoinmentActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AdminDashboard" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UserRegistrationActivity" >
-
+        <activity android:name=".UserRegistrationActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".BMRcalculatorActivity" />
+        <activity android:name=".AddAppoinmentActivity" />
+        <activity android:name=".UpdateUserAccountActivity" />
+        <activity android:name=".CalorieCalculatorActivity"/>
+        <activity android:name=".UpdateSessionActivity"/>
+        <activity android:name=".SessionsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AddSessionActivity"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
+
+
 
 </manifest>
