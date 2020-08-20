@@ -7,11 +7,13 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
@@ -27,8 +29,9 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-    //Dropdown
-    Spinner specializationSpinner;
+    TextInputLayout textInputLayout;
+    AutoCompleteTextView dropDown;
+
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -37,36 +40,23 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //Dropdown related code
-        specializationSpinner = findViewById(R.id.sm_home_specialization_spinner);
+        textInputLayout = findViewById(R.id.sm_home_specialization);
+        dropDown = findViewById(R.id.sm_home_specialization_value);
 
-        List<String> specializations = new ArrayList<>();
-        specializations.add("All");
-        specializations.add("Anesthesiologist");
-        specializations.add("Cardiologist");
-        specializations.add("Gastroenterologist");
-        specializations.add("Dermatologist");
+        String[] specialization = new String[]{
+                "Anesthesiologist",
+                "Cardiologist",
+                "Gastroenterologist",
+                "Dermatologist"
+        };
 
-        ArrayAdapter<String> specializationAdaptor = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specializations);
-        specializationAdaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        specializationSpinner.setAdapter(specializationAdaptor);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                HomeActivity.this,
+                R.layout.drop_down_item,
+                specialization
+        );
 
-        specializationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String selectedSpecialization = specializationSpinner.getSelectedItem().toString();
-                if(!selectedSpecialization.equals("All")){
-                    //another if condition
-                }else{
-                    //retrieve all doctors
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+        dropDown.setAdapter(adapter);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Digital Health");

@@ -12,45 +12,73 @@
         android:layout_height="100dp"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="25dp"
         />
 
-    <EditText
+    //phone
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sm_login_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sm_login_logo"
-        android:background="@drawable/input_design"
-        android:padding="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/enter_phone"
-        android:inputType="number"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        />
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/sm_login_logo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:counterMaxLength="10"
+        app:counterEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sm_login_phone_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
 
-    <EditText
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    //password
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/sm_login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sm_login_phone"
-        android:background="@drawable/input_design"
-        android:padding="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/enter_password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        />
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/sm_login_phone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="password_toggle"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sm_login_password_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <LinearLayout
         android:id="@+id/sm_login_linear_layout_1"
@@ -84,7 +112,7 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:layout_marginLeft="70dp"
-            android:paddingTop="5dp"
+            android:paddingTop="14dp"
             />
     </LinearLayout>
 
