@@ -48,7 +48,7 @@
         android:layout_height="130dp"
         android:src="@drawable/ic_user"
         android:layout_below="@+id/sm_update_user_toolbar"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true"
         />
 
@@ -62,7 +62,7 @@
         android:textSize="20sp"
         android:layout_below="@+id/sm_update_user_profile_img"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="12dp"
         />
 
@@ -191,6 +191,37 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    //re-password
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/sm_update_user_re_enter_password"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/re_enter_password"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="outline"
+        android:layout_below="@id/sm_update_user_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="password_toggle"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sm_update_user_re_enter_password_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/sm_update_user_delete_account_btn"
@@ -198,7 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:padding="10dp"

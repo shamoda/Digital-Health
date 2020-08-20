@@ -52,12 +52,12 @@
         android:padding="10dp"
         android:textAllCaps="false"
         android:textStyle="bold"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:text="@string/add_new_patient"
         android:textColor="@android:color/white"
         android:drawableLeft="@drawable/ic_patient"
-        android:paddingStart="95dp"
-        android:paddingEnd="80dp"
+        android:paddingStart="60dp"
+        android:paddingEnd="50dp"
         />
 
     <SearchView
