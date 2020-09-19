@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
-import com.google.android.gms.common.util.Strings;
+//import com.google.android.gms.common.util.Strings;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class DoctorRegistrationActivity extends AppCompatActivity {
