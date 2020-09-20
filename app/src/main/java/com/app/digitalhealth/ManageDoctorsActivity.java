@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,9 +31,8 @@ public class ManageDoctorsActivity extends AppCompatActivity {
     TextInputLayout textInputLayout;
     AutoCompleteTextView dropDown;
 
+    private Button addNewDoctor;
 
-//    //Dropdown
-//    Spinner specializationSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +42,28 @@ public class ManageDoctorsActivity extends AppCompatActivity {
         textInputLayout = findViewById(R.id.sm_manage_doctors_specialization);
         dropDown = findViewById(R.id.sm_manage_doctors_specialization_value);
 
+        addNewDoctor = findViewById(R.id.sm_manage_doctors_add_new_doctor);
+
         String[] specialization = new String[]{
+                "Allergists",
                 "Anesthesiologist",
                 "Cardiologist",
+                "Colon and Rectal Surgeon",
+                "Dermatologist",
+                "Endocrinologist",
                 "Gastroenterologist",
-                "Dermatologist"
+                "Hematologist",
+                "Infectious Disease",
+                "Internist",
+                "Nephrologist",
+                "Neurologist",
+                "Oncologist",
+                "Pathologist",
+                "Psychiatrist",
+                "Radiologist",
+                "Rheumatologist",
+                "Sports Medicine",
+                "Urologist"
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -56,36 +74,15 @@ public class ManageDoctorsActivity extends AppCompatActivity {
 
         dropDown.setAdapter(adapter);
 
-//        //Dropdown related code
-//        specializationSpinner = findViewById(R.id.sm_manage_doctors_specialization_spinner);
-//
-//        List<String> specializations = new ArrayList<>();
-//        specializations.add("All");
-//        specializations.add("Anesthesiologist");
-//        specializations.add("Cardiologist");
-//        specializations.add("Gastroenterologist");
-//        specializations.add("Dermatologist");
-//
-//        ArrayAdapter<String> specializationAdaptor = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specializations);
-//        specializationAdaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        specializationSpinner.setAdapter(specializationAdaptor);
-//
-//        specializationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                String selectedSpecialization = specializationSpinner.getSelectedItem().toString();
-//                if(!selectedSpecialization.equals("All")){
-//                    //another if condition
-//                }else{
-//                    //retrieve all doctors
-//                }
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//        });
+
+        addNewDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ManageDoctorsActivity.this, DoctorRegistrationActivity.class));
+            }
+        });
+
+
 
     }
 }
