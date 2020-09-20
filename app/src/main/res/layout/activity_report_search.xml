@@ -7,7 +7,7 @@
     tools:context=".ReportSearch"
     android:orientation="vertical"
     >
-    
+
     <Toolbar
         android:id="@+id/insulinCal"
         android:layout_width="match_parent"
@@ -73,16 +73,11 @@
 
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
 
             <SearchView
@@ -97,46 +92,53 @@
 
                 android:background="@drawable/input_design"
                 android:elevation="20dp"
-                android:queryHint="Search"/>
+                android:queryHint="Search" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ReposType"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/RepoTypes"
-                app:helperText="@string/RepoTypes"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/RepoTypes"
+                app:boxBackgroundMode="outline"
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
-                app:boxBackgroundMode="outline"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 app:endIconMode="dropdown_menu"
+                app:helperText="@string/RepoTypes"
 
                 >
+
                 <AutoCompleteTextView
                     android:id="@+id/drops"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
 
-
                     />
-
-
 
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <ListView
-                android:id="@+id/myList"
-                android:layout_width="match_parent"
-                android:layout_height="800dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:background="#FFFFFF" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/header"
+        android:fillViewport="true">
+        <ListView
+            android:id="@+id/myList"
+            android:layout_width="364dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:background="#FFFFFF" />
+
+    </ScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -147,11 +149,12 @@
         android:background="@color/RelateColor">
 
         <Button
+            android:id="@+id/GenReportTest"
             android:layout_width="300dp"
+
             android:layout_height="wrap_content"
 
             android:layout_marginLeft="50dp"
-
             android:backgroundTint="@color/UpdateCOlor"
             android:text="@string/GenRepo" />
 

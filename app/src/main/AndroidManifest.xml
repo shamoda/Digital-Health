@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.digitalhealth">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -10,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QuickHealthCheckupsActivity">
+        <activity android:name=".SugarReportActivity">
 
         </activity>
+        <activity android:name=".QuickHealthCheckupsActivity"></activity>
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".BMICalculatorActivity" />
         <activity android:name=".BodyFatCal" />
         <activity android:name=".AddBloodReport" />
@@ -25,44 +26,33 @@
         <activity android:name=".DetailedReport" />
         <activity android:name=".ReportSearch" />
         <activity android:name=".ReportList" />
-        <activity android:name=".ResultFatCal" >
-
-        </activity>
-        <activity android:name=".ManageUsersActivity" >
-
-        </activity>
+        <activity android:name=".ResultFatCal"></activity>
+        <activity android:name=".ManageUsersActivity"></activity>
         <activity android:name=".ManageDoctorsActivity" />
         <activity android:name=".DoctorRegistrationActivity" />
-        <activity android:name=".AppoinmentHistoryActivity">
-
-        </activity>
-        <activity android:name=".ViewAppoinmentActivity" >
-        </activity>
+        <activity android:name=".AppoinmentHistoryActivity"></activity>
+        <activity android:name=".ViewAppoinmentActivity"></activity>
         <activity android:name=".AdminDashboard" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
-        <activity android:name=".MainActivity" >
-
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".BMRcalculatorActivity" />
         <activity android:name=".AddAppoinmentActivity" />
         <activity android:name=".UpdateUserAccountActivity" />
-        <activity android:name=".CalorieCalculatorActivity"/>
-        <activity android:name=".UpdateSessionActivity"/>
-        <activity android:name=".SessionsActivity">
+        <activity android:name=".CalorieCalculatorActivity" />
+        <activity android:name=".UpdateSessionActivity" />
+        <activity android:name=".SessionsActivity"></activity>
+        <activity android:name=".AddSessionActivity" />
 
-        </activity>
-        <activity android:name=".AddSessionActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>
