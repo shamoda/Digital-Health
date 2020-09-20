@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "153724509050",
+    "firebase_url": "https://digital-health-78b99.firebaseio.com",
+    "project_id": "digital-health-78b99",
+    "storage_bucket": "digital-health-78b99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153724509050:android:2f6bd6b153555f7bea14c3",
+        "android_client_info": {
+          "package_name": "com.app.digitalhealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153724509050-kkl0tc7l58sv2efktiegrj7mn39ps2gv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.digitalhealth",
+            "certificate_hash": "24a5e150e205d3022dc0520a8fe0fc878df7e703"
+          }
+        },
+        {
+          "client_id": "153724509050-7jhle1asdtob14us6dosh90qgbih5qgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8_c4earRfNgdA-ook5TUhsnhKPM7QU98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153724509050-7jhle1asdtob14us6dosh90qgbih5qgn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

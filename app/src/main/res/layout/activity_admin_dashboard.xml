@@ -61,13 +61,11 @@
     </Toolbar>
 
 
-
-
     <androidx.cardview.widget.CardView
         android:id="@+id/Card1"
         android:layout_width="149dp"
         android:layout_height="137dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="100dp"
         android:backgroundTint="#00FFE1"
         android:elevation="10dp"
@@ -99,7 +97,7 @@
         android:id="@+id/Card2"
         android:layout_width="149dp"
         android:layout_height="137dp"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="220dp"
         android:layout_marginTop="100dp"
         android:backgroundTint="#00FFE1"
         android:elevation="10dp"
@@ -141,10 +139,10 @@
 
 
         <Button
-
-            android:layout_width="377dp"
+            android:id="@+id/admin_dashboard_manage_customers"
+            android:layout_width="374dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="30dp"
             android:drawableLeft="@drawable/ic_user"
             android:text="@string/manage_customers"
@@ -153,11 +151,11 @@
             />
 
         <Button
-
-            android:layout_width="376dp"
+            android:id="@+id/admin_dashboard_manage_doctors"
+            android:layout_width="374dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:drawableLeft="@drawable/ic_doctors"
             android:text="@string/manage_doctors" />
@@ -165,20 +163,20 @@
         <Button
 
 
-            android:layout_width="377dp"
+            android:layout_width="374dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:drawableLeft="@drawable/ic_appointments"
             android:text="@string/manage_sessions" />
 
         <Button
 
-            android:layout_width="379dp"
+            android:layout_width="374dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:drawableLeft="@drawable/ic_appointments"
             android:text="@string/manage_appointments" /><![CDATA[

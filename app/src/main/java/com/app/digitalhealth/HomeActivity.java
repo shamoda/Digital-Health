@@ -44,10 +44,25 @@ public class HomeActivity extends AppCompatActivity {
         dropDown = findViewById(R.id.sm_home_specialization_value);
 
         String[] specialization = new String[]{
+                "Allergists",
                 "Anesthesiologist",
                 "Cardiologist",
+                "Colon and Rectal Surgeon",
+                "Dermatologist",
+                "Endocrinologist",
                 "Gastroenterologist",
-                "Dermatologist"
+                "Hematologist",
+                "Infectious Disease",
+                "Internist",
+                "Nephrologist",
+                "Neurologist",
+                "Oncologist",
+                "Pathologist",
+                "Psychiatrist",
+                "Radiologist",
+                "Rheumatologist",
+                "Sports Medicine",
+                "Urologist"
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
