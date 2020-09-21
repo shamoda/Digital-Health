@@ -194,7 +194,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
 //
 //        doctorImageRandomKey = saveCurrentDate + saveCurrentTime;
 
-        final StorageReference filePath = doctorImageRef.child(imageUri.getLastPathSegment() + txtPhone + ".jpg");
+        final StorageReference filePath = doctorImageRef.child(txtPhone + ".jpg");
 
         final UploadTask uploadTask = filePath.putFile(imageUri);
         uploadTask.addOnFailureListener(new OnFailureListener() {
