@@ -44,8 +44,8 @@ public class SessionList extends AppCompatActivity {
 
                 }
 
-                SessionSearch adapter = new SessionSearch(SessionList.this, SessionList);
-                listSessions.setAdapter(adapter);
+//                SessionSearch adapter = new SessionSearch(SessionList.this, SessionList);
+//                listSessions.setAdapter(adapter);
             }
 
             @Override

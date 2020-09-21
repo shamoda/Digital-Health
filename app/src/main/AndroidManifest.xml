@@ -52,11 +52,7 @@
         <activity android:name=".UpdateUserAccountActivity" />
         <activity android:name=".CalorieCalculatorActivity" />
         <activity android:name=".UpdateSessionActivity" />
-        <activity android:name=".SessionsActivity"></activity>
         <activity android:name=".AddSessionActivity" />
-
-        </activity>
-        <activity android:name=".AddSessionActivity"/>
 
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>

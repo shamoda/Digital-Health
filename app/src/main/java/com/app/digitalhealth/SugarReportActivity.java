@@ -164,9 +164,15 @@ public class SugarReportActivity extends AppCompatActivity {
             String id =  "R"+p;
 
 
+
             SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
             sugarReports.child(id).setValue(Report);
             Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
+
+//            SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
+//            sugarReports.child(id).setValue(Report);
+            Toast.makeText(this, "Artist Added", Toast.LENGTH_SHORT).show();
+
       }
     }
 
