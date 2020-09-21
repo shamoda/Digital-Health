@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         if (user.getPassword().equals(password)){
 //                            Toast.makeText(MainActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                             pd.dismiss();
-
+                            Prevalent.currentUser = user;
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
                             finish();
                         }
