@@ -61,8 +61,8 @@ public class ReportSearch extends AppCompatActivity {
                      sugarList.add(sugarReport);
                 }
 
-               SugarReportList adapter = new SugarReportList(ReportSearch.this,sugarList);
-                listViewsugarReports.setAdapter(adapter);
+//               SugarReportList adapter = new SugarReportList(ReportSearch.this,sugarList);
+//                listViewsugarReports.setAdapter(adapter);
             }
 
 
