@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "153724509050-eok1o42j43bradm75591u1ct1jseh0g6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.digitalhealth",
+            "certificate_hash": "c5b8681d5ae76d4768b8d13cd9cdeb6bf8a9c2a6"
+          }
+        },
+        {
           "client_id": "153724509050-kkl0tc7l58sv2efktiegrj7mn39ps2gv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

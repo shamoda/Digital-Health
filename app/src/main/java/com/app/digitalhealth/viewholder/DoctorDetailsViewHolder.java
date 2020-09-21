@@ -10,10 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.digitalhealth.R;
 import com.app.digitalhealth.interfaces.ItemClickListner;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
-    public TextView specialization, name;
-    public ImageView image;
+    public TextView specialization;
+    public TextView name;
+    public CircleImageView image;
     public ItemClickListner listner;
 
     public DoctorDetailsViewHolder(@NonNull View itemView) {
