@@ -67,7 +67,7 @@
             android:id="@+id/ak_add_session_doctor_name_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -100,7 +100,7 @@
             android:id="@+id/ak_add_session_specialization_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -132,7 +132,7 @@
             android:id="@+id/ak_add_session_date_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -164,7 +164,7 @@
             android:id="@+id/ak_add_session_no_of_patients_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -196,7 +196,7 @@
             android:id="@+id/ak_add_session_time_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
