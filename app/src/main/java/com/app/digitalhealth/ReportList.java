@@ -3,7 +3,7 @@ package com.app.digitalhealth;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
-import android.widget.Spinner;
+
 import com.google.android.material.textfield.TextInputLayout;
 
 
@@ -26,7 +26,7 @@ public class ReportList extends AppCompatActivity {
 
 
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter<String>(this,R.layout.reportrow,R.id.txt1
+        ArrayAdapter arrayAdapter = new ArrayAdapter<String>(this,R.layout.reportrow,R.id.CusID
                 ,names);
 
         listView = findViewById(R.id.myList);

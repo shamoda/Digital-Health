@@ -9,12 +9,12 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="319dp"
-        android:layout_height="78dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="15dp"
-
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
         app:cardBackgroundColor="#00D4CD"
 
@@ -25,71 +25,110 @@
         <RelativeLayout
             android:id="@+id/report"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:layout_margin="5dp">
 
             <TextView
-                android:id="@+id/txt1"
-                android:layout_width="137dp"
+                android:id="@+id/CusID"
+                android:layout_width="79dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
-                android:text="Name"
-                android:textColor="@color/colorAccent"
-                android:textSize="14sp" />
+                android:layout_marginStart="81dp"
+                android:layout_marginTop="8dp"
+                android:text="0773551879"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/RepType"
+                android:id="@+id/patientName"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_below="@+id/txt1"
+                android:layout_height="24dp"
+                android:layout_below="@+id/CusID"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="19dp"
-                android:text="Blood Report"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="39dp"
+                android:text="Patient Name :"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/patientname"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_below="@+id/CusID"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="89dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="38dp"
+                android:text="Senath Sadeesha Weerasinghe"
                 android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/IssuedDate"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_below="@+id/txt1"
+                android:layout_height="23dp"
+                android:layout_below="@+id/CusID"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginStart="163dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="12dp"
                 android:text="12 May 2020"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/RepoID"
+                android:id="@+id/issuedDate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/RepType"
-                android:layout_alignParentEnd="true"
+                android:layout_height="20dp"
+                android:layout_below="@+id/CusID"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="226dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="20dp"
-                android:text="NP234"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="14dp"
+                android:text="6.30 PM"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/ReportIDtext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/RepType"
+                android:layout_alignStart="@+id/patientName"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="150dp"
-                android:layout_marginEnd="88dp"
-                android:layout_marginBottom="19dp"
+                android:layout_marginStart="163dp"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="78dp"
                 android:text="Report ID :"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/reportID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/patientName"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="225dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="77dp"
+                android:text="Report ID :"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/CusIDtext"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/patientName"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="-3dp"
+                android:layout_marginEnd="229dp"
+                android:layout_marginBottom="77dp"
+                android:text="@string/CustomerID"
                 android:textSize="12sp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

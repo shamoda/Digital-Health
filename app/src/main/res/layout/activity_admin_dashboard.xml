@@ -61,17 +61,15 @@
     </Toolbar>
 
 
-
-
     <androidx.cardview.widget.CardView
         android:id="@+id/Card1"
-        android:layout_width="149dp"
-        android:layout_height="137dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="148dp"
+        android:layout_height="112dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="100dp"
         android:backgroundTint="#00FFE1"
-        android:elevation="10dp"
-
+        android:elevation="30dp"
+        app:cardCornerRadius="10dp"
 
         >
 
@@ -90,20 +88,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:text="50"
             android:textSize="30sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Card2"
-        android:layout_width="149dp"
-        android:layout_height="137dp"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="100dp"
         android:backgroundTint="#00FFE1"
-        android:elevation="10dp"
-
+        android:elevation="30dp"
+        app:cardCornerRadius="10dp"
 
         >
 
@@ -121,9 +119,9 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
 
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
 
             android:text="267"
             android:textAlignment="center"
@@ -133,125 +131,68 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
 
 
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
 
         <Button
             android:id="@+id/admin_dashboard_manage_customers"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_width="269dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            android:text="@string/manage_customers"
-            android:layout_marginLeft="10dp"
             android:drawableLeft="@drawable/ic_user"
+            android:text="@string/manage_customers"
 
 
             />
 
         <Button
             android:id="@+id/admin_dashboard_manage_doctors"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_width="271dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
             android:drawableLeft="@drawable/ic_doctors"
-            android:layout_marginLeft="10dp"
-            android:text="@string/manage_doctors"
-            />
+            android:text="@string/manage_doctors" />
 
         <Button
 
 
-
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_width="271dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
             android:drawableLeft="@drawable/ic_appointments"
-            android:text="@string/manage_sessions"
-            />
+            android:text="@string/manage_sessions" />
 
         <Button
 
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="10dp"
-            android:drawableLeft="@drawable/ic_appointments"
+            android:layout_width="271dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
-            android:text="@string/manage_appointments"
-            />
-
-    <Button
-        android:id="@+id/Customer"
-        android:layout_width="387dp"
-        android:layout_height="70dp"
-        android:layout_margin="10dp"
-
-        android:background="@color/button"
-        android:drawableLeft="@drawable/ic_user"
-        android:drawableTint="#FFFFFF"
-
-        android:elevation="30dp"
-        android:paddingStart="50dp"
-        android:paddingEnd="100dp"
-        android:text="Manage Customers"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/Doca"
-        android:layout_width="387dp"
-        android:layout_height="70dp"
-        android:layout_margin="10dp"
-
-        android:background="@color/button"
-        android:drawableLeft="@drawable/ic_doctors"
-        android:elevation="10dp"
-        android:paddingStart="50dp"
-        android:paddingEnd="100dp"
-        android:text="Manage Doctors"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/sess"
-        android:layout_width="387dp"
-        android:layout_height="70dp"
-        android:layout_margin="10dp"
-        android:background="@color/button"
-        android:drawableLeft="@drawable/ic_appointments"
-        android:elevation="10dp"
-        android:paddingStart="50dp"
-        android:paddingEnd="100dp"
-        android:text="Manage Sessions"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/appo"
-        android:layout_width="356dp"
-        android:layout_height="70dp"
-        android:layout_margin="10dp"
-        android:background="@color/button"
-
-        android:drawableLeft="@drawable/ic_appointments"
-        android:elevation="10dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="80dp"
-        android:text="Manage Appointments"
-        android:textSize="18sp" />
-
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
-            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/ic_appointments"
+            android:text="@string/manage_appointments" />
+
+
+        <Button
+
+            android:id="@+id/btnmanageReports"
+            android:layout_width="276dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
             android:drawableLeft="@drawable/ic_reports"
-            android:layout_marginTop="10dp"
-            android:text="@string/manage_reports"
-            />
+            android:text="@string/manage_reports" />
+
 
     </LinearLayout>
 

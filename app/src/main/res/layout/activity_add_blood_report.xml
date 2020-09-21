@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Linearlay1"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
 
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <Toolbar
@@ -19,10 +20,10 @@
 
 
         <RelativeLayout
+            android:id="@+id/Rel1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
-            >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="53dp"
@@ -34,9 +35,8 @@
 
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="7dp"
-                android:layout_marginRight="12dp"
                 android:layout_marginBottom="-3dp"
-                android:text="Close"
+                android:text="@string/close"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -46,16 +46,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:drawableLeft="@drawable/ic_reports"
 
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="190dp"
-                android:layout_marginRight="24dp"
 
                 android:text="@string/SS_functionName"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/ic_reports" />
 
         </RelativeLayout>
 
@@ -63,71 +62,65 @@
     </Toolbar>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/Scroll1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="10dp"
-            >
+            android:orientation="vertical">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:orientation="vertical"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/input_design"
 
-            android:background="@drawable/input_design"
-            >
-
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="250dp"
-                android:layout_height="117dp"
-                android:layout_margin="30dp"
-                android:background="#FFFFFF"
-                android:contentDescription="todo"
-                android:scaleType="fitXY"
+                android:orientation="vertical">
 
 
-                android:src="@drawable/logo" />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="250dp"
+                    android:layout_height="117dp"
+                    android:layout_margin="30dp"
+                    android:background="#FFFFFF"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitXY"
 
 
+                    android:src="@drawable/logo" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                    android:layout_marginTop="10dp"
-                android:fontFamily="@font/asap"
-                android:text="Address    :   99/B Fiction Apps Col-07"
+                android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary"
+                android:fontFamily="@font/asap"
+                android:text="@string/address_99_b_fiction_apps_col_07"
                 android:textColor="@color/design_default_color_on_secondary"></TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
 
-                android:fontFamily="@font/asap"
                 android:background="@color/colorPrimary"
-                android:text="Contact No :    07235518789"
+                android:fontFamily="@font/asap"
+                android:text="@string/contact_no_07235518789"
                 android:textColor="@color/design_default_color_on_secondary"></TextView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="800dp"
-
 
 
                 android:layout_marginTop="30dp"
@@ -148,7 +141,7 @@
 
 
                     <TextView
-                        android:id="@+id/PatientID"
+                        android:id="@+id/PatientNames"
                         android:layout_width="107dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -166,7 +159,7 @@
                         android:id="@+id/PatientName"
                         android:layout_width="129dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/PatientID"
+                        android:layout_below="@+id/PatientNames"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="19dp"
                         android:layout_marginTop="20dp"
@@ -522,23 +515,25 @@
                         android:layout_marginBottom="-54dp"
                         android:text="@string/Plateletunit"
                         android:textColor="@color/design_default_color_on_secondary"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName"
+                        android:id="@+id/inputcusID"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_alignBottom="@+id/PatientID"
+                        android:layout_height="39dp"
+                        android:layout_alignBottom="@+id/PatientName"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="25dp"
                         android:layout_marginEnd="55dp"
-                        android:layout_marginBottom="3dp"
+                        android:layout_marginBottom="33dp"
+
+                        android:autofillHints=""
                         android:background="@drawable/input_design"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="NP6321"
+                        android:text="@string/np6321"
                         android:textAlignment="center"
                         android:textSize="14sp" />
 
@@ -552,8 +547,10 @@
                         android:layout_marginTop="77dp"
                         android:layout_marginEnd="57dp"
                         android:layout_marginBottom="-10dp"
+                        android:autofillHints=""
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="@string/hintName"
                         android:inputType="textPersonName"
                         android:text="Namal Premadasa"
                         android:textAlignment="center"
@@ -571,10 +568,11 @@
                         android:layout_marginBottom="1dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="ex:  1"
                         android:inputType="textPersonName"
-                        android:text="42.00"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp"
+                        android:autofillHints="" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName17"
@@ -588,10 +586,10 @@
                         android:layout_marginBottom="-3dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="ex:  1"
                         android:inputType="textPersonName"
-                        android:text="03.00"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName18"
@@ -605,10 +603,11 @@
                         android:layout_marginBottom="-3dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="ex:  1"
+                        android:importantForAutofill="no"
                         android:inputType="textPersonName"
-                        android:text="02.00"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName19"
@@ -622,10 +621,10 @@
                         android:layout_marginBottom="-2dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="ex:  1"
                         android:inputType="textPersonName"
-                        android:text="03.00"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName20"
@@ -640,9 +639,8 @@
                         android:background="@drawable/input_design"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="14.00"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName22"
@@ -657,9 +655,8 @@
                         android:background="@drawable/input_design"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="03.00"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName24"
@@ -674,9 +671,8 @@
                         android:background="@drawable/input_design"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="1260"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName23"
@@ -691,9 +687,9 @@
                         android:background="@drawable/input_design"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="      Type a comment here..."
+                        android:text="@string/reportComment"
                         android:textAlignment="textStart"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName21"
@@ -707,10 +703,10 @@
                         android:layout_marginBottom="1dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="ex:  1"
                         android:inputType="textPersonName"
-                        android:text="02.00"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName14"
@@ -724,10 +720,10 @@
                         android:layout_marginBottom="48dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="ex:  1"
                         android:inputType="textPersonName"
-                        android:text="4.3"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName15"
@@ -741,10 +737,10 @@
                         android:layout_marginBottom="83dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="ex:  1"
                         android:inputType="textPersonName"
-                        android:text="45.7"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/editTextTextPersonName16"
@@ -758,10 +754,10 @@
                         android:layout_marginBottom="121dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
+                        android:hint="@string/ex_1"
                         android:inputType="textPersonName"
-                        android:text="15.2"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
 
 
                 </RelativeLayout>
@@ -772,28 +768,24 @@
     </androidx.core.widget.NestedScrollView>
 
 
-
     <RelativeLayout
+        android:id="@+id/Rellay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:backgroundTint="@color/RelateColor"
         android:background="@color/RelateColor"
-        >
+        android:backgroundTint="@color/RelateColor">
 
         <Button
             android:layout_width="300dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
 
             android:backgroundTint="@color/UpdateCOlor"
             android:text="@string/GenRepo" />
         />
     </RelativeLayout>
-
-
-
 
 
 </LinearLayout>

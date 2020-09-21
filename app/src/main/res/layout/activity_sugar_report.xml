@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary"
+      >
+
+
+        <RelativeLayout
+            android:id="@+id/Rel1"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+
+
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="-3dp"
+                android:text="@string/close"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="190dp"
+
+                android:text="@string/SS_functionName"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+
+    </Toolbar>
+
+    <LinearLayout
+        android:id="@+id/lay2"
+        android:layout_width="407dp"
+        android:layout_height="121dp"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/input_design"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="79dp"
+            android:layout_margin="30dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
+
+
+            android:src="@drawable/logo" />
+
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="402dp"
+        android:layout_height="381dp"
+        android:layout_below="@id/lay2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        app:cardBackgroundColor="@color/CardColor"
+
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:id="@+id/report"
+            android:layout_width="wrap_content"
+            android:layout_height="347dp"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#00DAD4D4"
+            android:backgroundTint="#9EE3EEEF"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/Glucoselevel"
+                android:layout_width="248dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="224dp"
+                android:layout_marginEnd="162dp"
+                android:text="@string/GlucoseLevel"
+                android:textColor="#090909"
+                android:textColorHint="#090909"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/des"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="271dp"
+                android:layout_marginEnd="97dp"
+                android:text="@string/sugarDes"
+                android:textColor="#090909"
+                android:textColorHint="#090909"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/unitlevel"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="222dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/Glulevelunit"
+                android:textColor="#090909"
+                android:textColorHint="#090909"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/patientID3"
+                android:layout_width="144dp"
+                android:layout_height="36dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="219dp"
+                android:text="@string/CustomerID"
+                android:textColor="#090909"
+                android:textColorHint="#090909"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="245dp"
+                android:layout_height="34dp"
+                android:layout_alignParentTop="true"
+
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="143dp"
+                android:layout_marginEnd="49dp"
+                android:text="@string/BloodSugar"
+                android:textColor="#090909"
+                android:textColorHint="#090909"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/desSu"
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="19dp"
+                android:layout_marginBottom="11dp"
+                android:text="@string/dessu"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/inputcusID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/patientID3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="7dp"
+
+                android:autofillHints=""
+                android:background="@drawable/input_design"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/np6321"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/inputPatientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/patientID3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="81dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginBottom="-51dp"
+
+                android:autofillHints=""
+                android:background="@drawable/input_design"
+                android:ems="10"
+                android:hint="Enter the Patient Name"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/EditGlucoseLevel"
+                android:layout_width="99dp"
+                android:layout_height="44dp"
+                android:layout_alignBottom="@+id/PatientName"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="213dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="-137dp"
+
+                android:autofillHints=""
+                android:background="@drawable/input_design"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="87.6"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textPatient"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="99dp"
+                android:text="Patient Name :"
+                android:textColor="#232121" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/Rellay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/RelateColor"
+                android:backgroundTint="@color/RelateColor">
+
+                <Button
+                    android:id="@+id/GenReport"
+                    android:layout_width="289dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:backgroundTint="@color/UpdateCOlor"
+                    android:text="@string/GenRepo" />
+                />
+            </RelativeLayout>
+
+        </RelativeLayout>
