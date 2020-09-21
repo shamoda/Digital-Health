@@ -280,11 +280,33 @@
 
                 <Button
                     android:id="@+id/GenReport"
-                    android:layout_width="289dp"
+                    android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:backgroundTint="@color/UpdateCOlor"
                     android:text="@string/GenRepo" />
+
+                <Button
+                    android:id="@+id/Delete"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="Delete Report"
+                    android:backgroundTint="@color/DeleteColor"
+                    />
+
+
+
+                <Button
+                    android:id="@+id/Update"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:text="Update Report"
+                    android:backgroundTint="@color/UpdateCOlor"
+                    />
                 />
             </RelativeLayout>
 

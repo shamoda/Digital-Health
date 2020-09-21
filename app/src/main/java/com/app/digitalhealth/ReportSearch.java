@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -20,6 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReportSearch extends AppCompatActivity {
+
+    public static  final String Report_ID = "ReportID";
+    public static  final String CUS_ID = "cusID";
+    public static  final String patientName = "patientName";
+    public static  final String glucoseLevel = "glucoseLevel";
+//    public static  final String clicked = "";
+
 
     ListView listViewsugarReports;
     DatabaseReference dataBaseSugarReports;
@@ -41,9 +49,9 @@ public class ReportSearch extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ReportSearch.this, SugarReportActivity.class));
+
             }
         });
-
 
     }
 
@@ -71,5 +79,25 @@ public class ReportSearch extends AppCompatActivity {
 
             }
         });
-    }
+
+        listViewsugarReports.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                 SugarReport sugarReport = sugarList.get(i);
+                 Intent intent = new Intent(getApplicationContext(),SugarReportActivity.class);
+                 intent.putExtra(Report_ID,sugarReport.getReportID());
+                 intent.putExtra(CUS_ID,sugarReport.getCustomerID());
+                 intent.putExtra(patientName,sugarReport.getPatientName());
+                 intent.putExtra(glucoseLevel,sugarReport.getGlucoseLevel());
+                 intent.putExtra("clicked","clicked");
+
+                 startActivity(intent);
+}
+        });
+                }
+
+
+
+
 }
