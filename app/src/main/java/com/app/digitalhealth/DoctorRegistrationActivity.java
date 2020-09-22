@@ -104,6 +104,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
                 "Colon and Rectal Surgeon",
                 "Dermatologist",
                 "Endocrinologist",
+                "Family Physician",
                 "Gastroenterologist",
                 "Hematologist",
                 "Infectious Disease",

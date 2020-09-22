@@ -1,7 +1,11 @@
 package com.app.digitalhealth;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,9 +30,11 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -45,10 +52,15 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
+import static android.Manifest.permission.CALL_PHONE;
+
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     TextInputLayout textInputLayout;
     AutoCompleteTextView dropDown;
+    AutoCompleteTextView specializationSelector;
+
+    Button callAnAmbulance;
 
     private DatabaseReference doctorRef;
     private RecyclerView recyclerView;
@@ -62,6 +74,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
         setNavigationViewListener();
 
+        callAnAmbulance = findViewById(R.id.sm_home_call_an_ambulance);
+        specializationSelector = findViewById(R.id.sm_home_specialization_value);
+
         Paper.init(this);
 
         doctorRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
@@ -70,12 +85,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         dropDown = findViewById(R.id.sm_home_specialization_value);
 
         String[] specialization = new String[]{
+                "All",
                 "Allergists",
                 "Anesthesiologist",
                 "Cardiologist",
                 "Colon and Rectal Surgeon",
                 "Dermatologist",
                 "Endocrinologist",
+                "Family Physician",
                 "Gastroenterologist",
                 "Hematologist",
                 "Infectious Disease",
@@ -98,6 +115,39 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         );
 
         dropDown.setAdapter(adapter);
+
+
+        specializationSelector.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                filterDoctor(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+        callAnAmbulance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:1234"));
+
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    startActivity(intent);
+                } else {
+                    requestPermissions(new String[]{CALL_PHONE}, 1);
+                }
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Digital Health");
@@ -124,6 +174,46 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    private void filterDoctor(String s) {
+        FirebaseRecyclerOptions<Doctor> options;
+
+        if (s.equals("All")){
+            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(doctorRef, Doctor.class).build();
+        }
+        else {
+            Query firebaseSearchQuery = doctorRef.orderByChild("specialization").startAt(s).endAt(s + "\uf8ff");
+            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(firebaseSearchQuery, Doctor.class).setLifecycleOwner(this).build();
+        }
+
+
+        FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
+                doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
+                doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
+                Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+
+                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
+                        //Add intent for session list
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
+                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+                return holder;
+            }
+        };
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+    }
+
 
     @Override
     protected void onStart() {
@@ -142,6 +232,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
+                        //Add intent for session list
                     }
                 });
             }

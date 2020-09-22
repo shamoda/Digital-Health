@@ -12,6 +12,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -47,6 +50,7 @@ public class ManageDoctorsActivity extends AppCompatActivity {
 
     private Button addNewDoctor;
     private TextView closeBtn;
+    private AutoCompleteTextView specializationSelector;
 
     private DatabaseReference doctorRef;
     private RecyclerView recyclerView;
@@ -66,15 +70,18 @@ public class ManageDoctorsActivity extends AppCompatActivity {
 
         addNewDoctor = findViewById(R.id.sm_manage_doctors_add_new_doctor);
         closeBtn = findViewById(R.id.sm_manage_doctors_close_btn);
+        specializationSelector = findViewById(R.id.sm_manage_doctors_specialization_value);
         context = this;
 
         String[] specialization = new String[]{
+                "All",
                 "Allergists",
                 "Anesthesiologist",
                 "Cardiologist",
                 "Colon and Rectal Surgeon",
                 "Dermatologist",
                 "Endocrinologist",
+                "Family Physician",
                 "Gastroenterologist",
                 "Hematologist",
                 "Infectious Disease",
@@ -98,6 +105,23 @@ public class ManageDoctorsActivity extends AppCompatActivity {
 
         dropDown.setAdapter(adapter);
 
+        specializationSelector.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                filterDoctor(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
         addNewDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +144,46 @@ public class ManageDoctorsActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+    }
+
+    private void filterDoctor(String s) {
+
+        FirebaseRecyclerOptions<Doctor> options;
+
+        if (s.equals("All")){
+             options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(doctorRef, Doctor.class).build();
+        }
+        else {
+            Query firebaseSearchQuery = doctorRef.orderByChild("specialization").startAt(s).endAt(s + "\uf8ff");
+            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(firebaseSearchQuery, Doctor.class).setLifecycleOwner(this).build();
+        }
+
+
+        FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
+                doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
+                doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
+                Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+
+                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showAlertDialog(doctor.getPhone(), doctor.getName(), doctor.getImage());
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
+                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+                return holder;
+            }
+        };
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
     }
 
     @Override
