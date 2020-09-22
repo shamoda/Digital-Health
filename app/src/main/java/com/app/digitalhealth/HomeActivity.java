@@ -133,10 +133,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull Doctor doctor) {
+            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
                 doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
                 doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
                 Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+
+                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @NonNull
