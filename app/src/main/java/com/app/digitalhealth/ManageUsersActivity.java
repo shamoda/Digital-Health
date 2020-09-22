@@ -115,6 +115,7 @@ public class ManageUsersActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 final ProgressDialog pd = new ProgressDialog(ManageUsersActivity.this);
+                pd.setCanceledOnTouchOutside(false);
                 pd.setMessage("Deleting...");
                 pd.show();
 

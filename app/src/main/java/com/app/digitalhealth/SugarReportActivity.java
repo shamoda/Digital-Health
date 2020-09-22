@@ -165,8 +165,8 @@ public class SugarReportActivity extends AppCompatActivity {
 
 
 
-            SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
-            sugarReports.child(id).setValue(Report);
+//            SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
+//            sugarReports.child(id).setValue(Report);
             Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
 
 //            SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
@@ -179,9 +179,9 @@ public class SugarReportActivity extends AppCompatActivity {
     private boolean updateReports(String ReportID,String cusID, String patName,String glucoseLevel){
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("sugarReports").child(ReportID);
-        SugarReport sugarReport = new  SugarReport(ReportID,cusID,patName,glucoseLevel);
+//        SugarReport sugarReport = new  SugarReport(ReportID,cusID,patName,glucoseLevel);
 
-        databaseReference.setValue(sugarReport);
+//        databaseReference.setValue(sugarReport);
 
         Toast.makeText(this, "Report Updated Successfully", Toast.LENGTH_SHORT).show();
 
