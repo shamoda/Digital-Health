@@ -122,49 +122,47 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/footer"
-        android:layout_below="@+id/header"
-        android:fillViewport="true">
-        <ListView
-            android:id="@+id/myList"
-            android:layout_width="364dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="40dp"
-            android:background="#FFFFFF" />
-
-    </ScrollView>
-
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:background="#FFFFFF"
+
+            android:fillViewport="true">
+
+            <ListView
+                android:id="@+id/myList"
+                android:layout_width="364dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:background="#FFFFFF" />
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/RelateColor">
+
+            <Button
+                android:id="@+id/GenReportTest"
+                android:layout_width="305dp"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="@color/UpdateCOlor"
+                android:text="@string/GenRepo" />
 
 
-        android:background="@color/RelateColor">
-
-        <Button
-            android:id="@+id/GenReportTest"
-            android:layout_width="300dp"
-
-            android:layout_height="wrap_content"
-
-            android:layout_marginLeft="50dp"
-            android:backgroundTint="@color/UpdateCOlor"
-            android:text="@string/GenRepo" />
+        </RelativeLayout>
 
 
-    </RelativeLayout>
-
-
-
-
-
-    />
+</RelativeLayout>
 
 </LinearLayout>
