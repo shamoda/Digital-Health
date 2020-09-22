@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.google.android.gms.common.util.Strings;
+import com.app.digitalhealth.model.Doctor;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,11 +26,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,7 +51,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
     private String txtNic;
     private String txtSlmcRegNo;
     private String txtSpecialization;
-    private String saveCurrentDate;
+    private String dId;
     private String saveCurrentTime;
     private String doctorImageRandomKey;
 
@@ -71,6 +76,8 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_registration);
+
+        dId = getIntent().getStringExtra("dId");
 
         close = findViewById(R.id.sm_doctor_registration_close_btn);
         doctorImage = findViewById(R.id.sm_doctor_registration_profile_img);
@@ -116,6 +123,11 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         );
         dropDown.setAdapter(adapter);
 
+        if(dId != null){
+            loadData(dId);
+            addDoctorBtn.setText("Update");
+        }
+
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,6 +150,27 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void loadData(String dId) {
+        doctorRef.child(dId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Doctor doc = dataSnapshot.getValue(Doctor.class);
+                Picasso.get().load(doc.getImage()).into(doctorImage);
+                name.setText(doc.getName());
+                dropDown.setText(doc.getSpecialization());
+                address.setText(doc.getAddress());
+                phone.setText(doc.getPhone());
+                nic.setText(doc.getNic());
+                slmcRegNo.setText(doc.getSlmcRegNo());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void validateData() {
@@ -180,7 +213,12 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
 
     private void storeDoctorInfo() {
 
-        pd.setMessage("Registering new doctor");
+        if (dId != null){
+            pd.setMessage("Updating...");
+        }
+        else {
+            pd.setMessage("Registering new doctor");
+        }
         pd.setCanceledOnTouchOutside(false);
         pd.show();
 
@@ -206,7 +244,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(DoctorRegistrationActivity.this, "Profile image uploaded successfully.", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(DoctorRegistrationActivity.this, "Profile image uploaded successfully.", Toast.LENGTH_SHORT).show();
 
                 Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
@@ -223,7 +261,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
 
                         if(task.isSuccessful()){
                             downloadImageUrl = task.getResult().toString();
-                            Toast.makeText(DoctorRegistrationActivity.this, "Profile image download URL taken successfully.", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(DoctorRegistrationActivity.this, "Profile image download URL taken successfully.", Toast.LENGTH_SHORT).show();
 
                             saveDoctorInfo();
                         }
@@ -248,9 +286,15 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     pd.dismiss();
-                    Toast.makeText(DoctorRegistrationActivity.this, "Doctor registration successful.", Toast.LENGTH_SHORT).show();
+                    if (dId != null){
+                        Toast.makeText(DoctorRegistrationActivity.this, "Doctor details updated successfully.", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(DoctorRegistrationActivity.this, "Doctor registration successful.", Toast.LENGTH_SHORT).show();
+                    }
 
                     startActivity(new Intent(DoctorRegistrationActivity.this, ManageDoctorsActivity.class));
+                    finish();
                 }
                 else {
                     pd.dismiss();

@@ -22,7 +22,7 @@
     <string name="manage_doctors">Manage Doctors</string>
     <string name="update_btn">Update</string>
     <string name="manage_users">Manage Users</string>
-    <string name="add_new_patient">Add New Patient</string>
+    <string name="add_new_customer">Add New Customer</string>
     <string name="change_profile_picture">Change Profile Picture</string>
     <string name="delete_my_profile">Delete My Profile</string>
     <string name="bmi_calculator_title">Body Mass Index (BMI)</string>

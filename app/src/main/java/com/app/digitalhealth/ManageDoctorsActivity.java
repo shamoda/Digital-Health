@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,14 +22,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.digitalhealth.model.Doctor;
 import com.app.digitalhealth.viewholder.DoctorDetailsViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -43,6 +51,7 @@ public class ManageDoctorsActivity extends AppCompatActivity {
     private DatabaseReference doctorRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    private Context context;
 
 
     @Override
@@ -57,6 +66,7 @@ public class ManageDoctorsActivity extends AppCompatActivity {
 
         addNewDoctor = findViewById(R.id.sm_manage_doctors_add_new_doctor);
         closeBtn = findViewById(R.id.sm_manage_doctors_close_btn);
+        context = this;
 
         String[] specialization = new String[]{
                 "Allergists",
@@ -120,10 +130,17 @@ public class ManageDoctorsActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull Doctor doctor) {
+            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
                 doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
                 doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
                 Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+
+                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showAlertDialog(doctor.getPhone(), doctor.getName(), doctor.getImage());
+                    }
+                });
             }
 
             @NonNull
@@ -137,6 +154,46 @@ public class ManageDoctorsActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         adapter.startListening();
 
+    }
+
+    private void showAlertDialog(final String phone, final String name, final String image) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Manage Dr."+name);
+        builder.setMessage("What you want to do with Dr."+name);
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                final ProgressDialog pd = new ProgressDialog(context);
+                pd.setMessage("Deleting...");
+                pd.show();
+
+                doctorRef.child(phone).removeValue();
+                StorageReference proPicRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
+                proPicRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        pd.dismiss();
+                        Toast.makeText(context, "Dr."+name+" related records are deleted successfully.", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        pd.dismiss();
+                        Toast.makeText(context, "Something went wrong.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+        builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(ManageDoctorsActivity.this, DoctorRegistrationActivity.class);
+                intent.putExtra("dId", phone);
+                startActivity(intent);
+            }
+        });
+        builder.show();
     }
 
 
