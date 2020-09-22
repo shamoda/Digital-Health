@@ -22,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class ManageDoctorsActivity extends AppCompatActivity {
     private Button addNewDoctor;
     private TextView closeBtn;
     private AutoCompleteTextView specializationSelector;
+    private SearchView searchDoctor;
 
     private DatabaseReference doctorRef;
     private RecyclerView recyclerView;
@@ -71,6 +73,7 @@ public class ManageDoctorsActivity extends AppCompatActivity {
         addNewDoctor = findViewById(R.id.sm_manage_doctors_add_new_doctor);
         closeBtn = findViewById(R.id.sm_manage_doctors_close_btn);
         specializationSelector = findViewById(R.id.sm_manage_doctors_specialization_value);
+        searchDoctor = findViewById(R.id.sm_manage_doctors_search_view);
         context = this;
 
         String[] specialization = new String[]{
@@ -104,6 +107,20 @@ public class ManageDoctorsActivity extends AppCompatActivity {
         );
 
         dropDown.setAdapter(adapter);
+
+        searchDoctor.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                searchText(s);
+                return false;
+            }
+        });
+
 
         specializationSelector.addTextChangedListener(new TextWatcher() {
             @Override
@@ -145,6 +162,50 @@ public class ManageDoctorsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
     }
+
+
+
+    private void searchText(String s) {
+        FirebaseRecyclerOptions<Doctor> options;
+
+        if (s == null){
+            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(doctorRef, Doctor.class).build();
+        }
+        else {
+            Query firebaseSearchQuery = doctorRef.orderByChild("name").startAt(s).endAt(s + "\uf8ff");
+            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(firebaseSearchQuery, Doctor.class).setLifecycleOwner(this).build();
+        }
+
+
+        FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
+                doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
+                doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
+                Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+
+                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showAlertDialog(doctor.getPhone(), doctor.getName(), doctor.getImage());
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
+                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+                return holder;
+            }
+        };
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+    }
+
+
+
 
     private void filterDoctor(String s) {
 
