@@ -4,10 +4,10 @@ import com.google.firebase.database.DatabaseReference;
 
 public class SugarReport {
 
-   String ReportID;
-   String customerID;
-   String patientName;
-   String glucoseLevel;
+    private String ReportID;
+    private String customerID;
+    private String patientName;
+    private String glucoseLevel;
 
 
     public SugarReport() {

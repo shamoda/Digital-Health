@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -59,6 +60,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
     private TextInputEditText nic;
     private TextInputEditText slmcRegNo;
     private Button addDoctorBtn;
+
 
     private static final int galleryPick = 1;
     private Uri imageUri;
@@ -147,6 +149,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         txtNic = nic.getText().toString();
         txtSlmcRegNo = slmcRegNo.getText().toString();
         txtSpecialization = dropDown.getText().toString();
+
 
         if(imageUri == null){
             Toast.makeText(this, "Doctor's profile image is mandatory.", Toast.LENGTH_SHORT).show();

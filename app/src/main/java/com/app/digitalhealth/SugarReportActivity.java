@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,13 +17,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class SugarReportActivity extends AppCompatActivity {
 
-    long maxID = 0;
+    Integer maxID = 0;
     EditText CustomerID;
     EditText patientName;
     EditText glucoseLevelinput;
@@ -78,19 +80,22 @@ public class SugarReportActivity extends AppCompatActivity {
         glucoseLevelinput.setText(glucoseLevel);
 
 
-        sugarReports.addValueEventListener(new ValueEventListener() {
+        DatabaseReference db =FirebaseDatabase.getInstance().getReference().child("sugarReports");
+        Query query = db.orderByKey().limitToLast(1);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    maxID = (dataSnapshot.getChildrenCount());
-
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+                  maxID = Integer.parseInt(child.getKey()) ;
                 }
+
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
-            }
+            };
+
         });
 
 
@@ -160,13 +165,22 @@ public class SugarReportActivity extends AppCompatActivity {
         }else {
 //            String id = sugarReports.push().getKey();
 
-            String p = String.valueOf(maxID+1);
-            String id =  "R"+p;
+
+
+
+            String id = String.valueOf(maxID+1);
+//            String id =  "R"+p;
+
 
 
             SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
             sugarReports.child(id).setValue(Report);
             Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
+
+//            SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
+//            sugarReports.child(id).setValue(Report);
+
+
       }
     }
 

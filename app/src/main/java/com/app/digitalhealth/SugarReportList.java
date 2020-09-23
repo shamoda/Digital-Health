@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.app.digitalhealth.model.SugarReport;
+import com.app.digitalhealth.prevalent.Prevalent;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class SugarReportList extends ArrayAdapter<SugarReport> {
 
     private Activity context;
     private List<SugarReport> sugarlist;
+
 
     public SugarReportList(Activity context, List<SugarReport> sugarList){
         super(context, R.layout.reportrow,sugarList);
@@ -35,6 +37,7 @@ public class SugarReportList extends ArrayAdapter<SugarReport> {
         TextView  CusID = (TextView)listViewItem.findViewById(R.id.CusID);
         TextView  patientName = (TextView)listViewItem.findViewById(R.id.patientname);
         TextView  ReportID = (TextView)listViewItem.findViewById(R.id.reportID);
+
 
         SugarReport sugarReport = sugarlist.get(position);
 

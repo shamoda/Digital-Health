@@ -137,7 +137,7 @@
                 app:cardElevation="10dp">
 
                 <RelativeLayout
-                    android:id="@+id/report"
+                    android:id="@+id/addReport"
                     android:layout_width="371dp"
                     android:layout_height="1000dp"
                     android:layout_margin="5dp"
@@ -543,7 +543,7 @@
                         android:textSize="14sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName2"
+                        android:id="@+id/inputPatientName"
                         android:layout_width="207dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/PatientName"
@@ -560,7 +560,7 @@
                         android:textSize="14sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName5"
+                        android:id="@+id/Lymphoinput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/MCV"
@@ -577,7 +577,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName17"
+                        android:id="@+id/Monoinput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/Lympho"
@@ -594,7 +594,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName18"
+                        android:id="@+id/Eosoinput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/Mono"
@@ -611,7 +611,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName19"
+                        android:id="@+id/Basoinput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/Eosino"
@@ -628,7 +628,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName20"
+                        android:id="@+id/bandInput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/Myelo"
@@ -645,7 +645,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName22"
+                        android:id="@+id/blastInput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/Myelo"
@@ -662,7 +662,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName24"
+                        android:id="@+id/plateletInput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/Myelo"
@@ -679,7 +679,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName23"
+                        android:id="@+id/commentInput"
                         android:layout_width="272dp"
                         android:layout_height="18dp"
                         android:layout_alignBottom="@+id/band"
@@ -696,7 +696,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName21"
+                        android:id="@+id/Myeloinput"
                         android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/Baso"
@@ -713,7 +713,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName14"
+                        android:id="@+id/RBCinput"
                         android:layout_width="72dp"
                         android:layout_height="26dp"
                         android:layout_alignBottom="@+id/MCV"
@@ -730,7 +730,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName15"
+                        android:id="@+id/pcvinput"
                         android:layout_width="72dp"
                         android:layout_height="26dp"
                         android:layout_alignBottom="@+id/MCV"
@@ -747,7 +747,7 @@
                         android:textSize="10sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName16"
+                        android:id="@+id/Heaminput"
                         android:layout_width="71dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/MCV"
