@@ -131,6 +131,8 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                                 pd.dismiss();
 
+                                Prevalent.currentUser = user;
+
                                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                 finish();
                             }

@@ -22,7 +22,7 @@
     <string name="manage_doctors">Manage Doctors</string>
     <string name="update_btn">Update</string>
     <string name="manage_users">Manage Users</string>
-    <string name="add_new_patient">Add New Patient</string>
+    <string name="add_new_customer">Add New Customer</string>
     <string name="change_profile_picture">Change Profile Picture</string>
     <string name="delete_my_profile">Delete My Profile</string>
     <string name="bmi_calculator_title">Body Mass Index (BMI)</string>
@@ -173,5 +173,28 @@
     <string name="date_history">Date </string>
     <string name="app_history">Appointment History</string>
     <string name="view_history">View History</string>
+    <string name="close">Close</string>
+    <string name="address_99_b_fiction_apps_col_07">Address : 99/B Fiction Apps Col-07</string>
+    <string name="todo">todo</string>
+    <string name="contact_no_07235518789">Contact No : 07235518789</string>
+    <string name="np6321">NP6321</string>
+    <string name="reportComment">Type a comment here...</string>
+    <string name="hintName">Enter the patient Name</string>
+    <string name="ex_1">ex: 1</string>
+    <string name="BloodSugar">Blood Sugar Report</string>
+    <string name="Date" />
+    <string name="CustomerID">Customer ID :</string>
+    <string name="patientName">PatientName :</string>
+    <string name="GlucoseLevel">FASTING PLASMA GLUCOSE (FBS) </string>
+    <string name="sugarDes">Reference ranges </string>
+    <string name="dessu">70 - 99 mg/dL (3.9-5.5 mmol/L) = Normal fasting glucsoe level</string>
+    <string name="hintNamepatient">Enter the Patient Name</string>
+    <string name="exGlucLevel">ex   :   87.6</string>
+    <string name="Glulevelunit">mg/ dL</string>
+    <string name="HintCusid">ex : 0773551870</string>
+    <array name="reportTypes">
+        <item>Sugar Report(Fasting)</item>
+        <item>Full Blood count Report</item>
 
+    </array>
 </resources>

@@ -7,7 +7,7 @@
     tools:context=".ReportSearch"
     android:orientation="vertical"
     >
-    
+
     <Toolbar
         android:id="@+id/insulinCal"
         android:layout_width="match_parent"
@@ -73,16 +73,11 @@
 
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
 
             <SearchView
@@ -97,71 +92,78 @@
 
                 android:background="@drawable/input_design"
                 android:elevation="20dp"
-                android:queryHint="Search"/>
+                android:queryHint="Search" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ReposType"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/RepoTypes"
-                app:helperText="@string/RepoTypes"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/RepoTypes"
+                app:boxBackgroundMode="outline"
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
-                app:boxBackgroundMode="outline"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 app:endIconMode="dropdown_menu"
+                app:helperText="@string/RepoTypes"
 
                 >
+
                 <AutoCompleteTextView
-                    android:id="@+id/drops"
+                    android:id="@+id/drops_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-
-
+                    android:focusableInTouchMode="true"
+                    android:focusable="false"
+                    android:cursorVisible="false"
                     />
-
-
 
 
             </com.google.android.material.textfield.TextInputLayout>
 
+        </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:background="#FFFFFF"
+
+            android:fillViewport="true">
+
             <ListView
-                android:id="@+id/myList"
-                android:layout_width="match_parent"
-                android:layout_height="800dp"
-                android:layout_marginLeft="30dp"
+                android:id="@+id/UsersSugar_list"
+                android:layout_width="364dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="40dp"
                 android:background="#FFFFFF" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
+        </ScrollView>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/RelateColor">
 
-        android:background="@color/RelateColor">
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-
-            android:layout_marginLeft="50dp"
-
-            android:backgroundTint="@color/UpdateCOlor"
-            android:text="@string/GenRepo" />
+            <Button
+                android:id="@+id/GenReportTest"
+                android:layout_width="304dp"
+                android:layout_height="59dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="@color/UpdateCOlor"
+                android:text="@string/GenRepo" />
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
 
-
-
-
-    />
+</RelativeLayout>
 
 </LinearLayout>

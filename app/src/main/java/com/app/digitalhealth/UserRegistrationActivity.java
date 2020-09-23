@@ -29,6 +29,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
     private TextInputEditText password;
     private TextInputEditText reEnterPassword;
     private Button createAccount;
+    private String check;
 
     private ProgressDialog pd;
 
@@ -36,6 +37,9 @@ public class UserRegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registration);
+
+        check = "not";
+        check = getIntent().getStringExtra("check");
 
         name = findViewById(R.id.sm_user_registration_name_value);
         phone = findViewById(R.id.sm_user_registration_phone_value);
@@ -109,11 +113,18 @@ public class UserRegistrationActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 pd.dismiss();
-                                Toast.makeText(UserRegistrationActivity.this, "Thank you for joining with us.", Toast.LENGTH_SHORT).show();
 
-                                startActivity(new Intent(UserRegistrationActivity.this, LoginActivity.class));
-                                finish();
-                                Toast.makeText(UserRegistrationActivity.this, "Please login.", Toast.LENGTH_SHORT).show();
+                                if(check != null && "check".equalsIgnoreCase(check)){
+                                    startActivity(new Intent(UserRegistrationActivity.this, ManageUsersActivity.class));
+                                    finish();
+                                    Toast.makeText(UserRegistrationActivity.this, "New Customer added successfully.", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    startActivity(new Intent(UserRegistrationActivity.this, LoginActivity.class));
+                                    finish();
+                                    Toast.makeText(UserRegistrationActivity.this, "Thank you for joining with us. Please login.", Toast.LENGTH_SHORT).show();
+                                }
+
                             }
                             else {
                                 pd.dismiss();

@@ -3,6 +3,8 @@
     package="com.app.digitalhealth">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppoinmentHistoryActivity">
-
-        </activity>
-<!--        <activity android:name=".SessionList"></activity>-->
+        <activity android:name=".SessionList"></activity>
+        <activity android:name=".SugarReportActivity"></activity>
         <activity android:name=".QuickHealthCheckupsActivity" />
         <activity
             android:name=".HomeActivity"
@@ -31,23 +31,27 @@
         <activity android:name=".ManageUsersActivity" />
         <activity android:name=".ManageDoctorsActivity" />
         <activity android:name=".DoctorRegistrationActivity" />
-        <activity android:name=".ViewAppoinmentActivity"></activity>
+        <activity android:name=".AppoinmentHistoryActivity" />
+        <activity android:name=".ViewAppoinmentActivity" />
         <activity android:name=".AdminDashboard" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".BMRcalculatorActivity" />
-        <activity android:name=".AddAppoinmentActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BMRcalculatorActivity" />
+        <activity android:name=".AddAppoinmentActivity" />
         <activity android:name=".UpdateUserAccountActivity" />
         <activity android:name=".CalorieCalculatorActivity" />
         <activity android:name=".UpdateSessionActivity" />
-        <activity android:name=".AddSessionActivity"></activity>
+        <activity android:name=".AddSessionActivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,7 +1,6 @@
 package com.app.digitalhealth.viewholder;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,19 +11,19 @@ import com.app.digitalhealth.interfaces.ItemClickListner;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
-{
-    public TextView specialization;
+public class UserDetailsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public TextView phone;
     public TextView name;
     public CircleImageView image;
     public ItemClickListner listner;
 
-    public DoctorDetailsViewHolder(@NonNull View itemView) {
+    public UserDetailsViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        image = itemView.findViewById(R.id.sm_doctor_details_row_img);
-        specialization = itemView.findViewById(R.id.sm_doctor_details_row_specialization_value);
-        name = itemView.findViewById(R.id.sm_doctor_details_row_name_value);
+        image = itemView.findViewById(R.id.sm_patient_details_row_img);
+        phone = itemView.findViewById(R.id.sm_patient_details_row_phone_value);
+        name = itemView.findViewById(R.id.sm_patient_details_row_name_value);
 
     }
 

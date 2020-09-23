@@ -1,6 +1,7 @@
 package com.app.digitalhealth;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -21,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import io.paperdb.Paper;
+
+import static android.Manifest.permission.CALL_PHONE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,7 +49,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:1234"));
-                startActivity(intent);
+
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    startActivity(intent);
+                } else {
+                    requestPermissions(new String[]{CALL_PHONE}, 1);
+                }
             }
         });
 
@@ -97,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         if (user.getPassword().equals(password)){
 //                            Toast.makeText(MainActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                             pd.dismiss();
-
+                            Prevalent.currentUser = user;
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
                             finish();
                         }

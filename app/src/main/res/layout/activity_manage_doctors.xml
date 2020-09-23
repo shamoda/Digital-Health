@@ -27,6 +27,7 @@
                 />
 
             <TextView
+                android:id="@+id/sm_manage_doctors_close_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/close_btn"

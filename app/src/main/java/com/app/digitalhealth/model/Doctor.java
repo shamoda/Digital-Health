@@ -2,15 +2,25 @@ package com.app.digitalhealth.model;
 
 public class Doctor {
 
-    private String name, Specialization, image;
+    private String name;
+    private String phone;
+    private String address;
+    private String nic;
+    private String image;
+    private String specialization;
+    private String slmcRegNo;
 
     public Doctor() {
     }
 
-    public Doctor(String name, String specialization, String image) {
+    public Doctor(String name, String phone, String address, String nic, String image, String specialization, String slmcRegNo) {
         this.name = name;
-        Specialization = specialization;
+        this.phone = phone;
+        this.address = address;
+        this.nic = nic;
         this.image = image;
+        this.specialization = specialization;
+        this.slmcRegNo = slmcRegNo;
     }
 
     public String getName() {
@@ -21,12 +31,28 @@ public class Doctor {
         this.name = name;
     }
 
-    public String getSpecialization() {
-        return Specialization;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setSpecialization(String specialization) {
-        Specialization = specialization;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 
     public String getImage() {
@@ -35,5 +61,21 @@ public class Doctor {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    public String getSlmcRegNo() {
+        return slmcRegNo;
+    }
+
+    public void setSlmcRegNo(String slmcRegNo) {
+        this.slmcRegNo = slmcRegNo;
     }
 }
