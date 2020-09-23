@@ -12,6 +12,7 @@ public class AdminDashboard extends AppCompatActivity {
     private Button manageCustomers;
     private Button manageDoctors;
     private Button manageReports;
+    private Button manageSessions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,9 @@ public class AdminDashboard extends AppCompatActivity {
         manageDoctors = findViewById(R.id.admin_dashboard_manage_doctors);
         manageReports = findViewById(R.id.btnmanageReports);
         manageCustomers = findViewById(R.id.admin_dashboard_manage_customers);
+
+        manageSessions = findViewById(R.id.btn_manage_sessions);
+
 
         manageCustomers.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +45,13 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminDashboard.this, ReportSearch.class));
+            }
+        });
+
+        manageSessions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminDashboard.this, SessionList.class));
             }
         });
 

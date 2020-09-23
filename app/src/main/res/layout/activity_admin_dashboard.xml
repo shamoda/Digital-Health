@@ -159,6 +159,7 @@
         <Button
 
 
+            android:id="@+id/btn_manage_sessions"
             android:layout_width="271dp"
             android:layout_height="59dp"
             android:layout_marginLeft="50dp"
