@@ -363,7 +363,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else if(id == R.id.sm_nav_my_reports){
-
+            startActivity(new Intent(HomeActivity.this, ReportList.class));
         }
         else if (id == R.id.sm_nav_settings){
             startActivity(new Intent(HomeActivity.this, UpdateUserAccountActivity.class));

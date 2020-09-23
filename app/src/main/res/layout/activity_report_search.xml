@@ -111,11 +111,12 @@
                 >
 
                 <AutoCompleteTextView
-                    android:id="@+id/drops"
+                    android:id="@+id/drops_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-
+                    android:focusableInTouchMode="true"
+                    android:focusable="false"
+                    android:cursorVisible="false"
                     />
 
 
@@ -135,7 +136,7 @@
             android:fillViewport="true">
 
             <ListView
-                android:id="@+id/myList"
+                android:id="@+id/UsersSugar_list"
                 android:layout_width="364dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -152,8 +153,8 @@
 
             <Button
                 android:id="@+id/GenReportTest"
-                android:layout_width="305dp"
-                android:layout_height="70dp"
+                android:layout_width="304dp"
+                android:layout_height="59dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="30dp"
                 android:backgroundTint="@color/UpdateCOlor"
