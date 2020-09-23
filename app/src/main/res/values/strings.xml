@@ -124,6 +124,7 @@
     <string name="patient_age">Age</string>
     <string name="age_range">ages 15-80</string>
     <string name="patient_gender">Gender </string>
+    <string name="create_session">Create Session</string>
     <!--    <string name="male">Male</string>-->
     <!--    <string name="female">Female</string>-->
     <string name="patient_weight">Weight :</string>
@@ -191,6 +192,10 @@
     <string name="hintNamepatient">Enter the Patient Name</string>
     <string name="exGlucLevel">ex   :   87.6</string>
     <string name="Glulevelunit">mg/ dL</string>
+    <string name="HintCusid">ex : 0773551870</string>
+    <array name="reportTypes">
+        <item>Sugar Report(Fasting)</item>
+        <item>Full Blood count Report</item>
 
-
+    </array>
 </resources>

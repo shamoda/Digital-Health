@@ -132,7 +132,7 @@
                 app:cardElevation="10dp">
 
                 <RelativeLayout
-                    android:id="@+id/report"
+                    android:id="@+id/addReport"
                     android:layout_width="371dp"
                     android:layout_height="632dp"
                     android:layout_margin="5dp"

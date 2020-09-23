@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Linearlay1"
-    android:layout_width="wrap_content"
-
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:orientation="vertical">
+
 
     <Toolbar
         android:id="@+id/insulinCal"
@@ -20,9 +19,10 @@
 
 
         <RelativeLayout
-            android:id="@+id/Rel1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+
+            >
 
             <TextView
                 android:layout_width="53dp"
@@ -31,28 +31,30 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
 
-
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="7dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginBottom="-3dp"
-                android:text="@string/close"
+                android:text="back"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="190dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
 
                 android:layout_marginTop="13dp"
+                android:layout_marginEnd="190dp"
+                android:layout_marginRight="24dp"
 
                 android:text="@string/SS_functionName"
+                android:drawableLeft="@drawable/ic_reports"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                app:drawableLeftCompat="@drawable/ic_reports" />
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -60,41 +62,44 @@
     </Toolbar>
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/Scroll1"
         android:layout_width="match_parent"
-        android:layout_height="2000dp"
-
+        android:layout_height="0dp"
         android:layout_weight="1">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
                 android:background="@drawable/input_design"
-
+                android:backgroundTint="@color/RelateColor"
+                android:elevation="10dp"
                 android:orientation="vertical">
 
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="250dp"
-                    android:layout_height="117dp"
-                    android:layout_margin="30dp"
-                    android:background="#FFFFFF"
-                    android:contentDescription="@string/todo"
-                    android:scaleType="fitXY"
+                <TextView
+                    android:layout_width="291dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Patient ID    :   SL164"
+                    android:textSize="18sp"
+                    android:textStyle="bold"></TextView>
 
-
-                    android:src="@drawable/logo" />
+                <TextView
+                    android:layout_width="339dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Pateint Name   :    Mahela Jayawardena"
+                    android:textSize="18sp"
+                    android:textStyle="bold"></TextView>
 
 
             </LinearLayout>
@@ -102,35 +107,43 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
+
                 android:fontFamily="@font/asap"
-                android:text="@string/address_99_b_fiction_apps_col_07"
+                android:text="Address    :   99/B Fiction Apps Col-07"
+                android:background="@color/colorPrimary"
                 android:textColor="@color/design_default_color_on_secondary"></TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
 
-                android:background="@color/colorPrimary"
                 android:fontFamily="@font/asap"
-                android:text="@string/contact_no_07235518789"
+                android:background="@color/colorPrimary"
+                android:text="Contact No :    07235518789"
                 android:textColor="@color/design_default_color_on_secondary"></TextView>
 
             <androidx.cardview.widget.CardView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="820dp"
+                android:layout_height="800dp"
+
+
+
                 android:layout_marginTop="30dp"
                 app:cardBackgroundColor="#F6F3F4"
-                app:cardCornerRadius="30dp"
+
+                app:cardCornerRadius="15dp"
                 app:cardElevation="10dp">
 
                 <RelativeLayout
+                    android:id="@+id/addReport"
                     android:layout_width="371dp"
-                    android:layout_height="800dp"
+                    android:layout_height="1000dp"
                     android:layout_margin="5dp"
+
                     android:background="#00DAD4D4"
-                    android:backgroundTint="@color/RelateColor"
+                    android:backgroundTint="#FDFBFB"
                     android:orientation="vertical">
 
 
@@ -176,19 +189,19 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-
                     <TextView
                         android:id="@+id/Heamo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textView2"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/heamoglobin"
                         android:textColor="#090909"
                         android:textSize="14sp"
                         android:textStyle="bold" />
+
 
                     <TextView
                         android:id="@+id/PCV"
@@ -378,7 +391,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/PCV"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="17dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="21dp"
                         android:text="@string/rbc_count"
                         android:textColor="#090909"
@@ -509,44 +522,40 @@
                         android:layout_marginBottom="-54dp"
                         android:text="@string/Plateletunit"
                         android:textColor="@color/design_default_color_on_secondary"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
                         android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/inputcusID"
                         android:layout_width="wrap_content"
-                        android:layout_height="39dp"
+                        android:layout_height="34dp"
                         android:layout_alignBottom="@+id/PatientName"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="25dp"
                         android:layout_marginEnd="55dp"
-                        android:layout_marginBottom="33dp"
-
-                        android:autofillHints=""
+                        android:layout_marginBottom="38dp"
                         android:background="@drawable/input_design"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="@string/np6321"
+                        android:text="SL164"
                         android:textAlignment="center"
                         android:textSize="14sp" />
 
                     <EditText
                         android:id="@+id/inputPatientName"
-                        android:layout_width="wrap_content"
+                        android:layout_width="207dp"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/PatientName"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="77dp"
-                        android:layout_marginEnd="57dp"
+                        android:layout_marginEnd="14dp"
                         android:layout_marginBottom="-10dp"
-                        android:autofillHints=""
                         android:background="@drawable/input_design"
                         android:ems="10"
-                        android:hint="@string/hintName"
                         android:inputType="textPersonName"
-                        android:text="Namal Premadasa"
+                        android:text="Mahela"
                         android:textAlignment="center"
                         android:textSize="14sp" />
 
@@ -560,13 +569,12 @@
                         android:layout_marginTop="265dp"
                         android:layout_marginEnd="125dp"
                         android:layout_marginBottom="1dp"
-                        android:autofillHints=""
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="ex:  1"
                         android:inputType="textPersonName"
+                        android:text="42.00"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/Monoinput"
@@ -578,12 +586,12 @@
                         android:layout_marginTop="309dp"
                         android:layout_marginEnd="123dp"
                         android:layout_marginBottom="-3dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="ex:  1"
                         android:inputType="textPersonName"
+                        android:text="03.00"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/Eosoinput"
@@ -595,13 +603,12 @@
                         android:layout_marginTop="353dp"
                         android:layout_marginEnd="124dp"
                         android:layout_marginBottom="-3dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="ex:  1"
-                        android:importantForAutofill="no"
                         android:inputType="textPersonName"
+                        android:text="02.00"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/Basoinput"
@@ -613,12 +620,12 @@
                         android:layout_marginTop="401dp"
                         android:layout_marginEnd="125dp"
                         android:layout_marginBottom="-2dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="ex:  1"
                         android:inputType="textPersonName"
+                        android:text="03.00"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/bandInput"
@@ -630,11 +637,12 @@
                         android:layout_marginTop="494dp"
                         android:layout_marginEnd="124dp"
                         android:layout_marginBottom="-3dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
                         android:inputType="textPersonName"
+                        android:text="14.00"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/blastInput"
@@ -646,11 +654,12 @@
                         android:layout_marginTop="538dp"
                         android:layout_marginEnd="123dp"
                         android:layout_marginBottom="-46dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
                         android:inputType="textPersonName"
+                        android:text="03.00"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/plateletInput"
@@ -662,11 +671,12 @@
                         android:layout_marginTop="587dp"
                         android:layout_marginEnd="121dp"
                         android:layout_marginBottom="-95dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
                         android:inputType="textPersonName"
+                        android:text="1260"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/commentInput"
@@ -678,12 +688,12 @@
                         android:layout_marginTop="676dp"
                         android:layout_marginEnd="76dp"
                         android:layout_marginBottom="-121dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="@string/reportComment"
+                        android:text="      Type a comment here..."
                         android:textAlignment="textStart"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/Myeloinput"
@@ -695,12 +705,12 @@
                         android:layout_marginTop="445dp"
                         android:layout_marginEnd="124dp"
                         android:layout_marginBottom="1dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="ex:  1"
                         android:inputType="textPersonName"
+                        android:text="02.00"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/RBCinput"
@@ -712,12 +722,12 @@
                         android:layout_marginTop="217dp"
                         android:layout_marginEnd="124dp"
                         android:layout_marginBottom="48dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="ex:  1"
                         android:inputType="textPersonName"
+                        android:text="4.3"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/pcvinput"
@@ -729,12 +739,12 @@
                         android:layout_marginTop="181dp"
                         android:layout_marginEnd="125dp"
                         android:layout_marginBottom="83dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="ex:  1"
                         android:inputType="textPersonName"
+                        android:text="45.7"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/Heaminput"
@@ -746,12 +756,12 @@
                         android:layout_marginTop="141dp"
                         android:layout_marginEnd="128dp"
                         android:layout_marginBottom="121dp"
-                        android:background="@drawable/input_design"
+                        android:background="@drawable/outline"
                         android:ems="10"
-                        android:hint="@string/ex_1"
                         android:inputType="textPersonName"
+                        android:text="15.2"
                         android:textAlignment="center"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
 
 
                 </RelativeLayout>
@@ -763,23 +773,35 @@
 
 
     <RelativeLayout
-        android:id="@+id/Rellay"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/RelateColor"
-        android:backgroundTint="@color/RelateColor">
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+
+        >
 
         <Button
-            android:id="@+id/ReportAdd"
-            android:layout_width="300dp"
-
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
 
-            android:layout_marginStart="50dp"
+            android:text="Delete Report"
+            android:backgroundTint="@color/DeleteColor"
+            />
+
+
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="Update Report"
+
             android:backgroundTint="@color/UpdateCOlor"
-            android:text="@string/GenRepo" />
-        />
+            />
     </RelativeLayout>
+
 
 
 </LinearLayout>
