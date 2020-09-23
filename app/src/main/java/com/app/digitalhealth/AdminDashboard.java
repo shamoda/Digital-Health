@@ -22,7 +22,9 @@ public class AdminDashboard extends AppCompatActivity {
         manageDoctors = findViewById(R.id.admin_dashboard_manage_doctors);
         manageReports = findViewById(R.id.btnmanageReports);
         manageCustomers = findViewById(R.id.admin_dashboard_manage_customers);
+
         manageSessions = findViewById(R.id.btn_manage_sessions);
+
 
         manageCustomers.setOnClickListener(new View.OnClickListener() {
             @Override
