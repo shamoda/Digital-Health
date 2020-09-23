@@ -38,8 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/ak_add_session_toolbar"
         android:textStyle="bold"
-
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         />
 
     //name
@@ -79,28 +78,28 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ak_add_session_specialization"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/specialization"
         app:hintAnimationEnabled="true"
         app:boxBackgroundMode="outline"
         android:layout_below="@id/ak_add_session_doctor_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:endIconMode="clear_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:endIconMode="dropdown_menu"
         app:boxCornerRadiusBottomEnd="16dp"
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
         app:boxCornerRadiusTopStart="16dp"
-        app:counterMaxLength="5"
-        app:counterEnabled="true"
         >
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
             android:id="@+id/ak_add_session_specialization_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:focusableInTouchMode="true"
+            android:focusable="false"
+            android:cursorVisible="false"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -208,9 +207,26 @@
         android:id="@+id/ak_add_session_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/ak_add_session_time"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:text="@string/add_session_btn"
+        />
+
+    <Button
+        android:id="@+id/ak_session_cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:padding="10dp"
@@ -218,6 +234,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:text="@string/add_session_btn"
+        android:layout_below="@+id/ak_add_session_btn"
+        android:text="Delete"
         />
 </RelativeLayout>
