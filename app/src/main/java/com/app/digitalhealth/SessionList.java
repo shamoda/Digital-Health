@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SessionList extends AppCompatActivity {
@@ -19,15 +20,17 @@ public class SessionList extends AppCompatActivity {
     DatabaseReference DataRef;
     List SessionList;
     ListView listSessions;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session_list);
 
-        DataRef = FirebaseDatabase.getInstance().getReference("Sessions");
+        listSessions = (ListView) findViewById(R.id.sessionList);
+        SessionList = new ArrayList<>();
 
+        DataRef = FirebaseDatabase.getInstance().getReference("Sessions");
     }
+
 
     @Override
     protected void onStart() {
@@ -42,16 +45,20 @@ public class SessionList extends AppCompatActivity {
                     Sessions sessions = sessionsnap.getValue(Sessions.class);
                     SessionList.add(sessions);
 
-                }
-
-//                SessionSearch adapter = new SessionSearch(SessionList.this, SessionList);
-//                listSessions.setAdapter(adapter);
             }
+
+                SessionAdapter adapter = new SessionAdapter(SessionList.this, SessionList);
+                listSessions.setAdapter(adapter);
+        }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
-    }
+           }
+       });
+   }
 }
+
+
+
+
