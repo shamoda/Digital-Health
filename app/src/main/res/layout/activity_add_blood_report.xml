@@ -290,13 +290,13 @@
                     <TextView
                         android:id="@+id/PCV7"
                         android:layout_width="79dp"
-                        android:layout_height="24dp"
+                        android:layout_height="80dp"
                         android:layout_below="@+id/Heamo"
                         android:layout_alignBottom="@+id/editTextTextPersonName14"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="19dp"
                         android:layout_marginTop="202dp"
-                        android:layout_marginEnd="11dp"
+                        android:layout_marginEnd="21dp"
                         android:layout_marginBottom="-143dp"
                         android:text="@string/percent"
                         android:textColor="#090909"
@@ -765,21 +765,42 @@
     <RelativeLayout
         android:id="@+id/Rellay"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:background="@color/RelateColor"
         android:backgroundTint="@color/RelateColor">
 
         <Button
-            android:id="@+id/ReportAdd"
-            android:layout_width="300dp"
-
+            android:id="@+id/GenReport"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-
             android:layout_marginStart="50dp"
             android:backgroundTint="@color/UpdateCOlor"
             android:text="@string/GenRepo" />
+
+        <Button
+            android:id="@+id/Delete"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/DeleteColor"
+            android:text="Delete Report" />
+
+
+        <Button
+            android:id="@+id/Update"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/UpdateCOlor"
+            android:text="Update Report" />
         />
     </RelativeLayout>
+
+
 
 
 </LinearLayout>

@@ -3,8 +3,8 @@ package com.app.digitalhealth.model;
 public class BloodReport {
 
     private String reportID;
-    private String CustomerID;
-    private String patientNAME;
+    private String customerID;
+    private String patientName;
     private String heam;
     private String pcv;
     private String rbc;
@@ -25,8 +25,8 @@ public class BloodReport {
                        String lympho, String mono, String eoso, String myel,
                        String band, String blast, String platelet, String comment) {
         this.reportID = reportID;
-        this.CustomerID = customerID;
-        this.patientNAME = patientNAME;
+        this.customerID = customerID;
+        this.patientName = patientNAME;
         this.heam = heam;
         this.pcv = pcv;
         this.rbc = rbc;
@@ -44,12 +44,12 @@ public class BloodReport {
         return reportID;
     }
 
-    public String getCustomerID() {
-        return CustomerID;
+    public String getcustomerID() {
+        return customerID;
     }
 
-    public String getPatientNAME() {
-        return patientNAME;
+    public String getPatientName() {
+        return patientName;
     }
 
     public String getHeam() {

@@ -192,6 +192,7 @@
     <string name="exGlucLevel">ex   :   87.6</string>
     <string name="Glulevelunit">mg/ dL</string>
     <string name="HintCusid">ex : 0773551870</string>
+    <string name="searchpatientName">Search by patient name</string>
     <array name="reportTypes">
         <item>Sugar Report(Fasting)</item>
         <item>Full Blood count Report</item>
