@@ -69,6 +69,18 @@
             android:layout_marginTop="25dp"
             />
 
+        <TextView
+            android:id="@+id/ar_view_appoinment_vid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:layout_marginLeft="650px"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="001"
+            android:textSize="20sp"
+
+            android:layout_marginTop="25dp"
+            />
 
 
 
@@ -86,6 +98,20 @@
             android:textSize="20sp"
             android:layout_marginTop="20dp"
             />
+
+    <TextView
+        android:id="@+id/ar_view_appoinment_vname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:layout_marginLeft="650px"
+        android:layout_below="@id/ar_view_appoinment_id"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:text="001"
+        android:textSize="20sp"
+        android:layout_marginTop="25dp"
+        />
+
         <TextView
             android:id="@+id/ar_view_appoinment_drname"
             android:layout_width="match_parent"
@@ -101,6 +127,18 @@
             />
 
         <TextView
+        android:id="@+id/ar_view_appoinment_vdrname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:layout_marginLeft="650px"
+        android:layout_below="@id/ar_view_appoinment_name"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:text="001"
+        android:textSize="20sp"
+        android:layout_marginTop="25dp"
+        />
+        <TextView
             android:id="@+id/ar_view_appoinment_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,6 +150,19 @@
             android:layout_below="@id/ar_view_appoinment_drname"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_vdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:layout_marginLeft="650px"
+            android:layout_below="@id/ar_view_appoinment_drname"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="001"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
             />
 
         <TextView
@@ -129,17 +180,16 @@
             />
 
         <TextView
-            android:id="@+id/ar_view_appoinment_number"
+            android:id="@+id/ar_view_appoinment_vsession"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="20dp"
             android:textColor="@color/text"
+            android:layout_marginLeft="650px"
+            android:layout_below="@id/ar_view_appoinment_date"
             android:textColorHint="@color/colorPrimaryDark"
-            android:text="@string/app_no"
-            android:layout_below="@id/ar_view_appoinment_session"
+            android:text="001"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             />
 
         <TextView
@@ -150,11 +200,26 @@
             android:layout_marginRight="20dp"
             android:textColor="@color/text"
             android:textColorHint="@color/colorPrimaryDark"
-            android:text="@string/contact"
-            android:layout_below="@id/ar_view_appoinment_number"
+            android:text="@string/contactnum"
+            android:layout_below="@id/ar_view_appoinment_session"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             />
+
+        <TextView
+            android:id="@+id/ar_view_appoinment_vphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:layout_marginLeft="650px"
+            android:layout_below="@id/ar_view_appoinment_session"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:text="001"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            />
+
+
 
         <Button
             android:id="@+id/ar_view_appoinment_update"
