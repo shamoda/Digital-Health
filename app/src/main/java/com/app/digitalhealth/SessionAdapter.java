@@ -36,6 +36,7 @@ public class SessionAdapter extends ArrayAdapter<Sessions> {
 
         View listViewItem = inflater.inflate(R.layout.activity_sessions, null, true);
         TextView date = (TextView) listViewItem.findViewById(R.id.ak_session_list_date);
+        TextView doctorName = (TextView) listViewItem.findViewById(R.id.ak_session_list_day);
         TextView time = (TextView) listViewItem.findViewById(R.id.ak_session_list_time);
         TextView patientCount = (TextView) listViewItem.findViewById(R.id.ak_session_list_active_patients);
 
@@ -43,6 +44,7 @@ public class SessionAdapter extends ArrayAdapter<Sessions> {
         Sessions sessions = sessionsList.get(position);
 
         date.setText(sessions.getDate());
+        doctorName.setText(sessions.getName());
         time.setText(sessions.getTime());
         patientCount.setText(sessions.getNoOfPatients());
 

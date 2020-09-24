@@ -10,7 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.app.digitalhealth.model.BloodReport;
+
+
+import com.app.digitalhealth.model.SugarReport;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -231,9 +236,9 @@ public class AddBloodReport extends AppCompatActivity {
 
 
 
-            BloodReport bloodreport = new BloodReport(id,cusID,patName, heams,pcvs,rbcs, lymphos, monos,eosos,myelo,bands,blasts,platelets,comments);
-            bloodReports.child(id).setValue(bloodreport);
-            Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
+//            BloodReport bloodreport = new BloodReport(id,cusID,patName, heams,pcvs,rbcs, lymphos, monos,eosos,myelo,bands,blasts,platelets,comments);
+//            bloodReports.child(id).setValue(bloodreport);
+//            Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
 
 
 

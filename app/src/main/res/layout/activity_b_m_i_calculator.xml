@@ -5,10 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6F6FF"
     tools:context=".BMICalculatorActivity">
 
     <Toolbar
-        android:id="@+id/lAY"
+        android:id="@+id/sm_bmi_calculator_toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimary"
@@ -16,7 +17,16 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
+            <TextView
+                android:id="@+id/sm_bmi_calculator_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentStart="true"
+                />
         </RelativeLayout>
     </Toolbar>
 
@@ -29,7 +39,7 @@
         android:textColor="@android:color/black"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:layout_below="@id/lAY"
+        android:layout_below="@id/sm_bmi_calculator_toolbar"
         android:layout_marginTop="30dp"
         />
 
@@ -120,11 +130,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/sm_bmi_calculator_calculate_btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:textSize="40sp"
         android:text="26.08"
+        android:visibility="invisible"
         />
 
     <TextView
@@ -137,6 +148,7 @@
         android:textStyle="bold"
         android:textSize="17sp"
         android:text="Results suggest that you are,"
+        android:visibility="invisible"
         />
 
     <TextView
@@ -150,6 +162,7 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:text="Overweight"
+        android:visibility="invisible"
         />
 
     <TextView
@@ -163,18 +176,8 @@
         android:textSize="14sp"
         android:textColor="@android:color/black"
         android:text="@string/bmi_range"
+        android:visibility="invisible"
         />
-
-    <TextView
-        android:id="@+id/sm_bmi_calculator_close_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="170dp"
-        android:layout_marginBottom="0dp"
-        android:text="@string/close_btn"
-        android:textColor="@android:color/white"
-        android:textSize="17sp"
-        android:textStyle="bold" />
 
 
 </RelativeLayout>

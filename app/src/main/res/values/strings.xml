@@ -124,6 +124,7 @@
     <string name="patient_age">Age</string>
     <string name="age_range">ages 15-80</string>
     <string name="patient_gender">Gender </string>
+    <string name="create_session">Create Session</string>
     <!--    <string name="male">Male</string>-->
     <!--    <string name="female">Female</string>-->
     <string name="patient_weight">Weight :</string>
