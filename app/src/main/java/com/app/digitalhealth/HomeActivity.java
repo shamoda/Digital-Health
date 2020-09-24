@@ -292,8 +292,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
                         //Add intent for session list
+                        Intent intent = new Intent(HomeActivity.this, SelectSessionActivity.class);
+                        intent.putExtra("name", doctor.getName());
+                        intent.putExtra("phone", doctor.getPhone());
+                        intent.putExtra("specialization", doctor.getSpecialization());
+                        intent.putExtra("image", doctor.getImage());
+                        startActivity(intent);
                     }
                 });
             }

@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.app.digitalhealth.model.Sessions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -35,8 +34,10 @@ public class AddSessionActivity extends AppCompatActivity {
 
     TextInputLayout textInputLayout;
     AutoCompleteTextView dropDown;
+    TextInputLayout textInputLayout2;
+    AutoCompleteTextView nameDropdown;
 
-    private TextInputEditText InputName;
+    private AutoCompleteTextView InputName;
     private AutoCompleteTextView InputSpecialization;
     private TextInputEditText InputDate;
     private TextInputEditText InputPatients;
@@ -49,9 +50,10 @@ public class AddSessionActivity extends AppCompatActivity {
 
     List SessionList;
     ListView listSessions;
-     DatabaseReference DataRef;
+    DatabaseReference DataRef;
 
     private ProgressDialog loadingBar;
+
 
 
     @Override
@@ -123,6 +125,34 @@ public class AddSessionActivity extends AppCompatActivity {
                 specializationSelector
         );
         dropDown.setAdapter(adapter);
+
+
+        textInputLayout2 = findViewById(R.id.ak_add_session_doctor_name);
+        nameDropdown = findViewById(R.id.ak_add_session_doctor_name_value);
+
+        final ArrayAdapter<String> autocomplete = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item);
+
+        DatabaseReference nameRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
+        Query query1 = nameRef.orderByChild("name");
+        query1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    String dName = ds.child("name").getValue(String.class);
+
+                    autocomplete.add(dName);
+                    Toast.makeText(AddSessionActivity.this,  dName, Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        nameDropdown.setAdapter(autocomplete);
 
 
 
