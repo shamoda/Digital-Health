@@ -1,11 +1,19 @@
 package com.app.digitalhealth;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.app.digitalhealth.model.Appoinments;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +38,10 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
         applist = findViewById(R.id.ar_appoinment_history_list);
         listAppoinment = new ArrayList<>();
 
+
+
+
+
     }
 
     @Override
@@ -53,6 +65,9 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
 
                 AppoinmentAdapter adapter = new AppoinmentAdapter(AppoinmentHistoryActivity.this,listAppoinment);
                 applist.setAdapter(adapter);
+
+
+
             }
 
             @Override
@@ -60,6 +75,44 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
 
             }
         });
+
+
+        applist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                final Appoinments appoinments = listAppoinment.get(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(AppoinmentHistoryActivity.this);
+                builder.setTitle("Delete Appointment");
+                builder.setMessage("Are you sure that you want to delete this appointment?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        deleteApp(appoinments.getId());
+                    }
+                });
+
+                builder.setNeutralButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.show();
+
+            }
+        });
+    }
+
+    private void deleteApp(String id) {
+
+        rootRef.child(id).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(AppoinmentHistoryActivity.this, "Deleted successfully.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 

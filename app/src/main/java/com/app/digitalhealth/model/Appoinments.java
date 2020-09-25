@@ -11,11 +11,12 @@ public class Appoinments {
     private String session;
     private String doctor;
     private String Date;
+    private String userId;
 
     public Appoinments() {
     }
 
-    public Appoinments(String name, String email, String phone, String note, String id, String gender, String session, String doctor, String date) {
+    public Appoinments(String name, String email, String phone, String note, String id, String gender, String session, String doctor, String date, String userId) {
         Name = name;
         Email = email;
         Phone = phone;
@@ -25,6 +26,7 @@ public class Appoinments {
         this.session = session;
         this.doctor = doctor;
         Date = date;
+        this.userId = userId;
     }
 
     public String getName() {
@@ -61,5 +63,9 @@ public class Appoinments {
 
     public String getDate() {
         return Date;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 }

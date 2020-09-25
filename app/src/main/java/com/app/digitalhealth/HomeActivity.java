@@ -294,6 +294,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     public void onClick(View view) {
                         Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
                         //Add intent for session list
+                        startActivity(new Intent(HomeActivity.this, AddAppoinmentActivity.class));
                     }
                 });
             }
