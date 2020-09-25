@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.app.digitalhealth.prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.radiobutton.MaterialRadioButton;
@@ -149,6 +150,7 @@ public class AddAppoinmentActivity extends AppCompatActivity {
 
         if(updateId == null){
             HashMap<String, Object> map = new HashMap<>();
+            map.put("userId", Prevalent.currentUser.getPhone());
             map.put("id", appId);
             map.put("Name",name);
             map.put("Gender", gender);

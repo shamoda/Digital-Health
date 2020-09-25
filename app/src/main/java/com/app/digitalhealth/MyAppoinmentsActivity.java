@@ -5,43 +5,40 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.app.digitalhealth.Inflators.AppoinmentAdapter;
 import com.app.digitalhealth.model.Appoinments;
+import com.app.digitalhealth.prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppoinmentHistoryActivity extends AppCompatActivity {
+public class MyAppoinmentsActivity extends AppCompatActivity {
 
     ListView applist;
     DatabaseReference rootRef;
     List<Appoinments> listAppoinment;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appoinment_history);
+        setContentView(R.layout.activity_my_appoinments);
 
-        applist = findViewById(R.id.ar_appoinment_history_list);
+        applist = findViewById(R.id.ar_my_appoinments_list);
         listAppoinment = new ArrayList<>();
-
-
-
-
 
     }
 
@@ -54,7 +51,8 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
 
     private void loadData() {
         rootRef= FirebaseDatabase.getInstance().getReference("Appoinments");
-        rootRef.addValueEventListener(new ValueEventListener() {
+        Query query = rootRef.orderByChild("userId").equalTo(Prevalent.currentUser.getPhone());
+        query.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -64,7 +62,7 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
                     listAppoinment.add(appoinments);
                 }
 
-                AppoinmentAdapter adapter = new AppoinmentAdapter(AppoinmentHistoryActivity.this,listAppoinment);
+                AppoinmentAdapter adapter = new AppoinmentAdapter(MyAppoinmentsActivity.this,listAppoinment);
                 applist.setAdapter(adapter);
 
 
@@ -83,7 +81,7 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 final Appoinments appoinments = listAppoinment.get(i);
-                AlertDialog.Builder builder = new AlertDialog.Builder(AppoinmentHistoryActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MyAppoinmentsActivity.this);
                 builder.setTitle("Delete Appointment");
                 builder.setMessage("Are you sure that you want to delete this appointment?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -93,10 +91,12 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
                     }
                 });
 
-                builder.setNeutralButton("No", new DialogInterface.OnClickListener() {
+                builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
+                        Intent intent = new Intent(MyAppoinmentsActivity.this, AddAppoinmentActivity.class);
+                        intent .putExtra("appId", appoinments.getId());
+                        startActivity(intent);
                     }
                 });
                 builder.show();
@@ -110,13 +110,10 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
         rootRef.child(id).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(AppoinmentHistoryActivity.this, "Deleted successfully.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyAppoinmentsActivity.this, "Deleted successfully.", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-
 }
-
-

@@ -66,7 +66,7 @@
             android:id="@+id/ak_calorie_calculator_age_value"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -112,14 +112,14 @@
 
 
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/option1"
+            android:id="@+id/ak_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="@string/male" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/option2"
+            android:id="@+id/ak_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/female"
@@ -209,13 +209,12 @@
             android:id="@+id/ak_calorie_calculator_activity_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"
             android:focusableInTouchMode="true"
             android:focusable="false"
             android:cursorVisible="false"
-            />
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

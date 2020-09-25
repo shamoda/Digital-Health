@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="20dp"
-    android:layout_centerHorizontal="true"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="30dp">
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp">
 
 
     <RelativeLayout
@@ -91,6 +91,7 @@
             android:layout_below="@+id/ak_session_list_day"
             android:layout_marginStart="33dp"
             android:layout_marginLeft="35dp"
+            android:layout_marginTop="3dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@+id/ak_session_list_active_patients_title"
             android:text="25"
@@ -100,6 +101,5 @@
     </RelativeLayout>
 
 
-</androidx.cardview.widget.CardView>
-
+    </androidx.cardview.widget.CardView>
 

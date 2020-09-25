@@ -15,12 +15,11 @@ public class Report {
         this.patientName = patientName;
     }
 
-
     public String getReportID() {
         return reportID;
     }
 
-    public String getcustomerID() {
+    public String getCustomerID() {
         return customerID;
     }
 

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AppoinmentHistoryActivity">
+    tools:context=".MyAppoinmentsActivity">
 
     <TextView
-        android:id="@+id/ar_appoinment_history_title"
+        android:id="@+id/ar_my_appoinments_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Appoinments"
@@ -20,22 +20,22 @@
         />
 
 
-<!--    <androidx.appcompat.widget.SearchView-->
-<!--        android:id="@+id/ar_appoinment_history_search"-->
-<!--        android:layout_width="320sp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/input_design"-->
-<!--        android:layout_marginLeft="15dp"-->
-<!--        android:layout_below="@id/ar_appoinment_history_delete"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        />-->
+    <!--    <androidx.appcompat.widget.SearchView-->
+    <!--        android:id="@+id/ar_appoinment_history_search"-->
+    <!--        android:layout_width="320sp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/input_design"-->
+    <!--        android:layout_marginLeft="15dp"-->
+    <!--        android:layout_below="@id/ar_appoinment_history_delete"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        />-->
 
 
     <ListView
-        android:id="@+id/ar_appoinment_history_list"
+        android:id="@+id/ar_my_appoinments_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/ar_appoinment_history_title"
+        android:layout_below="@+id/ar_my_appoinments_title"
         android:layout_marginTop="10dp"
         />
 
