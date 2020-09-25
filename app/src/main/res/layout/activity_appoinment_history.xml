@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppoinmentHistoryActivity">
+
+
+    <Toolbar
+        android:id="@+id/ak_session_list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ar_appoinment_history_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Appointments"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                />
+
+
+            <TextView
+                android:id="@+id/ak_session_list_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingRight="20dp"
+                android:text="@string/close_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                />
+        </RelativeLayout>
+    </Toolbar>
+
+
+    <SearchView
+        android:id="@+id/ar_searchReport"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:autofillHints="@string/SS_cal"
+        android:background="@drawable/searchborder"
+        android:layout_centerHorizontal="true"
+        android:elevation="20dp"
+        android:queryHint="@string/searchpatientName" />
+
+
+    <ListView
+        android:id="@+id/ar_appoinment_history_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@+id/ar_searchReport"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>

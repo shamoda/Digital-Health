@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.app.digitalhealth.Inflators.AppoinmentAdapter;
 import com.app.digitalhealth.model.Appoinments;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
