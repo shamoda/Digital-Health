@@ -38,7 +38,8 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
         updateBtn =(Button) findViewById(R.id.ar_view_appoinment_update);
         myAppoinmentsBtn = (Button) findViewById(R.id.ar_view_appoinment_data);
 
-        appId = getIntent().getStringExtra("appId");
+        Intent intent = getIntent();
+        appId = intent.getStringExtra("appId");
 
         getData(id, name, doctor, session, date, phone);
 
@@ -61,10 +62,8 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
 
     }
 
-
-
     private void getData(final TextView id, final TextView name, final TextView doctor, final TextView session, final TextView date, final TextView phone) {
-        rootRef.child(appId).addListenerForSingleValueEvent(new ValueEventListener() {
+        rootRef.child(appId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 id.setText(dataSnapshot.child("id").getValue().toString());
@@ -73,6 +72,8 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
                 session.setText(dataSnapshot.child("session").getValue().toString());
                 date.setText(dataSnapshot.child("Date").getValue().toString());
                 phone.setText(dataSnapshot.child("Phone").getValue().toString());
+
+                Toast.makeText(ViewAppoinmentActivity.this, dataSnapshot.child("Name").getValue().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -80,5 +81,8 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
 
             }
         });
+
     }
+
+
 }
