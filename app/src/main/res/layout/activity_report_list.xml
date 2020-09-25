@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReportList"
+    tools:context=".ReportSearch"
     android:orientation="vertical"
     >
 
@@ -82,17 +82,15 @@
 
         <SearchView
             android:id="@+id/searchReport"
-            android:layout_width="271dp"
-
-            android:layout_height="34dp"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-
-
-            android:background="@drawable/input_design"
+            android:autofillHints="@string/SS_cal"
+            android:background="@drawable/searchborder"
             android:elevation="20dp"
-            android:queryHint="Search" />
+            android:queryHint="@string/searchpatientName" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ReposType"
@@ -114,8 +112,9 @@
                 android:id="@+id/drops_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
+                android:focusableInTouchMode="true"
+                android:focusable="false"
+                android:cursorVisible="false"
                 />
 
 
@@ -124,23 +123,11 @@
     </LinearLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
-
-        <ListView
-            android:id="@+id/UsersSugar_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="40dp"
-            android:background="#FFFFFF" />
-
-
-
-
-
-    </RelativeLayout>
+    <ListView
+        android:id="@+id/listUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
-
-

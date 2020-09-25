@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import android.widget.TextView;
 
-public class ShowSugarReport_Activity extends AppCompatActivity {
+public class showsugarReportactivity extends AppCompatActivity {
 
 
     TextView CustomerID;
@@ -24,7 +24,7 @@ public class ShowSugarReport_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_sugar_report_);
+        setContentView(R.layout.activity_showsugar_reportactivity);
 
         sugarReports = FirebaseDatabase.getInstance().getReference("sugarReports");
 
@@ -33,9 +33,9 @@ public class ShowSugarReport_Activity extends AppCompatActivity {
         glucoseLevelinput = (TextView) findViewById(R.id.glucoseLevelss);
 
         Intent intent = getIntent();
-        final String ReportIDs = intent.getStringExtra(ReportList.Report_IDS);
-        final String cusID = intent.getStringExtra(ReportList.CUS_IDS);
-        String patName= intent.getStringExtra(ReportList.patientNameS);
+        final String ReportIDs = intent.getStringExtra(ReportList.Report_ID);
+        final String cusID = intent.getStringExtra(ReportList.CUS_ID);
+        String patName= intent.getStringExtra(ReportList.patientName);
         String Clicked = intent.getStringExtra("clicked");
 
         if(ReportIDs != null){
@@ -65,7 +65,5 @@ public class ShowSugarReport_Activity extends AppCompatActivity {
         });
     }
 }
-
-
 
 

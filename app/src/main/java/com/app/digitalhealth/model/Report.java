@@ -19,7 +19,7 @@ public class Report {
         return reportID;
     }
 
-    public String getCustomerID() {
+    public String getcustomerID() {
         return customerID;
     }
 
