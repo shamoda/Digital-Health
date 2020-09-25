@@ -91,7 +91,6 @@
             android:layout_below="@+id/ak_session_list_day"
             android:layout_marginStart="33dp"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="3dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@+id/ak_session_list_active_patients_title"
             android:text="25"

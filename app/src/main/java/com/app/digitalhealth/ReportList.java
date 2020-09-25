@@ -126,7 +126,7 @@ public class ReportList extends AppCompatActivity {
 
                     Report Report = sugarSnapshot.getValue(Report.class);
 
-                    if (Report.getcustomerID().equals(CurrentUser)) {
+                    if (Report.getCustomerID().equals(CurrentUser)) {
                         sugarLists.add(Report);
                     }
 
@@ -154,7 +154,7 @@ public class ReportList extends AppCompatActivity {
                     Report sugarReport = sugarLists.get(i);
                     Intent intent = new Intent(getApplicationContext(), ShowSugarReport_Activity.class);
                     intent.putExtra(Report_IDS, sugarReport.getReportID());
-                    intent.putExtra(CUS_IDS, sugarReport.getcustomerID());
+                    intent.putExtra(CUS_IDS, sugarReport.getCustomerID());
                     intent.putExtra(patientNameS, sugarReport.getPatientName());
 //                   intent.putExtra(glucoseLevel, sugarReport.getGlucoseLevel());
                     intent.putExtra("clicked", "clicked");

@@ -245,6 +245,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
         android:textStyle="bold"
+        android:visibility="invisible"
         android:textSize="17sp"
         android:text="The result show how many calories to consume each day to maintain the current weight."
         />
@@ -256,6 +257,7 @@
         android:layout_below="@id/ak_calorie_calculator_suggest_msg"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:visibility="invisible"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:textSize="30sp"
