@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.app.digitalhealth.Inflators.AppoinmentAdapter;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -29,6 +31,8 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
     ListView applist;
     DatabaseReference rootRef;
     List<Appoinments> listAppoinment;
+    SearchView search;
+    Query query;
 
 
     @Override
@@ -36,13 +40,42 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appoinment_history);
 
+        rootRef= FirebaseDatabase.getInstance().getReference("Appoinments");
+        query = rootRef;
+
         applist = findViewById(R.id.ar_appoinment_history_list);
         listAppoinment = new ArrayList<>();
 
+        search = findViewById(R.id.ar_appoinment_history_search);
+
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                searchApp(s);
+                return false;
+            }
+        });
 
 
 
 
+
+    }
+
+    private void searchApp(String s) {
+        if(s == null){
+            query = rootRef;
+        }
+        else if (s != null){
+            query = rootRef.orderByChild("id").startAt(s).endAt(s + "\uf8ff");
+        }
+
+        loadData();
     }
 
     @Override
@@ -53,8 +86,7 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-        rootRef= FirebaseDatabase.getInstance().getReference("Appoinments");
-        rootRef.addValueEventListener(new ValueEventListener() {
+        query.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
