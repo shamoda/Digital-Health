@@ -10,7 +10,7 @@
         android:id="@+id/ar_appoinment_history_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Appoinments"
+        android:text=" Appointments List"
         android:textSize="18sp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"

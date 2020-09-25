@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.digitalhealth.prevalent.Prevalent;
@@ -35,6 +36,7 @@ public class AddAppoinmentActivity extends AppCompatActivity {
     String updateId;
     private MaterialRadioButton male, female;
     private String gender;
+    private TextView closeBtn;
 
     private DatabaseReference rootRef;
 
@@ -72,6 +74,24 @@ public class AddAppoinmentActivity extends AppCompatActivity {
         add = findViewById(R.id.ar_add_appoinment_btn);
         male = findViewById(R.id.ar_male);
         female = findViewById(R.id.ar_female);
+        closeBtn= findViewById(R.id.ar_add_appoinment_close_btn);
+
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (updateId != null){
+                    startActivity(new Intent(AddAppoinmentActivity.this, MyAppoinmentsActivity.class));
+                    finish();
+                }
+                else if (updateId == null){
+                    startActivity(new Intent(AddAppoinmentActivity.this, SelectSessionActivity.class));
+                    finish();
+                }
+            }
+        });
+
 
         updateId = getIntent().getStringExtra("appId");
 
@@ -187,7 +207,7 @@ public class AddAppoinmentActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(AddAppoinmentActivity.this, "successfully Updated", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(AddAppoinmentActivity.this, AppoinmentHistoryActivity.class);
+                        Intent intent = new Intent(AddAppoinmentActivity.this, MyAppoinmentsActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK );
                         startActivity(intent);
                         finish();

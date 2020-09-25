@@ -82,21 +82,22 @@ public class MyAppoinmentsActivity extends AppCompatActivity {
 
                 final Appoinments appoinments = listAppoinment.get(i);
                 AlertDialog.Builder builder = new AlertDialog.Builder(MyAppoinmentsActivity.this);
-                builder.setTitle("Delete Appointment");
-                builder.setMessage("Are you sure that you want to delete this appointment?");
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        deleteApp(appoinments.getId());
-                    }
-                });
-
-                builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
+                builder.setTitle("Update Appointment");
+                builder.setMessage("Are you sure that you want to update this appointment?");
+                builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(MyAppoinmentsActivity.this, AddAppoinmentActivity.class);
                         intent .putExtra("appId", appoinments.getId());
                         startActivity(intent);
+
+                    }
+                });
+
+                builder.setNeutralButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
                     }
                 });
                 builder.show();
