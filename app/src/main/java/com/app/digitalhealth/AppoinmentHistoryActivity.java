@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.app.digitalhealth.Inflators.AppoinmentAdapter;
 import com.app.digitalhealth.model.Appoinments;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

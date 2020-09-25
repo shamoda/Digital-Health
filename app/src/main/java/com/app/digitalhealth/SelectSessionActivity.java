@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.app.digitalhealth.model.Sessions;
@@ -14,12 +15,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SelectSessionActivity extends AppCompatActivity {
 
     String dName;
     String dSpecialization;
     String dPhone;
     String dImage;
+    ListView sessionList;
+    List<Sessions> arrayList;
 
 
     @Override
@@ -33,17 +39,24 @@ public class SelectSessionActivity extends AppCompatActivity {
         dPhone = intent.getStringExtra("phone");
         dImage = intent.getStringExtra("image");
 
+        sessionList = findViewById(R.id.SearchSessionList);
+        arrayList = new ArrayList<>();
+
         DatabaseReference sessionRef = FirebaseDatabase.getInstance().getReference().child("Sessions");
         Query query = sessionRef.orderByChild("name").equalTo(dName);
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    arrayList.clear();
+                    for (DataSnapshot ds : dataSnapshot.getChildren()){
                     Sessions sessions = ds.getValue(Sessions.class);
+                    arrayList.add(sessions);
                     //getting all the sessions with regards to a specific doctor
                     Toast.makeText(SelectSessionActivity.this, sessions.getDate(), Toast.LENGTH_SHORT).show();
                 }
+                SessionAdapter sessionAdapter = new SessionAdapter(SelectSessionActivity.this,arrayList);
+                sessionList.setAdapter(sessionAdapter);
             }
 
             @Override

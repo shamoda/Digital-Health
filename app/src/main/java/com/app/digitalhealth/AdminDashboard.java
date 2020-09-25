@@ -27,7 +27,6 @@ public class AdminDashboard extends AppCompatActivity {
     private TextView doctorsCount;
     private TextView customerCount;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +36,9 @@ public class AdminDashboard extends AppCompatActivity {
         manageReports = findViewById(R.id.btnmanageReports);
         manageCustomers = findViewById(R.id.admin_dashboard_manage_customers);
         manageSessions = findViewById(R.id.btn_manage_sessions);
+        logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
+        doctorsCount = findViewById(R.id.admin_dashboard_doctor_count);
+        customerCount = findViewById(R.id.admin_dashboard_customer_count);
 
         manageAppoinments = findViewById(R.id.btn_manage_appoinments);
 
@@ -131,6 +133,8 @@ public class AdminDashboard extends AppCompatActivity {
         });
 
     }
+
+
 
 
 }
