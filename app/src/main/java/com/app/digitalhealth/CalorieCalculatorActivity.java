@@ -27,7 +27,6 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
     private MaterialRadioButton male,female;
     private TextInputEditText height;
     private TextInputEditText weight;
-    //private AutoCompleteTextView activity;
 
     private TextView status;
     private TextView msg;

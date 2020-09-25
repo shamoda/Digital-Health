@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.app.digitalhealth.Inflators.SearchAdapter;
 import com.app.digitalhealth.model.Sessions;
 import com.app.digitalhealth.model.SugarReport;
 import com.google.firebase.database.DataSnapshot;
@@ -21,13 +23,16 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SessionList extends AppCompatActivity {
+public class SessionList extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private Button createSessionBtn;
     DatabaseReference DataRef;
-    List SessionList;
-    ListView listSessions;
+    SearchView searchView;
+//    List SessionList;
+    ListView listSessions;;
 
+
+    public static ArrayList<Sessions> SessionList = new ArrayList<Sessions>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,8 @@ public class SessionList extends AppCompatActivity {
         listSessions = (ListView) findViewById(R.id.sessionList);
         SessionList = new ArrayList<>();
         createSessionBtn = (Button) findViewById(R.id.ak_session_list_btn);
+        searchView = (SearchView) findViewById(R.id.searchDoctorName);
+        searchView.setOnQueryTextListener(this);
 
         createSessionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +79,7 @@ public class SessionList extends AppCompatActivity {
 
                 }
 
-                SessionAdapter adapter = new SessionAdapter(SessionList.this, SessionList);
+                SearchAdapter adapter = new SearchAdapter(SessionList.this, SessionList);
                 listSessions.setAdapter(adapter);
             }
 
@@ -104,6 +111,24 @@ public class SessionList extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        SearchAdapter searchAdapter = new SearchAdapter(SessionList.this,SessionList);
+        listSessions.setAdapter(searchAdapter);
+        String text = s;
+        searchAdapter.filter(text);
+
+        if(s.isEmpty()){
+
+            loadData();
+        }
+        return  false;
+    }
 }
 
 

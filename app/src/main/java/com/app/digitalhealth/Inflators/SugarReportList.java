@@ -69,7 +69,7 @@ public class SugarReportList extends BaseAdapter {
 
         Report report = List.get(position);
 
-        CusID.setText(report.getCustomerID());
+        CusID.setText(report.getcustomerID());
         patientName.setText(report.getPatientName());
         ReportID.setText(report.getReportID());
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,19 +15,26 @@ import androidx.annotation.Nullable;
 import com.app.digitalhealth.model.Sessions;
 import com.app.digitalhealth.model.SugarReport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SessionAdapter extends ArrayAdapter<Sessions> {
 
     private Activity context;
     private List<Sessions> sessionsList;
+    private ArrayList<Sessions> arrayList;
+    LayoutInflater layoutInflater;
 
 
     public SessionAdapter(Activity context, List<Sessions> sessionsList) {
         super(context, R.layout.activity_sessions, sessionsList);
         this.context = context;
         this.sessionsList = sessionsList;
+
+
     }
+
+
 
     @NonNull
     @Override
@@ -52,5 +60,8 @@ public class SessionAdapter extends ArrayAdapter<Sessions> {
 
 
     }
+
+
+
 
 }
