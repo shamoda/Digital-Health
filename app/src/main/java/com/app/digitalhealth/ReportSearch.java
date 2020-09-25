@@ -187,7 +187,7 @@ public class ReportSearch extends AppCompatActivity implements SearchView.OnQuer
                     Report sugarReport = sugarList.get(i);
                     Intent intent = new Intent(getApplicationContext(), SugarReportActivity.class);
                     intent.putExtra(Report_ID, sugarReport.getReportID());
-                    intent.putExtra(CUS_ID, sugarReport.getcustomerID());
+                    intent.putExtra(CUS_ID, sugarReport.getCustomerID());
                     intent.putExtra(patientName, sugarReport.getPatientName());
 //                   intent.putExtra(glucoseLevel, sugarReport.getGlucoseLevel());
                     intent.putExtra("clicked", "clicked");
@@ -205,7 +205,7 @@ public class ReportSearch extends AppCompatActivity implements SearchView.OnQuer
                     Report sugarReport = sugarList.get(i);
                     Intent intent = new Intent(getApplicationContext(), AddBloodReport.class);
                     intent.putExtra(Report_ID, sugarReport.getReportID());
-                    intent.putExtra(CUS_ID, sugarReport.getcustomerID());
+                    intent.putExtra(CUS_ID, sugarReport.getCustomerID());
                     intent.putExtra(patientName, sugarReport.getPatientName());
 
                     intent.putExtra("clicked", "clicked");

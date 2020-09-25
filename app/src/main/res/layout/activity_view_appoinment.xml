@@ -252,7 +252,7 @@
             android:textAllCaps="false"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:text="Appointment Details"
+            android:text="My Appoinments"
             android:textColor="@android:color/white"
             android:layout_below="@id/ar_view_appoinment_update"
             android:layout_marginBottom="10dp"

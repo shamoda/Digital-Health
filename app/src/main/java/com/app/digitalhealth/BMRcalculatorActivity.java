@@ -2,6 +2,7 @@ package com.app.digitalhealth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,7 +19,7 @@ public class BMRcalculatorActivity extends AppCompatActivity {
     private Button calcbtn;
     private MaterialRadioButton male, female;
     private String gender;
-    private TextView result;
+    private TextView result, closeBtn, clearBtn;
 
 
     @Override
@@ -32,7 +33,10 @@ public class BMRcalculatorActivity extends AppCompatActivity {
         male = findViewById(R.id.ar_bmr_male);
         female = findViewById(R.id.ar_bmr_female);
         calcbtn = findViewById(R.id.ar_bmr_calculate);
+        closeBtn = findViewById(R.id.ar_bmr_calculator_close_btn);
         result = findViewById(R.id.ar_bmr_tresults);
+        clearBtn = findViewById(R.id.ar_bmr_clear);
+
         calcbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,7 +44,32 @@ public class BMRcalculatorActivity extends AppCompatActivity {
             }
         });
 
+        clearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               age.setText("");
+               weight.setText("");
+               height.setText("");
+               result.setText("");
 
+               if(male.isChecked()){
+                   male.setChecked(false);
+               }
+
+               else if(female.isChecked()){
+                   female.setChecked(false);
+               }
+
+            }
+        });
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BMRcalculatorActivity.this,QuickHealthCheckupsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void calculateBMR() {
