@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ViewAppoinmentActivity extends AppCompatActivity {
 
     private TextView id, name, doctor, session, date, phone;
-    private Button updateBtn;
+    private Button updateBtn,myAppoinmentsBtn;
     private DatabaseReference rootRef;
     String appId;
 
@@ -36,6 +36,7 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
         session = (TextView) findViewById(R.id.ar_view_appoinment_vsession);
         phone = (TextView) findViewById(R.id.ar_view_appoinment_vphone);
         updateBtn =(Button) findViewById(R.id.ar_view_appoinment_update);
+        myAppoinmentsBtn = (Button) findViewById(R.id.ar_view_appoinment_data);
 
         appId = getIntent().getStringExtra("appId");
 
@@ -50,7 +51,17 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
             }
         });
 
+        myAppoinmentsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewAppoinmentActivity.this, MyAppoinmentsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
     private void getData(final TextView id, final TextView name, final TextView doctor, final TextView session, final TextView date, final TextView phone) {
         rootRef.child(appId).addListenerForSingleValueEvent(new ValueEventListener() {
