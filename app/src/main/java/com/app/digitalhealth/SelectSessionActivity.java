@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,7 +41,7 @@ public class SelectSessionActivity extends AppCompatActivity {
         dPhone = intent.getStringExtra("phone");
         dImage = intent.getStringExtra("image");
 
-        sessionList = findViewById(R.id.SearchSessionList);
+        sessionList = findViewById(R.id.ak_search_session_list);
         arrayList = new ArrayList<>();
 
         DatabaseReference sessionRef = FirebaseDatabase.getInstance().getReference().child("Sessions");
@@ -62,6 +64,25 @@ public class SelectSessionActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        sessionList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Sessions sessions = (Sessions) arrayList.get(i);
+
+                Toast.makeText(SelectSessionActivity.this, sessions.getSession_Id(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(SelectSessionActivity.this, AddAppoinmentActivity.class);
+                intent.putExtra("id", sessions.getSession_Id());
+                intent.putExtra("name", sessions.getName());
+                intent.putExtra("specialization", sessions.getSpecialization());
+                intent.putExtra("date",sessions.getDate());
+                intent.putExtra("time",sessions.getTime());
+                intent.putExtra("noOfPatients",sessions.getNoOfPatients());
+                intent.putExtra("check", "check");
+                startActivity(intent);
             }
         });
 

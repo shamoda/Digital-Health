@@ -35,8 +35,9 @@ public class AddAppoinmentActivity extends AppCompatActivity {
     String appId;
     String updateId;
     private MaterialRadioButton male, female;
-    private String gender;
+    private String gender, txtNote = "nothing";
     private TextView closeBtn;
+    String dName, dDate, dSessionId;
 
     private DatabaseReference rootRef;
 
@@ -48,6 +49,11 @@ public class AddAppoinmentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_appoinment);
 
         rootRef = FirebaseDatabase.getInstance().getReference();
+
+        Intent intent = getIntent();
+        dName = intent.getStringExtra("name");
+        dDate = intent.getStringExtra("date");
+        dSessionId = intent.getStringExtra("id");
 
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Appoinments");
@@ -145,7 +151,7 @@ public class AddAppoinmentActivity extends AppCompatActivity {
         String txtName = name.getText().toString();
         String txtEmail = email.getText().toString();
         String txtPhone = phone.getText().toString();
-        String txtNote = note.getText().toString();
+        txtNote = note.getText().toString();
 
         if(TextUtils.isEmpty(txtName)){
             Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
@@ -177,15 +183,15 @@ public class AddAppoinmentActivity extends AppCompatActivity {
             map.put("Email",email);
             map.put("Phone",phone);
             map.put("Note",note);
-            map.put("session", "sessionId");
-            map.put("doctor", "doctor name");
-            map.put("Date", "date");
+            map.put("session", dSessionId);
+            map.put("doctor", dName);
+            map.put("Date", dDate);
 
             rootRef.child("Appoinments").child(String.valueOf(appId)).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(AddAppoinmentActivity.this, "successfully added", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(AddAppoinmentActivity.this, "successfully added", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(AddAppoinmentActivity.this, ViewAppoinmentActivity.class);
                         intent.putExtra("appId", String.valueOf(appId));
