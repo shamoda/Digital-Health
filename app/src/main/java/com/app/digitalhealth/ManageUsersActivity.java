@@ -14,10 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.digitalhealth.model.Doctor;
 import com.app.digitalhealth.model.Users;
+import com.app.digitalhealth.viewholder.DoctorDetailsViewHolder;
 import com.app.digitalhealth.viewholder.UserDetailsViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -25,6 +28,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -33,6 +37,7 @@ public class ManageUsersActivity extends AppCompatActivity {
 
     private TextView closeBtn;
     private Button addNewCustomer;
+    private SearchView searchUser;
 
     private DatabaseReference userRef;
     private RecyclerView recyclerView;
@@ -45,6 +50,7 @@ public class ManageUsersActivity extends AppCompatActivity {
 
         closeBtn = findViewById(R.id.sm_manage_users_close_btn);
         addNewCustomer = findViewById(R.id.sm_manage_users_add_new_patient_btn);
+        searchUser = findViewById(R.id.sm_manage_users_search_view);
 
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -52,6 +58,21 @@ public class ManageUsersActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+
+        searchUser.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                searchText(s);
+                return false;
+            }
+        });
+
 
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +93,45 @@ public class ManageUsersActivity extends AppCompatActivity {
 
     }
 
+    private void searchText(String s) {
+        FirebaseRecyclerOptions<Users> options;
+
+        if (s == null){
+            options = new FirebaseRecyclerOptions.Builder<Users>().setQuery(userRef, Users.class).build();
+        }
+        else {
+            Query firebaseSearchQuery = userRef.orderByChild("name").startAt(s).endAt(s + "\uf8ff");
+            options = new FirebaseRecyclerOptions.Builder<Users>().setQuery(firebaseSearchQuery, Users.class).setLifecycleOwner(this).build();
+        }
+
+
+        FirebaseRecyclerAdapter<Users, UserDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Users, UserDetailsViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull UserDetailsViewHolder userDetailsViewHolder, int i, @NonNull final Users users) {
+                userDetailsViewHolder.name.setText(users.getName());
+                userDetailsViewHolder.phone.setText(users.getPhone());
+                Picasso.get().load(users.getProfileImage()).placeholder(R.drawable.ic_user).into(userDetailsViewHolder.image);
+
+                userDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showAlertDialog(users.getPhone(), users.getName(), users.getProfileImage());
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public UserDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.patient_details_row, parent, false);
+                UserDetailsViewHolder holder = new UserDetailsViewHolder(view);
+                return holder;
+            }
+        };
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -83,7 +143,7 @@ public class ManageUsersActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull UserDetailsViewHolder userDetailsViewHolder, int i, @NonNull final Users users) {
                 userDetailsViewHolder.name.setText(users.getName());
                 userDetailsViewHolder.phone.setText(users.getPhone());
-                Picasso.get().load(users.getProfileImage()).into(userDetailsViewHolder.image);
+                Picasso.get().load(users.getProfileImage()).placeholder(R.drawable.ic_user).into(userDetailsViewHolder.image);
 
                 userDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

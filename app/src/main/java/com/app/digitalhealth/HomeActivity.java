@@ -292,9 +292,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
                         //Add intent for session list
-                        startActivity(new Intent(HomeActivity.this, AddAppoinmentActivity.class));
+                        Intent intent = new Intent(HomeActivity.this, SelectSessionActivity.class);
+                        intent.putExtra("name", doctor.getName());
+                        intent.putExtra("phone", doctor.getPhone());
+                        intent.putExtra("specialization", doctor.getSpecialization());
+                        intent.putExtra("image", doctor.getImage());
+                        startActivity(intent);
                     }
                 });
             }
@@ -361,10 +365,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else  if(id == R.id.sm_nav_my_appointments){
-            startActivity(new Intent(HomeActivity.this, MyAppoinmentsActivity.class));
+
         }
         else if(id == R.id.sm_nav_my_reports){
             startActivity(new Intent(HomeActivity.this, ReportList.class));
+        }
+        else if(id == R.id.sm_nav_quick_health_checkups){
+            startActivity(new Intent(HomeActivity.this, QuickHealthCheckupsActivity.class));
         }
         else if (id == R.id.sm_nav_settings){
             startActivity(new Intent(HomeActivity.this, UpdateUserAccountActivity.class));
