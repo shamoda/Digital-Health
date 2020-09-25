@@ -8,13 +8,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SessionList"></activity>
-        <activity android:name=".SugarReportActivity"></activity>
+
+        <activity android:name=".ShowSugarReport_Activity"></activity>
+
+        <activity android:name=".SelectSessionActivity"></activity>
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SessionList" />
+        <activity android:name=".SugarReportActivity" />
         <activity android:name=".QuickHealthCheckupsActivity" />
         <activity
             android:name=".HomeActivity"
@@ -36,22 +48,16 @@
         <activity android:name=".AdminDashboard" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserRegistrationActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".BMRcalculatorActivity" />
         <activity android:name=".AddAppoinmentActivity" />
         <activity android:name=".UpdateUserAccountActivity" />
         <activity android:name=".CalorieCalculatorActivity" />
         <activity android:name=".UpdateSessionActivity" />
         <activity android:name=".AddSessionActivity" />
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
+<!--        <activity-->
+<!--            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"-->
+<!--            android:theme="@style/Base.Theme.AppCompat" />-->
 
         <meta-data
             android:name="preloaded_fonts"

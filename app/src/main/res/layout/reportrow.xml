@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="40dp"
-    android:orientation="horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#FFFFFF"
+    android:backgroundTint="#D1D0D0"
+    android:orientation="horizontal"
+    android:scrollbarTrackHorizontal="@drawable/appoinment">
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="319dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        app:cardBackgroundColor="#00D4CD"
+        android:layout_marginBottom="2dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
 
-
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp">
+        app:cardCornerRadius="5dp"
+        app:cardElevation="50dp">
 
         <RelativeLayout
             android:id="@+id/addReport"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="5dp">
+            android:layout_height="match_parent"
+
+            android:layout_margin="5dp"
+            android:background="#CAF5FF">
 
             <TextView
                 android:id="@+id/CusID"
@@ -35,10 +40,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="81dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="0dp"
                 android:text="0773551879"
                 android:textColor="@color/design_default_color_on_secondary"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/patientName"
@@ -51,6 +57,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="39dp"
                 android:text="Patient Name :"
+                android:textColor="@color/design_default_color_on_secondary"
                 android:textSize="12sp" />
 
             <TextView
@@ -64,7 +71,9 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginBottom="38dp"
                 android:text="Senath Sadeesha Weerasinghe"
-                android:textSize="12sp" />
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/IssuedDate"
@@ -73,11 +82,13 @@
                 android:layout_below="@+id/CusID"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="163dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="49dp"
+                android:layout_marginBottom="3dp"
                 android:text="12 May 2020"
-                android:textSize="12sp" />
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/issuedDate"
@@ -86,23 +97,26 @@
                 android:layout_below="@+id/CusID"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="250dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="14dp"
+                android:layout_marginStart="131dp"
+                android:layout_marginTop="49dp"
+                android:layout_marginBottom="5dp"
                 android:text="6.30 PM"
-                android:textSize="12sp" />
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/ReportIDtext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="141dp"
+                android:layout_height="27dp"
                 android:layout_alignStart="@+id/patientName"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="163dp"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="78dp"
+                android:layout_marginStart="234dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="60dp"
                 android:text="Report ID :"
+                android:textColor="@color/design_default_color_on_secondary"
                 android:textSize="12sp" />
 
             <TextView
@@ -112,11 +126,13 @@
                 android:layout_alignStart="@+id/patientName"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="225dp"
-                android:layout_marginEnd="13dp"
-                android:layout_marginBottom="77dp"
+                android:layout_marginStart="302dp"
+                android:layout_marginEnd="-63dp"
+                android:layout_marginBottom="71dp"
                 android:text="Report ID :"
-                android:textSize="12sp" />
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/CusIDtext"
@@ -129,7 +145,18 @@
                 android:layout_marginEnd="229dp"
                 android:layout_marginBottom="77dp"
                 android:text="@string/CustomerID"
+                android:textColor="@color/design_default_color_on_secondary"
                 android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="8dp"
+                app:srcCompat="@drawable/logo" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

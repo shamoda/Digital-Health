@@ -38,49 +38,49 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="30dp">
 
-    <TextView
-        android:id="@+id/ar_add_appoinment_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_appoinment"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-
-        android:layout_marginTop="30dp"
-        />
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ar_add_appoinment_tname"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
-        android:hint="@string/fullname"
-        android:layout_below="@+id/ar_add_appoinment_title"
-        app:hintAnimationEnabled="true"
-        app:boxBackgroundMode="outline"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:endIconMode="clear_text"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ar_add_appoinment_name"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/ar_add_appoinment_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:text="@string/add_appoinment"
+            android:textSize="24sp"
             android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
 
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="30dp"
+            />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ar_add_appoinment_tname"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/fullname"
+            android:layout_below="@+id/ar_add_appoinment_title"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundMode="outline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ar_add_appoinment_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/ar_add_appoinment_tgen"
@@ -109,14 +109,14 @@
 
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/option1"
+                android:id="@+id/ar_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="@string/male" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/option2"
+                android:id="@+id/ar_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/female"
@@ -125,115 +125,115 @@
         </RadioGroup>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ar_add_appoinment_temail"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/email"
-        app:hintAnimationEnabled="true"
-        app:boxBackgroundMode="outline"
-        app:endIconMode="clear_text"
-        android:layout_below="@+id/ar_add_appoinment_gen"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        >
-        <AutoCompleteTextView
-            android:id="@+id/ar_add_appoinment_email"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ar_add_appoinment_temail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/email"
+            android:layout_below="@+id/ar_add_appoinment_gen"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundMode="outline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ar_add_appoinment_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ar_add_appoinment_tphone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/contactnum"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundMode="outline"
+            android:layout_below="@+id/ar_add_appoinment_temail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ar_add_appoinment_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ar_add_appoinment_tnote"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/notes"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundMode="outline"
+            android:layout_below="@+id/ar_add_appoinment_tphone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ar_add_appoinment_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+        <Button
+            android:id="@+id/ar_add_appoinment_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ar_add_appoinment_tphone"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/contactnum"
-        app:hintAnimationEnabled="true"
-        app:boxBackgroundMode="outline"
-        android:layout_below="@+id/ar_add_appoinment_temail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:endIconMode="clear_text"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ar_add_appoinment_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ar_add_appoinment_tnote"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/notes"
-        app:hintAnimationEnabled="true"
-        app:boxBackgroundMode="outline"
-        android:layout_below="@+id/ar_add_appoinment_tphone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:endIconMode="clear_text"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        >
-        
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ar_add_appoinment_note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-    <Button
-        android:id="@+id/ar_add_appoinment_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:padding="12dp"
-        android:textAllCaps="false"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:text="@string/submit"
-        android:textColor="@android:color/white"
-        android:layout_below="@id/ar_add_appoinment_tnote"
-        android:layout_marginBottom="10dp"
-        />
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="12dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="@string/submit"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/ar_add_appoinment_tnote"
+            android:layout_marginBottom="10dp"
+            />
     </RelativeLayout>
 </RelativeLayout>
