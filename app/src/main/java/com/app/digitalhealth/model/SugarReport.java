@@ -14,7 +14,7 @@ public class SugarReport {
     }
 
     public SugarReport(String reportID, String customerID, String patientName, String glucoseLevel) {
-        this.ReportID = reportID;
+        ReportID = reportID;
         this.customerID = customerID;
         this.patientName = patientName;
         this.glucoseLevel = glucoseLevel;
@@ -24,31 +24,15 @@ public class SugarReport {
         return ReportID;
     }
 
-    public void setReportID(String reportID) {
-        ReportID = reportID;
-    }
-
-    public String getCustomerID() {
+    public String getcustomerID() {
         return customerID;
-    }
-
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
     }
 
     public String getPatientName() {
         return patientName;
     }
 
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
-    }
-
     public String getGlucoseLevel() {
         return glucoseLevel;
-    }
-
-    public void setGlucoseLevel(String glucoseLevel) {
-        this.glucoseLevel = glucoseLevel;
     }
 }

@@ -4,25 +4,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        app:cardElevation="5dp">
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/input_design">
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:background="#C5ECFF">
 
         <ImageView
             android:id="@+id/ak_session_list_calendar_img"
             android:layout_width="40dp"
             android:layout_height="45dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/calendar" />
 
         <TextView
@@ -33,38 +37,41 @@
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/ak_session_list_calendar_img"
             android:text="@string/session_date"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
 
-        <ImageView
-            android:id="@+id/ak_session_list_clock_img"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="7dp"
+        <TextView
+            android:id="@+id/ak_session_list_time_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/ak_session_list_date"
-            android:src="@drawable/clock" />
+            android:text="Time : "
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/ak_session_list_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="18dp"
             android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/ak_session_list_clock_img"
+            android:layout_toRightOf="@+id/ak_session_list_time_title"
             android:text="@string/session_time"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/ak_session_list_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ak_session_list_calendar_img"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="-12dp"
             android:text="Doctor's Name"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -72,22 +79,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ak_session_list_day"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="0dp"
             android:text="@string/no_of_active_patients"
-            android:textStyle="bold" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/ak_session_list_active_patients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ak_session_list_day"
+            android:layout_marginStart="33dp"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_toEndOf="@+id/ak_session_list_active_patients_title"
             android:text="25"
-            android:layout_marginBottom="5dp"
-            android:textStyle="bold" />
+            android:textColor="@android:color/black" />
 
 
     </RelativeLayout>
