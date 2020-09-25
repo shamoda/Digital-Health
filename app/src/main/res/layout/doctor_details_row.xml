@@ -10,12 +10,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/sm_doctor_details_row_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@drawable/ic_user"
             android:scaleType="centerCrop"
             />
@@ -27,7 +28,7 @@
             android:text="@string/specialization"
             android:layout_toRightOf="@+id/sm_doctor_details_row_img"
             android:layout_marginLeft="7dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             />
 
@@ -38,7 +39,7 @@
             android:text="@string/specialization"
             android:layout_toRightOf="@+id/sm_doctor_details_row_specialization"
             android:layout_marginLeft="7dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             />
@@ -51,7 +52,7 @@
             android:layout_toRightOf="@+id/sm_doctor_details_row_img"
             android:layout_below="@+id/sm_doctor_details_row_specialization"
             android:layout_marginLeft="7dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             />
 
@@ -63,7 +64,7 @@
             android:layout_toRightOf="@+id/sm_doctor_details_row_name"
             android:layout_below="@+id/sm_doctor_details_row_specialization"
             android:layout_marginLeft="7dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             />

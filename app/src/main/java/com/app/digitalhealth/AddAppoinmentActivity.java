@@ -103,6 +103,11 @@ public class AddAppoinmentActivity extends AppCompatActivity {
 
         if (updateId != null){
             add.setText("Update");
+            name.setEnabled(false);
+            name.setClickable(false);
+            name.setFocusable(false);
+            male.setEnabled(false);
+            female.setEnabled(false);
             retrieveData(email,phone,note,name,male,female);
 
         }
