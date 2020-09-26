@@ -234,11 +234,9 @@ public class AddBloodReport extends AppCompatActivity {
 //            String id =  "R"+p;
 
 
-
-
-//            BloodReport bloodreport = new BloodReport(id,cusID,patName, heams,pcvs,rbcs, lymphos, monos,eosos,myelo,bands,blasts,platelets,comments);
-//            bloodReports.child(id).setValue(bloodreport);
-//            Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
+            BloodReport bloodreport = new BloodReport(id,cusID,patName, heams,pcvs,rbcs, lymphos, monos,eosos,myelo,bands,blasts,platelets,comments);
+            bloodReports.child(id).setValue(bloodreport);
+            Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
 
 
 

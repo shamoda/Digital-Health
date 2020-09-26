@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background"
-    >
+    android:orientation="vertical">
 
     <Toolbar
         android:id="@+id/insulinCal"
@@ -44,18 +42,15 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+                android:layout_width="500dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-
-
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="17dp"
                 android:layout_marginEnd="190dp"
                 android:layout_marginRight="24dp"
-
                 android:text="@string/SS_cal"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
@@ -65,18 +60,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="551dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/input_design"
+
         android:orientation="vertical"
 
         >
 
         <TextView
             android:id="@+id/Cal_Topic"
-            android:layout_width="317dp"
+            android:layout_width="326dp"
             android:layout_height="56dp"
             android:layout_margin="20dp"
             android:fontFamily="@font/arbutus"
@@ -121,7 +116,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:hint="@string/waistSize"
+            android:hint="ex : BMI in kg/m2"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
@@ -131,7 +126,7 @@
             app:hintAnimationEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/WaistText"
+                android:id="@+id/BMI"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -141,98 +136,61 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Hip"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/HipSize"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            app:endIconMode="clear_text"
-            app:hintAnimationEnabled="true">
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/HipText"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@android:color/black"
-                android:textSize="17sp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Gender"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Neck"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/Neck"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            app:endIconMode="clear_text"
-            app:hintAnimationEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/NeckText"
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:id="@+id/ak_calorie_calculator_gender_value"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@android:color/black"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:layout_toRightOf="@+id/ak_calorie_calculator_gender"
+                android:layout_below="@id/ak_calorie_calculator_age_range"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                >
 
-        </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/ak_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/male" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Height"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/Height"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            app:endIconMode="clear_text"
-            app:hintAnimationEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/HeightText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@android:color/black"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/ak_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female"
+                    android:layout_marginLeft="30dp"
+                    />
+            </RadioGroup>
+        </LinearLayout>
 
         <Button
-            android:layout_width="311dp"
+            android:id="@+id/calFat"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="20dp"
             android:text="Calculate my Body Fat"
-
             android:textSize="18sp">
 
 
@@ -240,6 +198,43 @@
 
 
     </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="263dp"
+        android:layout_height="169dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="30dp">
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="192dp"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="40dp"
+            android:padding="30dp"
+            android:textAlignment="center"
+            android:textColor="@color/material_on_background_emphasis_high_type"
+            android:textSize="30sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:padding="20dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>

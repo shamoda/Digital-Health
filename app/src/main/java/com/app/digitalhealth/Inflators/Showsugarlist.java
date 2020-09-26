@@ -36,7 +36,7 @@ public class Showsugarlist extends BaseAdapter {
         this.arraylist.addAll(ReportList.sugarList);
     }
 
-    public class ViewHolder {
+       public class ViewHolder {
         TextView name;
     }
 
