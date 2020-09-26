@@ -11,6 +11,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import android.view.View;
 import android.widget.TextView;
 
 public class showsugarReportactivity extends AppCompatActivity {
@@ -20,6 +22,7 @@ public class showsugarReportactivity extends AppCompatActivity {
     TextView  patientName;
     TextView  glucoseLevelinput;
     DatabaseReference sugarReports;
+    TextView closeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,14 @@ public class showsugarReportactivity extends AppCompatActivity {
         CustomerID = (TextView) findViewById(R.id.inputCusIDs);
         patientName = (TextView) findViewById(R.id.inputpatientNames);
         glucoseLevelinput = (TextView) findViewById(R.id.glucoseLevelss);
+        closeBtn = (TextView) findViewById(R.id.closeSugar);
 
         Intent intent = getIntent();
         final String ReportIDs = intent.getStringExtra(ReportList.Report_ID);
         final String cusID = intent.getStringExtra(ReportList.CUS_ID);
         String patName= intent.getStringExtra(ReportList.patientName);
         String Clicked = intent.getStringExtra("clicked");
+
 
         if(ReportIDs != null){
             loadData(ReportIDs);
@@ -45,6 +50,15 @@ public class showsugarReportactivity extends AppCompatActivity {
 
         CustomerID.setText(cusID);
         patientName.setText(patName);
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(showsugarReportactivity.this, HomeActivity.class));
+                finish();
+            }
+        });
+
     }
 
     private void loadData(String id) {

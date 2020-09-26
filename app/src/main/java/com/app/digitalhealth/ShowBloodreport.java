@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class ShowBloodreport extends AppCompatActivity {
 
     TextView CustomerID,patientNAME,heam,pcv,rbc,lympho,mono,eoso,myel,band,blast,platelet,comment;
     DatabaseReference bloodReports;
+    TextView closeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class ShowBloodreport extends AppCompatActivity {
         blast = (TextView) findViewById(R.id.textBlast);
         platelet =(TextView) findViewById(R.id.txtPlatelet);
         comment = (TextView) findViewById(R.id.txtComment);
+        closeBtn = findViewById(R.id.closeBlood);
 
 
         Intent intent = getIntent();
@@ -59,6 +62,15 @@ public class ShowBloodreport extends AppCompatActivity {
 
         CustomerID.setText(cusID);
         patientNAME.setText(patName);
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ShowBloodreport.this, HomeActivity.class));
+                finish();
+            }
+        });
+
     }
 
     private void loadData(String id) {

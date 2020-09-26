@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -30,6 +31,7 @@ public class SugarReportActivity extends AppCompatActivity {
     EditText glucoseLevelinput;
     Button addReport,UpdateReport,DeleteReport;
     DatabaseReference sugarReports;
+    TextView closeBtn;
 
 
     @Override
@@ -45,6 +47,7 @@ public class SugarReportActivity extends AppCompatActivity {
         addReport = (Button) findViewById(R.id.GenReport);
         UpdateReport = (Button) findViewById(R.id.Update);
         DeleteReport = (Button) findViewById(R.id.Delete);
+        closeBtn = (TextView) findViewById(R.id.closesugarBtn);
 
 
         Intent intent = getIntent();
@@ -141,6 +144,16 @@ public class SugarReportActivity extends AppCompatActivity {
             }
         });
 
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SugarReportActivity.this, ReportSearch.class));
+                finish();
+            }
+        });
+
+
     }
 
     private void loadData(String id) {
@@ -189,6 +202,9 @@ public class SugarReportActivity extends AppCompatActivity {
             sugarReports.child(id).setValue(Report);
             Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
 
+            Intent intent = new Intent(getApplicationContext(),ReportSearch.class);
+            startActivity(intent);
+
 
       }
     }
@@ -204,6 +220,8 @@ public class SugarReportActivity extends AppCompatActivity {
         databaseReference.setValue(sugarReport);
 
         Toast.makeText(this, "Report Updated Successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(),ReportSearch.class);
+        startActivity(intent);
 
         return true;
     }

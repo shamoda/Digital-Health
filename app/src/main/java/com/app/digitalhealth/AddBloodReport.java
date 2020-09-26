@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -34,6 +35,7 @@ public class AddBloodReport extends AppCompatActivity {
 
     Button reportAdd,UpdateReport,DeleteReport;
     DatabaseReference bloodReports;
+    TextView closeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,16 @@ public class AddBloodReport extends AppCompatActivity {
         reportAdd = (Button) findViewById(R.id.GenReport);
         UpdateReport = (Button) findViewById(R.id.Update);
         DeleteReport = (Button) findViewById(R.id.Delete);
+        closeBtn = (TextView) findViewById(R.id.closebloodBtn);
 
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddBloodReport.this, ReportSearch.class));
+                finish();
+            }
+        });
 
 
         Intent intent = getIntent();
@@ -111,8 +122,6 @@ public class AddBloodReport extends AppCompatActivity {
             };
 
         });
-
-
 
 //       sugarReport = FirebaseDatabase.getInstance().getReference("SugarReports").child(id);
 
