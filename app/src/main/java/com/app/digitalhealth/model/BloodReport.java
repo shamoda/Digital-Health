@@ -16,6 +16,7 @@ public class BloodReport {
     private String blast;
     private String platelet;
     private String comment;
+    private String currentDate;
 
 
     public BloodReport() {
@@ -23,7 +24,7 @@ public class BloodReport {
 
     public BloodReport(String reportID,String customerID, String patientNAME, String heam, String pcv, String rbc,
                        String lympho, String mono, String eoso, String myel,
-                       String band, String blast, String platelet, String comment) {
+                       String band, String blast, String platelet, String comment, String currentDate) {
         this.reportID = reportID;
         this.customerID = customerID;
         this.patientName = patientNAME;
@@ -38,6 +39,7 @@ public class BloodReport {
         this.blast = blast;
         this.platelet = platelet;
         this.comment = comment;
+        this.currentDate = currentDate;
     }
 
     public String getReportID() {
@@ -94,5 +96,9 @@ public class BloodReport {
 
     public String getComment() {
         return comment;
+    }
+
+    public String getCurrentDate() {
+        return currentDate;
     }
 }

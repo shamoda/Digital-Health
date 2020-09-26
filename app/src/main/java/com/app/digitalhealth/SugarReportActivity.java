@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import com.app.digitalhealth.model.SugarReport;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -157,6 +161,8 @@ public class SugarReportActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void GenerateReport(){
 
         String cusID = CustomerID.getText().toString().trim();
@@ -175,11 +181,13 @@ public class SugarReportActivity extends AppCompatActivity {
         }else {
 
             String id = String.valueOf(maxID+1);
-            SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel);
+            Calendar c = Calendar .getInstance();
+            System.out.println("Current time => "+c.getTime());
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+            String formattedDate = df.format(c.getTime());
+            SugarReport Report = new SugarReport(id, cusID, patName, glucoseLevel, formattedDate);
             sugarReports.child(id).setValue(Report);
             Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
-
-
 
 
       }
@@ -187,8 +195,12 @@ public class SugarReportActivity extends AppCompatActivity {
 
     private boolean updateReports(String ReportID,String cusID, String patName,String glucoseLevel){
 
+        Calendar c = Calendar .getInstance();
+        System.out.println("Current time => "+c.getTime());
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String formattedDate = df.format(c.getTime());
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("sugarReports").child(ReportID);
-        SugarReport sugarReport = new  SugarReport(ReportID,cusID,patName,glucoseLevel);
+        SugarReport sugarReport = new  SugarReport(ReportID,cusID,patName,glucoseLevel,formattedDate);
         databaseReference.setValue(sugarReport);
 
         Toast.makeText(this, "Report Updated Successfully", Toast.LENGTH_SHORT).show();

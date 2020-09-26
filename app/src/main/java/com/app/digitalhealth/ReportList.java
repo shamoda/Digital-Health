@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.SearchView;
 
@@ -57,6 +58,7 @@ public class ReportList extends AppCompatActivity implements SearchView.OnQueryT
     TextInputLayout textlayout;
     ListView listView;
     DatabaseReference dataBaseReports;
+    TextView closeBtn;
 
 
     public static ArrayList<Report> sugarList = new ArrayList<Report>();
@@ -77,6 +79,15 @@ public class ReportList extends AppCompatActivity implements SearchView.OnQueryT
         textlayout = findViewById(R.id.ReposType);
         search = (SearchView) findViewById(R.id.searchReport);
         search.setOnQueryTextListener(this);
+        closeBtn =  findViewById(R.id.reportlistClose);
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ReportList.this, HomeActivity.class));
+                finish();
+            }
+        });
 
         final String[] reportTypes = new String[]{
                 "Blood Report",
@@ -192,7 +203,7 @@ public class ReportList extends AppCompatActivity implements SearchView.OnQueryT
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                     Report sugarReport = sugarList.get(i);
-                    Intent intent = new Intent(getApplicationContext(), AddBloodReport.class);
+                    Intent intent = new Intent(getApplicationContext(), ShowBloodreport.class);
                     intent.putExtra(Report_ID, sugarReport.getReportID());
                     intent.putExtra(CUS_ID, sugarReport.getcustomerID());
                     intent.putExtra(patientName, sugarReport.getPatientName());

@@ -77,30 +77,15 @@
 
             <TextView
                 android:id="@+id/IssuedDate"
-                android:layout_width="wrap_content"
-                android:layout_height="23dp"
+                android:layout_width="179dp"
+                android:layout_height="21dp"
                 android:layout_below="@+id/CusID"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="21dp"
-                android:layout_marginTop="49dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginBottom="3dp"
                 android:text="12 May 2020"
-                android:textColor="@color/design_default_color_on_secondary"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/issuedDate"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_below="@+id/CusID"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginTop="49dp"
-                android:layout_marginBottom="5dp"
-                android:text="6.30 PM"
                 android:textColor="@color/design_default_color_on_secondary"
                 android:textSize="12sp"
                 android:textStyle="bold" />

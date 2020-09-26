@@ -65,6 +65,7 @@ public class SugarReportList extends BaseAdapter {
         TextView  CusID = (TextView)listViewItem.findViewById(R.id.CusID);
         TextView  patientName = (TextView)listViewItem.findViewById(R.id.patientname);
         TextView  ReportID = (TextView)listViewItem.findViewById(R.id.reportID);
+        TextView date = (TextView) listViewItem.findViewById(R.id.IssuedDate);
 
 
         Report report = List.get(position);
@@ -72,6 +73,7 @@ public class SugarReportList extends BaseAdapter {
         CusID.setText(report.getcustomerID());
         patientName.setText(report.getPatientName());
         ReportID.setText(report.getReportID());
+        date.setText(report.getCurrentDate());
 
         return listViewItem;
 

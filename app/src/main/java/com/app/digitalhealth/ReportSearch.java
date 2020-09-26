@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.SearchView;
 
@@ -36,6 +37,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +58,7 @@ public class ReportSearch extends AppCompatActivity implements SearchView.OnQuer
     TextInputLayout textlayout;
     ListView listView;
     DatabaseReference dataBaseReports;
+    TextView closeBtn;
 //    List<Report> sugarLists;
 
     public static ArrayList<Report> sugarList = new ArrayList<Report>();
@@ -78,6 +82,7 @@ public class ReportSearch extends AppCompatActivity implements SearchView.OnQuer
         textlayout = findViewById(R.id.ReposType);
         search = (SearchView) findViewById(R.id.searchReport);
         search.setOnQueryTextListener(this);
+        closeBtn = findViewById(R.id.reportSearchClose);
 
         final String[] reportTypes = new String[]{
                 "Blood Report",
@@ -136,6 +141,15 @@ public class ReportSearch extends AppCompatActivity implements SearchView.OnQuer
 
             }
         });
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ReportSearch.this, AdminDashboard.class));
+                finish();
+            }
+        });
+
 
     }
 

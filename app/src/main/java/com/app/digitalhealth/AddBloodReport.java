@@ -23,6 +23,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class AddBloodReport extends AppCompatActivity {
 
 
@@ -234,7 +237,12 @@ public class AddBloodReport extends AppCompatActivity {
 //            String id =  "R"+p;
 
 
-            BloodReport bloodreport = new BloodReport(id,cusID,patName, heams,pcvs,rbcs, lymphos, monos,eosos,myelo,bands,blasts,platelets,comments);
+            Calendar c = Calendar .getInstance();
+            System.out.println("Current time => "+c.getTime());
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+            String formattedDate = df.format(c.getTime());
+
+            BloodReport bloodreport = new BloodReport(id,cusID,patName, heams,pcvs,rbcs, lymphos, monos,eosos,myelo,bands,blasts,platelets,comments,formattedDate);
             bloodReports.child(id).setValue(bloodreport);
             Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
 
@@ -292,9 +300,13 @@ public class AddBloodReport extends AppCompatActivity {
     private boolean updateReports(String ReportID,String cusID, String patName,String heams,String pcvss,
                                   String rbc,String lymphocytes,String mono,String eoso,String myelosytes, String bands,String blasts,String platelets,String comments){
 
+        Calendar c = Calendar .getInstance();
+        System.out.println("Current time => "+c.getTime());
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String formattedDate = df.format(c.getTime());
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("bloodReports").child(ReportID);
-        BloodReport bloodReport = new BloodReport(ReportID,cusID,patName,heams,pcvss,rbc,lymphocytes,mono,eoso,myelosytes,bands,blasts,platelets,comments);
+        BloodReport bloodReport = new BloodReport(ReportID,cusID,patName,heams,pcvss,rbc,lymphocytes,mono,eoso,myelosytes,bands,blasts,platelets,comments,formattedDate);
 
         databaseReference.setValue(bloodReport);
 
