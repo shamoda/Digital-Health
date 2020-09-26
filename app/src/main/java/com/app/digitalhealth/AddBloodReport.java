@@ -163,6 +163,7 @@ public class AddBloodReport extends AppCompatActivity {
                 }else{
 
                     updateReports(ReportIDs,custID,patName,rbcs,pcvs,lymphos,heams,monos,eosos,myels,bands,blasts,plateletes,comments);
+
                 }
 
 
@@ -254,6 +255,8 @@ public class AddBloodReport extends AppCompatActivity {
             BloodReport bloodreport = new BloodReport(id,cusID,patName, heams,pcvs,rbcs, lymphos, monos,eosos,myelo,bands,blasts,platelets,comments,formattedDate);
             bloodReports.child(id).setValue(bloodreport);
             Toast.makeText(this, "Report Generated", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(),ReportSearch.class);
+            startActivity(intent);
 
 
 
@@ -320,6 +323,8 @@ public class AddBloodReport extends AppCompatActivity {
         databaseReference.setValue(bloodReport);
 
         Toast.makeText(this, "Report Updated Successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(),ReportSearch.class);
+        startActivity(intent);
 
         return true;
     }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.app.digitalhealth.model.SugarReport;
+import com.app.digitalhealth.prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,15 +16,16 @@ import com.google.firebase.database.ValueEventListener;
 import android.view.View;
 import android.widget.TextView;
 
-public class showsugarReportactivity extends AppCompatActivity {
+import io.paperdb.Paper;
 
+public class showsugarReportactivity extends AppCompatActivity {
 
     TextView CustomerID;
     TextView  patientName;
     TextView  glucoseLevelinput;
     DatabaseReference sugarReports;
     TextView closeBtn;
-
+    private String CurrentUser = Prevalent.currentUser.getPhone();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,18 @@ public class showsugarReportactivity extends AppCompatActivity {
         patientName = (TextView) findViewById(R.id.inputpatientNames);
         glucoseLevelinput = (TextView) findViewById(R.id.glucoseLevelss);
         closeBtn = (TextView) findViewById(R.id.closeSugar);
+
+
+//        Paper.init(this);
+////        closeBtn.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View view) {
+////                Intent intent = new Intent(getApplicationContext(),ReportList.class);
+////                startActivity(intent);
+////
+////            }
+////        });
+
 
         Intent intent = getIntent();
         final String ReportIDs = intent.getStringExtra(ReportList.Report_ID);
@@ -51,13 +65,6 @@ public class showsugarReportactivity extends AppCompatActivity {
         CustomerID.setText(cusID);
         patientName.setText(patName);
 
-        closeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(showsugarReportactivity.this, HomeActivity.class));
-                finish();
-            }
-        });
 
     }
 

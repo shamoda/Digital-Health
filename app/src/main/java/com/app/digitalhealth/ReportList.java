@@ -42,6 +42,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.paperdb.Paper;
+
 public class ReportList extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     public static  final String Report_ID = "ReportID";
@@ -58,7 +60,7 @@ public class ReportList extends AppCompatActivity implements SearchView.OnQueryT
     TextInputLayout textlayout;
     ListView listView;
     DatabaseReference dataBaseReports;
-    TextView closeBtn;
+    private TextView closeBtn;
 
 
     public static ArrayList<Report> sugarList = new ArrayList<Report>();
@@ -80,6 +82,7 @@ public class ReportList extends AppCompatActivity implements SearchView.OnQueryT
         search = (SearchView) findViewById(R.id.searchReport);
         search.setOnQueryTextListener(this);
         closeBtn =  findViewById(R.id.reportlistClose);
+
 
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,9 +208,9 @@ public class ReportList extends AppCompatActivity implements SearchView.OnQueryT
                     Report sugarReport = sugarList.get(i);
                     Intent intent = new Intent(getApplicationContext(), ShowBloodreport.class);
                     intent.putExtra(Report_ID, sugarReport.getReportID());
+
                     intent.putExtra(CUS_ID, sugarReport.getcustomerID());
                     intent.putExtra(patientName, sugarReport.getPatientName());
-
                     intent.putExtra("clicked", "clicked");
 
                     startActivity(intent);

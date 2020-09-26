@@ -3,6 +3,7 @@ package com.app.digitalhealth;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,22 +15,26 @@ import android.widget.Toast;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.DecimalFormat;
+
 public class BodyFatCal extends AppCompatActivity {
 
     private TextInputEditText age;
     private TextInputEditText BMI;
     private Button calculate;
-    private String gender;
+    private String gender ="male";
     private MaterialRadioButton male,female;
-    private float Age;
-    private float Bmi;
+    private double Age;
+    private double Bmi;
     private  String txtAge= null;
     private String txtBMI = null;
     private TextView BFCvalue;
     private TextView status;
     private CardView card;
+    private  TextView close;
+    double BFP = 0;
 
-    private float BFP;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +50,22 @@ public class BodyFatCal extends AppCompatActivity {
         BFCvalue = findViewById(R.id.percent);
         status = findViewById(R.id.status);
         card = findViewById(R.id.card);
+        close = findViewById(R.id.closebtn);
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BodyFatCal.this, QuickHealthCheckupsActivity.class));
+                finish();
+            }
+        });
 
 
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 validate();
+                setResults( BFP );
             }
         });
     }
@@ -71,44 +86,49 @@ public class BodyFatCal extends AppCompatActivity {
         }
         else if (TextUtils.isEmpty(txtBMI)){
             Toast.makeText(this, "BMI cannot be empty.", Toast.LENGTH_SHORT).show();
-        }else if(TextUtils.isEmpty(gender)){
+        }else if( !male.isChecked() && !female.isChecked()){
 
             Toast.makeText(this, "Gender must be checked", Toast.LENGTH_SHORT).show();
         }
         else {
-            calculateFAT();
+            Age = Double.parseDouble(txtAge);
+            Bmi = Double.parseDouble(txtBMI);
+
+            calculateFAT(Age,Bmi,gender);
         }
 
     }
 
 
-    private void calculateFAT() {
+    public double calculateFAT(double Age, double Bmi,String gender) {
 
-        Age = Float.parseFloat(txtAge);
-        Bmi = Float.parseFloat(txtBMI);
 
-        if (Age < 19 && gender.equals("male")){
+        if (Age < 19 && gender.equals("male")) {
 
-            BFP = (float) ((1.51 * Bmi) - 0.70 * Age - 2.2);
-            setResults(BFP);
+            BFP = (Double) (1.51 * Bmi - 0.70 * Age - 2.2);
 
         }else if(Age < 19 && gender.equals("female")){
 
-              BFP = (float) ((1.51 * Bmi) - 0.70 * Age + 1.4);
-              setResults(BFP);
+              BFP = (Double) ((1.51 * Bmi) - 0.70 * Age + 1.4);
+
         }
         else if (Age > 19 && gender.equals("male")){
 
-            BFP = (float) ((1.20 * Bmi) + 0.23 * Age - 16.2);
-            setResults(BFP);
+            BFP = (Double) ((1.20 * Bmi) + 0.23 * Age - 16.2);
+
         }else if(Age > 19 && gender.equals("female")){
 
-            BFP = (float) ((1.51 * Bmi) - 0.70 * Age + 1.4);
-            setResults(BFP);
+            BFP = (Double) ((1.51 * Bmi) - 0.70 * Age + 1.4);
+
+
         }
         else {
             Toast.makeText(this, "Please check the inputs and enter again", Toast.LENGTH_SHORT).show();
         }
+
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        Double twoDigitsF = Double.valueOf(decimalFormat.format(BFP));
+        return twoDigitsF;
     }
 //    Classification	Women (% Fat)	Men (% Fat)
 //    Essential Fat	10-12%	2-4%
@@ -116,9 +136,14 @@ public class BodyFatCal extends AppCompatActivity {
 //    Fitness	21-24%	14-17%
 //    Acceptable	25-31%	18-25%
 //    Obese	32% +	25% +
-    private void setResults(float bfc) {
 
-        BFCvalue.setText(String.valueOf(bfc +"%"));
+    public void setResults(double bfc) {
+
+        bfc = BFP;
+
+        String formattedValue = String.format("%.2f",bfc);
+
+        BFCvalue.setText((formattedValue+"%"));
         if(gender.equals("male")){
 
             if(bfc < 10){
@@ -163,7 +188,7 @@ public class BodyFatCal extends AppCompatActivity {
         }
 
         else if(bfc >= 32  && bfc< 100 ){
-                card.setCardBackgroundColor(Color.parseColor("#F08080"));
+            card.setCardBackgroundColor(Color.parseColor("#F08080"));
             status.setTextColor(Color.parseColor("#FF000C"));
             status.setText("Your fat level is Obese");
 
@@ -247,5 +272,6 @@ public class BodyFatCal extends AppCompatActivity {
 
         }
     }
+
 
 }

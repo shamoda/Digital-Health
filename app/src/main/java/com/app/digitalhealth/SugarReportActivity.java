@@ -233,6 +233,8 @@ public class SugarReportActivity extends AppCompatActivity {
 
 
         Toast.makeText(this, "Report is deleted successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(),ReportSearch.class);
+        startActivity(intent);
     }
 
 }
