@@ -266,7 +266,7 @@ public class AddSessionActivity extends AppCompatActivity {
 
 
                     HashMap<String, Object> dataMap = new HashMap<>();
-                    dataMap.put("id", id);
+                    dataMap.put("session_Id", id);
                     dataMap.put("name", name);
                     dataMap.put("specialization", specialization);
                     dataMap.put("date", date);
