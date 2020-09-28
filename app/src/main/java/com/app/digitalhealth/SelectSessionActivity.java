@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.digitalhealth.model.Sessions;
@@ -28,6 +29,7 @@ public class SelectSessionActivity extends AppCompatActivity {
     String dImage;
     ListView sessionList;
     List<Sessions> arrayList;
+    private TextView closeBtn;
 
 
     @Override
@@ -43,9 +45,21 @@ public class SelectSessionActivity extends AppCompatActivity {
 
         sessionList = findViewById(R.id.ak_search_session_list);
         arrayList = new ArrayList<>();
+        closeBtn= findViewById(R.id.ak_select_session_close_btn);
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectSessionActivity.this, HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         DatabaseReference sessionRef = FirebaseDatabase.getInstance().getReference().child("Sessions");
         Query query = sessionRef.orderByChild("name").equalTo(dName);
+
 
         query.addValueEventListener(new ValueEventListener() {
             @Override

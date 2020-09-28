@@ -125,7 +125,7 @@
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
         app:boxCornerRadiusTopStart="16dp"
-        app:counterMaxLength="5"
+        app:counterMaxLength="15"
         app:counterEnabled="true"
         >
         <com.google.android.material.textfield.TextInputEditText
@@ -157,7 +157,7 @@
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
         app:boxCornerRadiusTopStart="16dp"
-        app:counterMaxLength="5"
+        app:counterMaxLength="15"
         app:counterEnabled="true"
         >
         <com.google.android.material.textfield.TextInputEditText
@@ -189,7 +189,7 @@
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
         app:boxCornerRadiusTopStart="16dp"
-        app:counterMaxLength="5"
+        app:counterMaxLength="15"
         app:counterEnabled="true"
         >
         <com.google.android.material.textfield.TextInputEditText
