@@ -92,7 +92,7 @@ public class AddAppoinmentActivity extends AppCompatActivity {
                     finish();
                 }
                 else if (updateId == null){
-                    startActivity(new Intent(AddAppoinmentActivity.this, SelectSessionActivity.class));
+                    startActivity(new Intent(AddAppoinmentActivity.this, HomeActivity.class));
                     finish();
                 }
             }
