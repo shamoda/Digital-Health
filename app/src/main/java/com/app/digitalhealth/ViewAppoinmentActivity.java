@@ -21,6 +21,7 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
     private Button updateBtn,myAppoinmentsBtn;
     private DatabaseReference rootRef;
     String appId;
+    private TextView closeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,16 @@ public class ViewAppoinmentActivity extends AppCompatActivity {
         phone = (TextView) findViewById(R.id.ar_view_appoinment_vphone);
         updateBtn =(Button) findViewById(R.id.ar_view_appoinment_update);
         myAppoinmentsBtn = (Button) findViewById(R.id.ar_view_appoinment_data);
+        closeBtn = (TextView) findViewById(R.id.ar_view_appoinment_close_btn);
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewAppoinmentActivity.this,MyAppoinmentsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         appId = intent.getStringExtra("appId");
