@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -46,6 +47,8 @@ public class AddSessionActivity extends AppCompatActivity {
     private TextInputEditText InputTime;
     private Button AddSessionBtn;
     private Button DeleteSessionBtn;
+    private TextView closeBtn;
+
     long maxID;
     String check;
     String updateId;
@@ -67,6 +70,8 @@ public class AddSessionActivity extends AppCompatActivity {
 
 
         AddSessionBtn = (Button) findViewById(R.id.ak_add_session_btn);
+        closeBtn= findViewById(R.id.ak_add_session_close_btn);
+
         DeleteSessionBtn = (Button) findViewById(R.id.ak_session_cancel_btn);
         InputName = findViewById(R.id.ak_add_session_doctor_name_value);
         InputSpecialization = findViewById(R.id.ak_add_session_specialization_value);
@@ -76,6 +81,17 @@ public class AddSessionActivity extends AppCompatActivity {
         listSessions = findViewById(R.id.sessionList);
         loadingBar = new ProgressDialog(this);
         SessionList = new ArrayList();
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddSessionActivity.this, SessionList.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         Intent intent = getIntent();
          updateId = intent.getStringExtra("id");
@@ -93,6 +109,7 @@ public class AddSessionActivity extends AppCompatActivity {
         InputTime.setText(time);
         InputDate.setText(date);
         InputPatients.setText(noOfPatients);
+
 
 
 

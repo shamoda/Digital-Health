@@ -78,6 +78,7 @@ public class SearchAdapter extends BaseAdapter {
 
         date.setText(SessionList.getDate());
         doctorName.setText(SessionList.getName());
+        time.setText(SessionList.getTime());
         patientCount.setText(SessionList.getNoOfPatients());
 
 
