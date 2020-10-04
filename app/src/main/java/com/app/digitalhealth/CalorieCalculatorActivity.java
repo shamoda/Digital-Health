@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.AutoText;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,7 +17,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class CalorieCalculatorActivity extends AppCompatActivity {
-
     private Button CalculateBtn;
     TextInputLayout textInputLayout;
     AutoCompleteTextView dropDown;
@@ -33,6 +31,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
     private TextView result;
     private String gender;
     private String activity;
+    private TextView closeBtn;
 
 
     @Override
@@ -49,6 +48,9 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
         msg = findViewById(R.id.ak_calorie_calculator_suggest_msg);
         result = findViewById(R.id.ak_calorie_calculator_status);
         CalculateBtn = findViewById(R.id.ak_calorie_calculator_calculate_btn);
+        closeBtn = findViewById(R.id.ak_calorie_calculator_close);
+
+
 
         textInputLayout = findViewById(R.id.ak_calorie_calculator_activity);
         dropDown = findViewById(R.id.ak_calorie_calculator_activity_value);
@@ -70,18 +72,70 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
         dropDown.setAdapter(adapter);
 
 
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CalorieCalculatorActivity.this,QuickHealthCheckupsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         CalculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                claculateCalories();
+                setCalories();
+
 
             }
         });
 
     }
 
-    private void claculateCalories() {
+    public static float calcCalories(float tage, float tweight, float theight,String tgen, String tactivity) {
+        float calories = 0;
+        if (tgen.equals("female")) {
+            if (tactivity.equals("little or no exercise")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) - 161.0) * 1.2);
+
+            } else if (tactivity.equals("light exercise (sports 1-3 days/week)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) - 161.0) * 1.375);
+
+            } else if (tactivity.equals("moderate exercise (sports 3-5 days/week)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) - 161.0) * 1.55);
+
+            } else if (tactivity.equals("very active (athletic)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) - 161.0) * 1.725);
+
+            } else if (tactivity.equals("extra active (sports 6-7 days/week)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) - 161.0) * 1.9);
+
+            }
+
+        } else {
+            if (tactivity.equals("little or no exercise")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0) * 1.2);
+
+            } else if (tactivity.equals("light exercise (sports 1-3 days/week)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0) * 1.375);
+
+            } else if (tactivity.equals("moderate exercise (sports 3-5 days/week)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0) * 1.55);
+
+            } else if (tactivity.equals("very active (athletic)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0) * 1.725);
+
+            } else if (tactivity.equals("extra active (sports 6-7 days/week)")) {
+                calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0) * 1.9);
+
+
+            }
+
+        }
+        return calories;
+    }
+
+    private void setCalories() {
         String txtAge = age.getText().toString();
         String txtHeight = height.getText().toString();
         String txtWeight = weight.getText().toString();
@@ -107,46 +161,11 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
             float heightValue = Float.parseFloat(txtHeight);
             float weightValue = Float.parseFloat(txtWeight);
 
-            if (gender.equals("female")) {
-                if (activity.equals("little or no exercise")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) - 161.0) * 1.2);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("light exercise (sports 1-3 days/week)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) - 161.0) * 1.375);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("moderate exercise (sports 3-5 days/week)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) - 161.0) * 1.55);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("very active (athletic)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) - 161.0) * 1.725);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("extra active (sports 6-7 days/week)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) - 161.0) * 1.9);
-                    status.setText(String.valueOf(calories));
-                }
 
-            } else {
-                if (activity.equals("little or no exercise")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) + 5.0) * 1.2);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("light exercise (sports 1-3 days/week)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) + 5.0) * 1.375);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("moderate exercise (sports 3-5 days/week)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) + 5.0) * 1.55);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("very active (athletic)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) + 5.0) * 1.725);
-                    status.setText(String.valueOf(calories));
-                } else if (activity.equals("extra active (sports 6-7 days/week)")) {
-                    float calories = (float) (((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) + 5.0) * 1.9);
-                    status.setText(String.valueOf(calories));
-
-                }
-            }
-            msg.setVisibility(View.VISIBLE);
-            result.setVisibility(View.VISIBLE);
+            float answer = calcCalories(ageValue,weightValue,heightValue,gender,activity);
+            status.setText(String.valueOf(answer));
         }
+        msg.setVisibility(View.VISIBLE);
+        result.setVisibility(View.VISIBLE);
     }
-
 }
