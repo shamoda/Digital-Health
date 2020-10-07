@@ -40,7 +40,7 @@ public class BMRcalculatorActivity extends AppCompatActivity {
         calcbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calculateBMR();
+                setBMR();
             }
         });
 
@@ -72,7 +72,18 @@ public class BMRcalculatorActivity extends AppCompatActivity {
         });
     }
 
-    private void calculateBMR() {
+    public static float calculateBMR(float tweight, float theight, float tage ,String tgender){
+        if(tgender.equals("female")) {
+            float BMR = (float) ((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) - 161.0);
+            return BMR;
+        } else {
+            float BMR = (float) ((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0);
+            return BMR;
+        }
+
+    }
+
+    private void setBMR() {
         String txtage = age.getText().toString();
         String txtheight = height.getText().toString();
         String txtweight = weight.getText().toString();
@@ -100,16 +111,11 @@ public class BMRcalculatorActivity extends AppCompatActivity {
             float heightValue = Float.parseFloat(txtheight);
             float weightValue = Float.parseFloat(txtweight);
 
-            if(gender.equals("female")){
-                float BMR = (float) ((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue) - 161.0);
-                result.setText(String.valueOf(BMR));
 
-            }
-            else {
-                float BMR = (float) ((10.0 * weightValue) + (6.25 * heightValue) - (5.0 * ageValue)  + 5.0);
-                result.setText(String.valueOf(BMR));
+                float bmr = calculateBMR(weightValue,heightValue,ageValue,gender);
+                result.setText(String.valueOf(bmr));
 
-            }
+
         }
     }
 

@@ -111,4 +111,141 @@ public class ExampleUnitTest {
         Assert.assertEquals(expectedValue, result, 0.001);
     }
 
+    //IT19185026(BMR Calculator)
+
+    private  BMRcalculatorActivity bmr;
+
+    @Before
+    public void set(){
+
+        bmr = new BMRcalculatorActivity();
+    }
+
+    @Test
+    public void testa1() {
+
+        float age = 22;
+        float height = 110;
+        float weight = 40;
+        String gender ="female";
+
+       float Result = (float) 816.5;
+       float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+       Assert.assertEquals(Result,res, 0);
+
+    }
+
+    @Test
+    public void testa2() {
+
+        float age = 22;
+        float height = 110;
+        float weight = 40;
+        String gender ="male";
+
+        float Result = (float) 982.5;
+        float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+        Assert.assertEquals(Result,res, 0);
+
+    }
+
+    @Test
+    public void testa3() {
+
+        float age = 22;
+        float height = 110;
+        float weight = 55;
+        String gender ="female";
+
+        float Result = (float) 966.5;
+        float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+        Assert.assertEquals(Result,res, 0);
+
+    }
+
+    @Test
+    public void testa4() {
+
+        float age = 22;
+        float height = 110;
+        float weight = 55;
+        String gender ="male";
+
+        float Result = (float) 1132.5;
+        float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+        Assert.assertEquals(Result,res, 0);
+
+    }
+
+    @Test
+    public void testa5() {
+
+        float age = 22;
+        float height = 120;
+        float weight = 40;
+        String gender ="female";
+
+        float Result = (float) 879.0;
+        float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+        Assert.assertEquals(Result,res, 0);
+
+    }
+
+    @Test
+    public void testa6() {
+
+        float age = 22;
+        float height = 120;
+        float weight = 40;
+        String gender ="male";
+
+        float Result = (float) 1045.0;
+        float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+        Assert.assertEquals(Result,res, 0);
+
+    }
+
+    @Test
+    public void testa7() {
+
+        float age = 32;
+        float height = 120;
+        float weight = 40;
+        String gender ="female";
+
+        float Result = (float) 829.0;
+        float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+        Assert.assertEquals(Result,res, 0);
+
+    }
+
+    @Test
+    public void testa8() {
+
+        float age = 32;
+        float height = 120;
+        float weight = 40;
+        String gender ="male";
+
+        float Result = (float) 995.0;
+        float res = BMRcalculatorActivity.calculateBMR(weight,height,age,gender);
+
+
+        Assert.assertEquals(Result,res, 0);
+
+    }
 }
