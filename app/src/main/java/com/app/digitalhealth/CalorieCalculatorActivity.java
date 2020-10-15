@@ -96,6 +96,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
         float calories = 0;
         if (tgen.equals("female")) {
             if (tactivity.equals("little or no exercise")) {
+              
                 calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) - 161.0) * 1.2);
 
             } else if (tactivity.equals("light exercise (sports 1-3 days/week)")) {
@@ -115,6 +116,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
         } else {
             if (tactivity.equals("little or no exercise")) {
                 calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0) * 1.2);
+
 
             } else if (tactivity.equals("light exercise (sports 1-3 days/week)")) {
                 calories = (float) (((10.0 * tweight) + (6.25 * theight) - (5.0 * tage) + 5.0) * 1.375);
@@ -150,6 +152,8 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(txtAge)) {
             Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+        }else if( Float.parseFloat(txtAge)<15 || Float.parseFloat(txtAge)>80){
+            Toast.makeText(this, "Please Enter value between 15 to 80", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(txtHeight)) {
             Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(txtWeight)) {
@@ -161,11 +165,12 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
             float heightValue = Float.parseFloat(txtHeight);
             float weightValue = Float.parseFloat(txtWeight);
 
-
             float answer = calcCalories(ageValue,weightValue,heightValue,gender,activity);
             status.setText(String.valueOf(answer));
+
         }
         msg.setVisibility(View.VISIBLE);
         result.setVisibility(View.VISIBLE);
     }
+
 }
