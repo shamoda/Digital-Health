@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.digitalhealth.Inflators.SearchAdapter;
@@ -30,6 +31,7 @@ public class SessionList extends AppCompatActivity implements SearchView.OnQuery
     SearchView searchView;
 //    List SessionList;
     ListView listSessions;;
+    private TextView closeBtn;
 
 
     public static ArrayList<Sessions> SessionList = new ArrayList<Sessions>();
@@ -43,6 +45,17 @@ public class SessionList extends AppCompatActivity implements SearchView.OnQuery
         createSessionBtn = (Button) findViewById(R.id.ak_session_list_btn);
         searchView = (SearchView) findViewById(R.id.searchDoctorName);
         searchView.setOnQueryTextListener(this);
+        closeBtn= findViewById(R.id.ak_session_list_close_btn);
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SessionList.this, AdminDashboard.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         createSessionBtn.setOnClickListener(new View.OnClickListener() {
             @Override

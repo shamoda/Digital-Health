@@ -283,7 +283,7 @@ public class ManageDoctorsActivity extends AppCompatActivity {
 
     private void showAlertDialog(final String phone, final String name, final String image) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Manage Dr."+name);
+        builder.setTitle("Dr."+name);
         builder.setMessage("What you want to do with Dr."+name);
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
             @Override

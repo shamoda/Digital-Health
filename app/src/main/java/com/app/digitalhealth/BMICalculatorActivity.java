@@ -73,16 +73,17 @@ public class BMICalculatorActivity extends AppCompatActivity {
             Toast.makeText(this, "Weight cannot be empty.", Toast.LENGTH_SHORT).show();
         }
         else {
-            calculateBMI();
+            temp = Float.parseFloat(txtHeight);
+            weight = Float.parseFloat(txtWeight);
+
+            bmi = calculateBMI(temp, weight);
+            setResults(bmi);
         }
 
     }
 
 
-    private void calculateBMI() {
-
-        temp = Float.parseFloat(txtHeight);
-        weight = Float.parseFloat(txtWeight);
+    public float calculateBMI(float temp, float weight) {
 
         if (temp < 30.0 || temp > 250){
             Toast.makeText(this, "Height is not valid.", Toast.LENGTH_SHORT).show();
@@ -94,8 +95,8 @@ public class BMICalculatorActivity extends AppCompatActivity {
             height = temp / 100;
 
             bmi = weight / (height * height);
-            setResults(bmi);
         }
+        return bmi;
     }
 
     private void setResults(float bmi) {
