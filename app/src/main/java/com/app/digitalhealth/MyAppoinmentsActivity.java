@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.digitalhealth.model.Appoinments;
@@ -31,6 +32,7 @@ public class MyAppoinmentsActivity extends AppCompatActivity {
     ListView applist;
     DatabaseReference rootRef;
     List<Appoinments> listAppoinment;
+    private TextView closeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,19 @@ public class MyAppoinmentsActivity extends AppCompatActivity {
 
         applist = findViewById(R.id.ar_my_appoinments_list);
         listAppoinment = new ArrayList<>();
+        closeBtn= findViewById(R.id.ar_my_appoinment_close_btn);
+
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyAppoinmentsActivity.this, HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
 

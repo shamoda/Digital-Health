@@ -94,17 +94,23 @@ public class BMRcalculatorActivity extends AppCompatActivity {
             gender = "female";
         }
 
+
         if(TextUtils.isEmpty(txtage)){
-            Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please add your age to calculate BMR", Toast.LENGTH_SHORT).show();
+
         }
+        else if( Float.parseFloat(txtage)<15 || Float.parseFloat(txtage)>100){
+            Toast.makeText(this, "Please Enter age between 15 to 100", Toast.LENGTH_SHORT).show();
+        }
+
         else if(TextUtils.isEmpty(txtheight)){
-            Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please add your height to calculate BMR", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(txtweight)){
-            Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please add your weight to calculate BMR", Toast.LENGTH_SHORT).show();
         }
         else if (!male.isChecked() && !female.isChecked()){
-            Toast.makeText(this, "Gender Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please select your age to calculate BMR", Toast.LENGTH_SHORT).show();
         }
         else {
             float ageValue = Float.parseFloat(txtage);
