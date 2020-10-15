@@ -63,6 +63,7 @@ public class UpdateUserAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_user_account);
 
+//        getting refference
         closeBtn = findViewById(R.id.sm_update_user_close_btn);
         updateBtn = findViewById(R.id.sm_update_user_update_btn);
         changeProfileImageBtn = findViewById(R.id.sm_update_user_change_profile_img_btn);
@@ -183,6 +184,7 @@ public class UpdateUserAccountActivity extends AppCompatActivity {
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users");
 
+//        adding data into hashmap
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", name.getText().toString());
         map.put("password", password.getText().toString());
@@ -216,6 +218,8 @@ public class UpdateUserAccountActivity extends AppCompatActivity {
     }
 
     private void userInfoSaved() {
+
+//        validate
         if(TextUtils.isEmpty(name.getText().toString())){
             Toast.makeText(this, "Name cannot be empty.", Toast.LENGTH_SHORT).show();
         }
@@ -224,6 +228,12 @@ public class UpdateUserAccountActivity extends AppCompatActivity {
         }
         else if(TextUtils.isEmpty(address.getText().toString())){
             Toast.makeText(this, "Address cannot be empty.", Toast.LENGTH_SHORT).show();
+        }
+        else if (phone.length() != 10){
+            Toast.makeText(this, "Phone number must contain 10 digits.", Toast.LENGTH_SHORT).show();
+        }
+        else if (password.length() < 4){
+            Toast.makeText(this, "Password must contain at least 4 characters.", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(password.getText().toString())){
             Toast.makeText(this, "Password cannot be empty.", Toast.LENGTH_SHORT).show();

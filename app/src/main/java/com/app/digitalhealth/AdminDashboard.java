@@ -39,8 +39,9 @@ public class AdminDashboard extends AppCompatActivity {
         logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
         doctorsCount = findViewById(R.id.admin_dashboard_doctor_count);
         customerCount = findViewById(R.id.admin_dashboard_customer_count);
-
         manageAppoinments = findViewById(R.id.btn_manage_appoinments);
+
+        Paper.init(this);
 
         manageAppoinments.setOnClickListener(new View.OnClickListener() {
             @Override

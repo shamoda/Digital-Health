@@ -65,6 +65,7 @@ public class ManageDoctorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_doctors);
 
+//        getting refferences
         doctorRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
 
         textInputLayout = findViewById(R.id.sm_manage_doctors_specialization);
@@ -200,6 +201,8 @@ public class ManageDoctorsActivity extends AppCompatActivity {
                 return holder;
             }
         };
+
+//        setting adaptor to the recyclerview
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
@@ -243,6 +246,8 @@ public class ManageDoctorsActivity extends AppCompatActivity {
                 return holder;
             }
         };
+
+//        setting adaptor to the recyclerview
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
@@ -276,6 +281,8 @@ public class ManageDoctorsActivity extends AppCompatActivity {
                 return holder;
             }
         };
+
+//        setting adaptor to the recyclerview
         recyclerView.setAdapter(adapter);
         adapter.startListening();
 

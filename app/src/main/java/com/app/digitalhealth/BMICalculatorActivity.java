@@ -36,6 +36,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b_m_i_calculator);
 
+//        getting reference from the xml layout
         heightInput = findViewById(R.id.sm_bmi_calculator_height_value);
         weightInput = findViewById(R.id.sm_bmi_calculator_weight_value);
         calculate = findViewById(R.id.sm_bmi_calculator_calculate_btn);
@@ -66,6 +67,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
         txtHeight = heightInput.getText().toString();
         txtWeight = weightInput.getText().toString();
 
+//        validating input
         if (TextUtils.isEmpty(txtHeight)){
             Toast.makeText(this, "Height cannot be empty.", Toast.LENGTH_SHORT).show();
         }
@@ -85,6 +87,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
 
     public float calculateBMI(float temp, float weight) {
 
+//        validating inputs
         if (temp < 30.0 || temp > 250){
             Toast.makeText(this, "Height is not valid.", Toast.LENGTH_SHORT).show();
         }
@@ -92,8 +95,9 @@ public class BMICalculatorActivity extends AppCompatActivity {
             Toast.makeText(this, "Weight is not valid.", Toast.LENGTH_SHORT).show();
         }
         else {
-            height = temp / 100;
 
+//            calculation
+            height = temp / 100;
             bmi = weight / (height * height);
         }
         return bmi;
@@ -102,6 +106,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
     private void setResults(float bmi) {
         BMIvalue.setText(String.valueOf(bmi));
 
+//        displaying results according to the bmi value
         if (bmi < 18.5){
             status.setTextColor(Color.parseColor("#FF5C00"));
             status.setText("Underweight");

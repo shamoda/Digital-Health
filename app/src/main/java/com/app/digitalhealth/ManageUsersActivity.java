@@ -48,6 +48,7 @@ public class ManageUsersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_users);
 
+//        getting refferences
         closeBtn = findViewById(R.id.sm_manage_users_close_btn);
         addNewCustomer = findViewById(R.id.sm_manage_users_add_new_patient_btn);
         searchUser = findViewById(R.id.sm_manage_users_search_view);
@@ -128,6 +129,8 @@ public class ManageUsersActivity extends AppCompatActivity {
                 return holder;
             }
         };
+
+//        setting adaptor to the recyclerview
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
@@ -162,9 +165,11 @@ public class ManageUsersActivity extends AppCompatActivity {
             }
         };
 
+//        setting adaptor to the recyclerview
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
+
 
     private void showAlertDialog(final String phone, String name, final String profileImage) {
         AlertDialog.Builder builder = new AlertDialog.Builder(ManageUsersActivity.this);

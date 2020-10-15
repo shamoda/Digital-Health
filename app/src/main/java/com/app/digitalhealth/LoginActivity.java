@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+//        getting refferences from xml layout
         phone = findViewById(R.id.sm_login_phone_value);
         password = findViewById(R.id.sm_login_password_value);
         login = findViewById(R.id.sm_login_btn);
@@ -83,14 +84,22 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginUser() {
 
+//        getting inputs into string variables
         String txtPhone = phone.getText().toString();
         String txtPassword = password.getText().toString();
 
+//        validating data
         if(TextUtils.isEmpty(txtPhone)){
             Toast.makeText(this, "Please enter phone number.", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(txtPassword)){
             Toast.makeText(this, "Please enter password.", Toast.LENGTH_SHORT).show();
+        }
+        else if (txtPhone.length() != 10){
+            Toast.makeText(this, "Please enter valid phone number.", Toast.LENGTH_SHORT).show();
+        }
+        else if (txtPassword.length() < 4){
+            Toast.makeText(this, "Please enter valid password.", Toast.LENGTH_SHORT).show();
         }
         else {
             pd.setMessage("Please wait.");
@@ -104,11 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void allowAccess(final String phone, final String password) {
 
-        if(rememberMe.isChecked()){
-            Paper.book().write(Prevalent.userPhoneKey, phone);
-            Paper.book().write(Prevalent.userPasswordKey, password);
-        }
-
+//        getting database refference
         final DatabaseReference rootRef;
         rootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -130,6 +135,12 @@ public class LoginActivity extends AppCompatActivity {
                             else if (parentDbName.equals("Users")){
                                 Toast.makeText(LoginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                                 pd.dismiss();
+
+                                if(rememberMe.isChecked()){
+//                                    writting data into android memory
+                                    Paper.book().write(Prevalent.userPhoneKey, phone);
+                                    Paper.book().write(Prevalent.userPasswordKey, password);
+                                }
 
                                 Prevalent.currentUser = user;
 

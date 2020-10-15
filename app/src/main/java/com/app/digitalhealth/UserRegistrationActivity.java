@@ -38,14 +38,20 @@ public class UserRegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registration);
 
+//        check weather the intent is coming from admin or customer dashboard
         check = "not";
         check = getIntent().getStringExtra("check");
 
+//        getting refference
         name = findViewById(R.id.sm_user_registration_name_value);
         phone = findViewById(R.id.sm_user_registration_phone_value);
         password = findViewById(R.id.sm_user_registration_password_value);
         reEnterPassword = findViewById(R.id.sm_user_registration_re_enter_password_value);
         createAccount = findViewById(R.id.sm_user_registration_btn);
+
+        if(check != null && "check".equalsIgnoreCase(check)){
+            createAccount.setText("Add New Customer");
+        }
 
         pd = new ProgressDialog(this);
 
@@ -59,11 +65,14 @@ public class UserRegistrationActivity extends AppCompatActivity {
     }
 
     private void createAccount() {
+
+//        adding data into string variables
         String txtName = name.getText().toString();
         String txtPhone = phone.getText().toString();
         String txtPassword = password.getText().toString();
         String txtReEnterPassword = reEnterPassword.getText().toString();
 
+//        validating
         if(TextUtils.isEmpty(txtName)){
             Toast.makeText(this, "Name cannot be empty.", Toast.LENGTH_SHORT).show();
         }
@@ -103,6 +112,8 @@ public class UserRegistrationActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (!(dataSnapshot.child("Users").child(phone).exists())){
+
+//                    adding data to a hash map
                     HashMap<String, Object> map = new HashMap<>();
                     map.put("phone" , phone);
                     map.put("name" , name);

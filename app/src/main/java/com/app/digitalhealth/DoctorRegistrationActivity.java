@@ -79,8 +79,10 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_registration);
 
+//        checking it is a update or insert using a intent value
         dId = getIntent().getStringExtra("dId");
 
+//        getting refferences from xml layout
         close = findViewById(R.id.sm_doctor_registration_close_btn);
         doctorImage = findViewById(R.id.sm_doctor_registration_profile_img);
         name = findViewById(R.id.sm_doctor_registration_name_value);
@@ -90,6 +92,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         slmcRegNo = findViewById(R.id.sm_doctor_registration_slmc_reg_no_value);
         addDoctorBtn = findViewById(R.id.sm_doctor_registration_add_doctor_btn);
 
+//        refferencing to databases
         doctorImageRef = FirebaseStorage.getInstance().getReference().child("DoctorsImages");
         doctorRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
         pd = new ProgressDialog(this);
@@ -177,6 +180,8 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
     }
 
     private void validateData() {
+
+//        getting all the values to string variables
         txtName = name.getText().toString();
         txtAddress = address.getText().toString();
         txtPhone = phone.getText().toString();
@@ -185,6 +190,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         txtSpecialization = dropDown.getText().toString();
 
 
+//        validating data
         if(imageUri == null){
             Toast.makeText(this, "Doctor's profile image is mandatory.", Toast.LENGTH_SHORT).show();
         }
@@ -276,6 +282,8 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
     }
 
     private void saveDoctorInfo() {
+
+//        adding data into a hashmap
         HashMap<String, Object> doctorMap = new HashMap<>();
         doctorMap.put("name", txtName);
         doctorMap.put("phone", txtPhone);
@@ -310,12 +318,14 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
 
 
     private void openGallery() {
+//        opening gallery using implicit intent
         Intent galleryIntent = new Intent();
         galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, galleryPick);
     }
 
+//    getting implicit intent results
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
