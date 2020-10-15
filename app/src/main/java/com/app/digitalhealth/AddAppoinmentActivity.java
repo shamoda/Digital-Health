@@ -159,16 +159,16 @@ public class AddAppoinmentActivity extends AppCompatActivity {
         txtNote = note.getText().toString();
 
         if(TextUtils.isEmpty(txtName)){
-            Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Add your name to place an appointment", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(txtEmail)){
-            Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Add your email to place an appointment", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(txtPhone)){
-            Toast.makeText(this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Add your contact number to place an appointment", Toast.LENGTH_SHORT).show();
         }
         else if (!male.isChecked() && !female.isChecked()){
-            Toast.makeText(this, "Gender Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "select your gender to place an appointment", Toast.LENGTH_SHORT).show();
         }
         else {
             sendData(txtName,txtEmail,txtPhone,txtNote, gender);

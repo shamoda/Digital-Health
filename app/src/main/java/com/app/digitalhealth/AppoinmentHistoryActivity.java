@@ -5,11 +5,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.digitalhealth.Inflators.AppoinmentAdapter;
@@ -33,6 +35,7 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
     List<Appoinments> listAppoinment;
     SearchView search;
     Query query;
+    private TextView closeBtn;
 
 
     @Override
@@ -47,6 +50,8 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
         listAppoinment = new ArrayList<>();
 
         search = findViewById(R.id.ar_appoinment_history_search);
+        closeBtn =findViewById(R.id.ar_appoinment_history_close_btn);
+
 
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -58,6 +63,16 @@ public class AppoinmentHistoryActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String s) {
                 searchApp(s);
                 return false;
+            }
+        });
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AppoinmentHistoryActivity.this, AdminDashboard.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 
